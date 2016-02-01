@@ -72,9 +72,4 @@ Now you have a new _powered off_ VM we want to update the configuration using so
 
 3. Select _enable 3d accelleration_.
 
-
-
-
-
-
-
+TODO => continue on from here...
