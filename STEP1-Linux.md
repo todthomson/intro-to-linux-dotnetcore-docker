@@ -1,4 +1,4 @@
-Linux, .NET Core and Docker
+# Step 1
 
 This is a tutorial on Linux, .NET Core and Docker.
 
