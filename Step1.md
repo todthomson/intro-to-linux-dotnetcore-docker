@@ -1,4 +1,4 @@
-# Step 1 => Linux
+# Step 1 - Linux Installation
 
 First we'll get a basic Linux installation up and running.
 
@@ -122,15 +122,22 @@ __Note:__ The option __default__ _should_ have the same effect i.e. _default_ wi
 
   b. __Your computer's name:__ e.g. apsalar
 
-  > __See:__ [RFC1178](https://tools.ietf.org/html/rfc1178) or __TL;DR__ Use all lower case (Unix is case-sensitive) Don't use random combinations of letters and numbers that "encode" some information about the location or function of the computer which are hard to "talk about". At the other end of the spectrum don't use names that will clash or sound like real people's names.
+  > __See:__ [RFC1178](https://tools.ietf.org/html/rfc1178) or __TL;DR__ Use all lower case (Unix is case-sensitive). Don't use random combinations of letters and numbers that "encode" some information about the location or function of the computer which are hard to "talk about". At the other end of the spectrum don't use names that will clash or sound like real people's names.
 
   c. __Pick a username:__ e.g. tnt
 
   > The "Unix way" is to use all your initials for your username. You need to type your username a lot so it's good for it to be short.
 
+  d. __Choose a password__ and __confirm your password__. You will need to remember this password as you'll need it when you want to run things as _root_ (administrator).
 
+  e. For ease of use (and as this is just a VM) select __log in automatically__.
 
+  f. Click __continue__ to begin the process of installing your new Linux system.
 
+  __Note:__ While you wait, expand the lower section to take a look at the installation _under the hood_. Also _use the left and right arrows_ to explore some user-facing parts of your new Ubuntu install.
 
+9. Once see the message __installation complete__ click _restart now_.
 
+Congrats! You now have a Linux VM! :)
 
+When you are ready go back to the homepage and continue with S
