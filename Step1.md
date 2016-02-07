@@ -1,6 +1,6 @@
-# Step 1 - Linux Installation
+# Step 1 - GNU/Linux Installation
 
-First we'll get a basic Linux installation up and running.
+First we'll get a basic GNU/Linux installation up and running.
 
 ## Prerequisites
 

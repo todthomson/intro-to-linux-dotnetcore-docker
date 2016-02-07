@@ -6,7 +6,7 @@ A tutorial on "how to" GNU/Linux + .NET/ASP.NET Core + LXC/Docker...
 
 If you don't have a preexisting Ubuntu GNU/Linux installation then start at [Step 1](Step1.md).
 
-## Step 2 - Ubuntu GNU/Linux Configuration
+## Step 2 - Ubuntu GNU/Linux Configuration & Maintenance
 
 Once you have a "fresh" Ubuntu install go to [Step 2](Step2.md).
 
