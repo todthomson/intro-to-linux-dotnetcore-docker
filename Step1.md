@@ -1,3 +1,5 @@
+TODO: (Tod) ALTER THIS TO UBUNTU 14.04.4 LTS AS THAT'S WHAT DOTNET CORE SUPPORTS :(
+
 # Step 1 - GNU/Linux Installation
 
 ![gnu-linux](Step1/1-gnu-linux.jpg)
