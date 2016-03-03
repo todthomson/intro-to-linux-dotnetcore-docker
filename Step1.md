@@ -1,5 +1,7 @@
 # Step 1 - GNU/Linux Installation
 
+![gnu-linux](Step1/1-gnu-linux.jpg)
+
 First we'll get a basic GNU/Linux installation up and running.
 
 ## Prerequisites
@@ -138,6 +140,8 @@ __Note:__ The option __default__ _should_ have the same effect i.e. _default_ wi
 
 9. Once see the message __installation complete__ click _restart now_.
 
+## End of step 1
+
 Congrats! You now have a Linux VM! :)
 
-When you are ready go back to the homepage and continue with S
+Take a 5 minute coffee break and then head over to [Step 2 - Ubuntu GNU/Linux Configuration & Maintenance](Step2.md).
