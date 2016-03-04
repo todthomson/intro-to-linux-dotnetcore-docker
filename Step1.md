@@ -1,5 +1,3 @@
-TODO: (Tod) ALTER THIS TO UBUNTU 14.04.4 LTS AS THAT'S WHAT DOTNET CORE SUPPORTS :(
-
 # Step 1 - GNU/Linux Installation
 
 ![gnu-linux](Step1/1-gnu-linux.jpg)
@@ -8,7 +6,7 @@ First we'll get a basic GNU/Linux installation up and running.
 
 ## Prerequisites
 
-1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-15.10-desktop-amd64.iso`) from your local Ubuntu mirror to save your quota and to download as fast as possible.
+1. Download the latest [Ubuntu Desktop 14.04.4 LTS 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (i.e. `ubuntu-14.04.4-desktop-amd64.iso`) from your local Ubuntu mirror to save your quota and to download it as fast as possible. We're using 14.04.4 LTS as it's the primary GNU/Linux distribution (and version) being used by the .NET Core team.
 
 2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. for Mac OS X `VirtualBox-5.0.14-105127-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle__VM__VirtualBox__Extension__Pack-5.0.14-105127.vbox-extpack`). This extension pack contains drivers for USB etc.
 
@@ -19,6 +17,8 @@ First we'll get a basic GNU/Linux installation up and running.
 2. Double-click the VirtualBox extension pack and __accept__ to install. VirtualBox should now be open.
 
 3. Open VirtualBox __Preferences... => Input => Virtual Machine__ and update the __Host Key Combination__ to _Right COMMAND_ if you're on Mac or _Right CTRL_ if you're on non-Mac hardware.
+
+  ![2-virtualbox-host-key](Step1/2-virtualbox-host-key.png)
 
 ## Creating the new VM
 
@@ -86,7 +86,7 @@ __Note:__ The option __default__ _should_ have the same effect i.e. _default_ wi
 
 2. Remove the virtual __controller: ide__ from the __storage tree__ by selecting it and then clicking the _subtract controller_ icon at the bottom (the rightmost icon).
 
-3. Add a new virtual optical drive by selecting __controller: sata__ and clicking the _add disk_ icon at the bottom (the leftmost icon). When the modal appears click __choose disk__ and select `ubuntu-15.10-desktop-amd64.iso` downloaded earlier. Also check _use host i/o cache_.
+3. Add a new virtual optical drive by selecting __controller: sata__ and clicking the _add disk_ icon at the bottom (the leftmost icon). When the modal appears click __choose disk__ and select `ubuntu-14.04.4-desktop-amd64.iso` downloaded earlier. Also check __use host i/o cache__.
 
 4. If your host has an SSD select __Ubuntu.vdi__ and check __solid-state drive__.
 
@@ -102,11 +102,17 @@ __Note:__ The option __default__ _should_ have the same effect i.e. _default_ wi
 
 2. If you are on "wired network" (e.g. ethernet) set __attached to__ to _bridged adapter_. If you're on a "wireless network" (e.g. `802.11abgn` or `4G` etc) leave __attached to__ as _NAT_ as a lot of wireless access points will not allow multiple DCHP allocations to the same physical device (so the virtual device will fail to get an IP address).
 
-3. __Done!__ Click __OK__ to save the VM settings.
+#### Ports => USB
+
+1. Select __USB 3.0 (xHCI) Controller.
+
+__Done!__ Click __OK__ to save the VM settings.
 
 ## Booting your new VM and installing Linux
 
 1. Double-click your new VM labelled __Ubuntu => Powered Off__ to boot the VM and begin the installation.
+
+  > While your new VM is booting into the installation screen, if your are using a host with a "retina" screen select __View => Scale Factor => 200%__ so you can actually see your VM while it's installing.
 
 2. Once you arrive at the first screen labelled __Install (as superuser)__ click _Install Ubuntu_.
 
