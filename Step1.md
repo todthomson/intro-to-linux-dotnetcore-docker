@@ -26,25 +26,41 @@ First we'll get a basic GNU/Linux installation up and running.
 
 2. Give your VM a __name__ (e.g. Ubuntu), select __type__ _Linux_, __version__ _Ubuntu (64-bit)_ and then click __continue__.
 
+  ![3-name-and-os](Step1/3-name-and-os.png)
+
 3. Determine how much memory (RAM) to dedicate to your VM. I recommend a minimum of `2048MiB` and a maximum of `50%` of your host's physical memory e.g. in my case I have a MacBook Pro with `16GiB` of memory so I chose to configure my new VM with `4096MiB` of memory. Then click __continue__.
+
+  ![4-memory-size](Step1/4-memory-size.png)
 
 4. Leave the option _Create a virtual hard disk now_ in place and click __continue__.
 
+  ![5-create-hdd](Step1/5-create-hdd.png)
+
 5. Leave the option _VDI (VirtualBox Disk Image)_ in place and click __continue__.
 
+  ![6-hdd-file-type](Step1/6-hdd-file-type.png)
+
 6. Leave the option _Dynamically allocated_ in place and click __continue__.
+
+  ![7-dynamically-allocated-disk](Step1/7-dynamically-allocated-disk.png)
 
 7. Determine the maximum size for your __dynamically allocated disk__. I recommend setting this to a reasonable size which is less than the currently available space on the host disk e.g. in my case I have `182GiB` free so I set the maximum disk size to `128GB`. The other option is to set it to `2TB` and monitor actual `.vdi` file size yourself. This maximum size can be altered later via the command line tools so it's not _set in stone_.
 
 8. Once you are happy with all your settings click __create__ to build your new VM and VHDD.
 
+  ![8-hdd-size](Step1/8-hdd-size.png)
+
 ## Configuring your new VM
 
 Now you have a new __powered off__ VM we want to update the configuration using some more optimal defaults prior to installing Linux. Click __settings__ to configure your new VM.
 
+![9-powered-off](Step1/9-powered-off.png)
+
 #### General => Advanced
 
 1. Set __shared clipboard__ and __drag'n'drop__ to _bidirectional_.
+
+  ![10-general-advanced](Step1/10-general-advanced.png)
 
 #### System => Motherboard
 
@@ -54,15 +70,21 @@ Now you have a new __powered off__ VM we want to update the configuration using 
 
 3. Set __pointing device__ to a setting which matches your host hardware e.g. I'm on a `2015 MacBook Pro` so I set it to _USB multi-touch tablet_.
 
+  ![11-system-motherboard](Step1/11-system-motherboard.png)
+
 #### System => Processor
 
 1. Determine how many __Processor(s)__ to assign to your new VM. I recommend a minimum of `1` and a maximum of `half the number` of logical CPU cores of your host machine e.g. in my case I have a `2015 MacBook Pro` with `4 physical / 8 logical` CPU cores, so I _could_ set the virtual CPU cores to `4`, but I only selected `1` as that's all I will need for this tutorial.
 
 2. Check __enable PAE/NX__.
 
+  ![12-system-processor](Step1/12-system-processor.png)
+
 #### System => Acceleration
 
 1. Set __paravirtualization interface__ to _KVM_ which is the recommended setting for Linux guests. When using a Windows guest you should set __paravirtualization interface__ to _Hyper-V_.
+
+  ![13-system-acceleration](Step1/13-system-acceleration.png)
 
   > VirtualBox allows exposing a paravirtualization interface to facilitate accurate and efficient execution of software within a virtual machine. These interfaces require the guest operating system to recognize their presence and make use of them in order to leverage the benefits of communicating with the VirtualBox hypervisor.
 
@@ -80,6 +102,8 @@ __Note:__ The option __default__ _should_ have the same effect i.e. _default_ wi
 
 3. Check __enable 3D acceleration__.
 
+  ![14-display-screen](Step1/14-display-screen.png)
+
 #### Storage
 
 1. Remove the __empty__ virtual optical drive from the __storage tree__ by selecting it and then clicking the _subtract disk_ icon at the bottom (second from the left).
@@ -90,9 +114,13 @@ __Note:__ The option __default__ _should_ have the same effect i.e. _default_ wi
 
 4. If your host has an SSD select __Ubuntu.vdi__ and check __solid-state drive__.
 
+  ![15-storage](Step1/15-storage.png)
+
 #### Audio
 
 1. Set __audio controller__ to _Intel HD Audio_.
+
+  ![16-audio.png](Step1/16-audio.png)
 
 #### Network => Adapter 1
 
@@ -102,9 +130,13 @@ __Note:__ The option __default__ _should_ have the same effect i.e. _default_ wi
 
 2. If you are on "wired network" (e.g. ethernet) set __attached to__ to _bridged adapter_. If you're on a "wireless network" (e.g. `802.11abgn` or `4G` etc) leave __attached to__ as _NAT_ as a lot of wireless access points will not allow multiple DCHP allocations to the same physical device (so the virtual device will fail to get an IP address).
 
+  ![17-network-adapter-1](Step1/17-network-adapter-1.png)
+
 #### Ports => USB
 
 1. Select __USB 3.0 (xHCI) Controller.
+
+  ![18-ports-usb](Step1/18-ports-usb.png)
 
 __Done!__ Click __OK__ to save the VM settings.
 
@@ -112,19 +144,33 @@ __Done!__ Click __OK__ to save the VM settings.
 
 1. Double-click your new VM labelled __Ubuntu => Powered Off__ to boot the VM and begin the installation.
 
+  ![9-powered-off](Step1/9-powered-off.png)
+
   > While your new VM is booting into the installation screen, if your are using a host with a "retina" screen select __View => Scale Factor => 200%__ so you can actually see your VM while it's installing.
 
 2. Once you arrive at the first screen labelled __Install (as superuser)__ click _Install Ubuntu_.
 
+  ![19-install-ubuntu](Step1/19-install-ubuntu.png)
+
 3. Make sure you have __three green ticks__ then check _download updates while installing_. If you want to be able to play patented audio formats you should also check _install this third-party software_. Once you're happy click _continue_.
+
+  ![20-preparing-to-install](Step1/20-preparing-to-install.png)
 
 4. To keep things simple leave the default option __Erase disk and install Ubuntu__ in place and click _install now_.
 
+  ![21-erase-disk-and-install](Step1/21-erase-disk-and-install.png)
+
 5. Confirm the partition table changes by clicking _continue_.
+
+  ![22-write-changes-to-disk](Step1/22-write-changes-to-disk.png)
 
 6. _Where are you?_ should have automatically detected and configured your location via the Internet. If this didn't happen stop and check the "up and down" arrows in the task bar (top right corner) to confirm you have internet access through _NAT_ or _Bridged Mode_ via the host. If you don't have any Internet access that's OK just type in to the autocomplete the name of your closet capital city e.g. _Brisbane (Queensland, Australia)_ or your timezone e.g. _Lord Howe Time (Australia)_ and then click _continue_.
 
+  ![23-where-are-you](Step1/23-where-are-you.png)
+
 7. Leave the left pane set to __English (US)__. If you're using Windows hardware also leave the right pane set to __English (US)__. If you're using Mac hardware select __English (US) - English (Macintosh)__ in the right pane. Then click on _continue_.
+
+  ![24-keyboard-layout](Step1/24-keyboard-layout.png)
 
 8. _Who are you?_ Use the following guide to fill in these details:
 
@@ -145,6 +191,8 @@ __Done!__ Click __OK__ to save the VM settings.
   f. Click __continue__ to begin the process of installing your new Linux system.
 
   __Note:__ While you wait, expand the lower section to take a look at the installation _under the hood_. Also _use the left and right arrows_ to explore some user-facing parts of your new Ubuntu install.
+
+  ![25-who-are-you](Step1/25-who-are-you.png)
 
 9. Once see the message __installation complete__ click _restart now_.
 
