@@ -6,9 +6,9 @@ First we'll get a basic GNU/Linux installation up and running.
 
 ## Prerequisites
 
-1. Download the latest [Ubuntu Desktop 14.04.4 LTS 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (i.e. `ubuntu-14.04.4-desktop-amd64.iso`) from your local Ubuntu mirror to save your quota and to download it as fast as possible. We're using 14.04.4 LTS as it's the primary GNU/Linux distribution (and version) being used by the .NET Core team.
+1. Download the latest [Ubuntu Desktop 14.04.4 LTS 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-14.04.4-desktop-amd64.iso`) from your local Ubuntu mirror to save your quota and to download it as fast as possible. We're using 14.04.4 LTS as it's the primary GNU/Linux distribution (and version) being used by the .NET Core team.
 
-2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. for Mac OS X `VirtualBox-5.0.14-105127-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle__VM__VirtualBox__Extension__Pack-5.0.14-105127.vbox-extpack`). This extension pack contains drivers for USB etc.
+2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. for Mac OS X `VirtualBox-5.0.14-105127-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle__VM__VirtualBox__Extension__Pack-5.0.14-105127.vbox-extpack`). This extension pack contains host drivers for USB etc.
 
 ## Installing and configuring VirtualBox
 
@@ -22,7 +22,7 @@ First we'll get a basic GNU/Linux installation up and running.
 
 ## Creating the new VM
 
-1. CLick __New__ in VirtualBox to begin the process of creating your new VM.
+1. Click __New__ in VirtualBox to begin the process of creating your new VM.
 
 2. Give your VM a __name__ (e.g. Ubuntu), select __type__ _Linux_, __version__ _Ubuntu (64-bit)_ and then click __continue__.
 
@@ -52,7 +52,7 @@ First we'll get a basic GNU/Linux installation up and running.
 
 ## Configuring your new VM
 
-Now you have a new __powered off__ VM we want to update the configuration using some more optimal defaults prior to installing Linux. Click __settings__ to configure your new VM.
+Now you have a new __powered off__ VM we want to update the configuration using some more-optimal defaults prior to installing Linux. Click __settings__ to configure your new VM.
 
 ![9-powered-off](Step1/9-powered-off.png)
 
@@ -70,11 +70,15 @@ Now you have a new __powered off__ VM we want to update the configuration using 
 
 3. Set __pointing device__ to a setting which matches your host hardware e.g. I'm on a `2015 MacBook Pro` so I set it to _USB multi-touch tablet_.
 
+4. If the _only_ host operating system you run on your PC is Windows __unselect__ _Hardware Clock in UTC Time_.
+
   ![11-system-motherboard](Step1/11-system-motherboard.png)
+
+  __Note:__ Windows expects its hardware clock in to be in _local time_. Macintosh (and most other operating systems) run their hardware clocks in _UTC by default_.
 
 #### System => Processor
 
-1. Determine how many __Processor(s)__ to assign to your new VM. I recommend a minimum of `1` and a maximum of `half the number` of logical CPU cores of your host machine e.g. in my case I have a `2015 MacBook Pro` with `4 physical / 8 logical` CPU cores, so I _could_ set the virtual CPU cores to `4`, but I only selected `1` as that's all I will need for this tutorial.
+1. Determine how many __Processor(s)__ to assign to your new VM. I recommend a minimum of `1` and a maximum of `half the number` of logical CPU cores of your host machine e.g. in my case I have a `2015 MacBook Pro` with `4 physical / 8 logical` CPU cores, so I _could_ set the virtual CPU cores to `4`, however I just selected `1` as that's all I will need.
 
 2. Check __enable PAE/NX__.
 
@@ -82,7 +86,7 @@ Now you have a new __powered off__ VM we want to update the configuration using 
 
 #### System => Acceleration
 
-1. Set __paravirtualization interface__ to _KVM_ which is the recommended setting for Linux guests. When using a Windows guest you should set __paravirtualization interface__ to _Hyper-V_.
+1. Set __paravirtualization interface__ to _KVM_ which is the recommended setting for Linux guests. When using a Windows guest you should set it to _Hyper-V_.
 
   ![13-system-acceleration](Step1/13-system-acceleration.png)
 
@@ -92,7 +96,7 @@ Now you have a new __powered off__ VM we want to update the configuration using 
 
   > Exposing a [paravirtualization provider](https://www.virtualbox.org/manual/ch10.html#gimproviders) to the guest operating system does not rely on the choice of host platforms. For example, the Hyper-V paravirtualization provider can be used for VMs to run on any host platform (supported by VirtualBox) and not just Windows.
 
-__Note:__ The option __default__ _should_ have the same effect i.e. _default_ will automatically set the optimal __paravirtualization interface__ setting dependent on host operating system.
+  __Note:__ The option __default__ _should_ have the same effect i.e. _default_ will automatically set the optimal __paravirtualization interface__ setting dependent on the guest operating system selected.
 
 #### Display => Screen
 
@@ -134,7 +138,7 @@ __Note:__ The option __default__ _should_ have the same effect i.e. _default_ wi
 
 #### Ports => USB
 
-1. Select __USB 3.0 (xHCI) Controller.
+1. Select __USB 3.0 (xHCI) Controller__.
 
   ![18-ports-usb](Step1/18-ports-usb.png)
 
@@ -146,13 +150,13 @@ __Done!__ Click __OK__ to save the VM settings.
 
   ![9-powered-off](Step1/9-powered-off.png)
 
-  > While your new VM is booting into the installation screen, if your are using a host with a "retina" screen select __View => Scale Factor => 200%__ so you can actually see your VM while it's installing.
+  __Note:__ While your new VM is booting into the installation screen, if your are using a host with a "retina" screen select __View => Scale Factor => 200%__ so you can actually see your VM while it's installing.
 
-2. Once you arrive at the first screen labelled __Install (as superuser)__ click _Install Ubuntu_.
+2. Once you arrive at the first screen labelled __Install__ click _Install Ubuntu_.
 
   ![19-install-ubuntu](Step1/19-install-ubuntu.png)
 
-3. Make sure you have __three green ticks__ then check _download updates while installing_. If you want to be able to play patented audio formats you should also check _install this third-party software_. Once you're happy click _continue_.
+3. Make sure you have __three green ticks__ then check _download updates while installing_. If you want to be able to play _patent-encumbered audio formats_ you should also check _install this third-party software_. Once you're happy click _continue_.
 
   ![20-preparing-to-install](Step1/20-preparing-to-install.png)
 
@@ -178,11 +182,11 @@ __Done!__ Click __OK__ to save the VM settings.
 
   b. __Your computer's name:__ e.g. apsalar
 
-  > __See:__ [RFC1178](https://tools.ietf.org/html/rfc1178) or __TL;DR__ Use all lower case (Unix is case-sensitive). Don't use random combinations of letters and numbers that "encode" some information about the location or function of the computer which are hard to "talk about". At the other end of the spectrum don't use names that will clash or sound like real people's names.
+    __Note:__ Feel free to take a look at [RFC1178](https://tools.ietf.org/html/rfc1178) or __TL;DR__ Use all lower case (Unix is case-sensitive). Don't use random combinations of letters and numbers that "encode" some information about the location or function of the computer which are hard to "talk about". At the other end of the spectrum don't use names that will clash or sound like real people's names.
 
   c. __Pick a username:__ e.g. tnt
 
-  > The "Unix way" is to use all your initials for your username. You need to type your username a lot so it's good for it to be short.
+    _Note:__ The "Unix way" is to use all your initials for your username. You need to type your username a lot so it's good for it to be short.
 
   d. __Choose a password__ and __confirm your password__. You will need to remember this password as you'll need it when you want to run things as _root_ (administrator).
 
@@ -190,11 +194,11 @@ __Done!__ Click __OK__ to save the VM settings.
 
   f. Click __continue__ to begin the process of installing your new Linux system.
 
-  __Note:__ While you wait, expand the lower section to take a look at the installation _under the hood_. Also _use the left and right arrows_ to explore some user-facing parts of your new Ubuntu install.
-
   ![25-who-are-you](Step1/25-who-are-you.png)
 
-9. Once see the message __installation complete__ click _restart now_.
+    __Note:__ While you wait, expand the lower section to take a look at the installation _under the hood_. Also _use the left and right arrows_ to explore some user-facing parts of your new Ubuntu install.
+
+9. Once you see the message __installation complete__ click _restart now_.
 
 ## End of step 1
 
