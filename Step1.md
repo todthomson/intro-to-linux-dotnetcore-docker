@@ -8,7 +8,7 @@ First we'll get a basic GNU/Linux installation up and running.
 
 1. Download the latest [Ubuntu Desktop 14.04.4 LTS 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-14.04.4-desktop-amd64.iso`) from your local Ubuntu mirror to save your quota and to download it as fast as possible. We're using 14.04.4 LTS as it's the primary GNU/Linux distribution (and version) being used by the .NET Core team.
 
-2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. for Mac OS X `VirtualBox-5.0.14-105127-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle__VM__VirtualBox__Extension__Pack-5.0.14-105127.vbox-extpack`). This extension pack contains host drivers for USB etc.
+2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. for Mac OS X `VirtualBox-5.0.16-105871-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.0.16-105871.vbox-extpack`). This extension pack contains host drivers for USB etc.
 
 ## Installing and configuring VirtualBox
 

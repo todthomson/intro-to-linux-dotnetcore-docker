@@ -30,35 +30,40 @@ _But why should I care?_ When you install package X `aptitude` (via `apt-get`) w
 
 Time to switch back to our Ubuntu GNU/Linux VM.
 
-#### VGA just ain't what it used to be...
+> Whoa! That's one teeny tiny VM!
 
 Yes. Yes it is. But let's fix it anyhow ;)
 
-> Whoa! That's one teeny tiny VM!
-
-__Note:__ The original version of this guide was written for Ubuntu 15.10 (the latest version at the time of writing) where everything "just works". Unfortunately going back to Ubuntu 14.04.4 LTS has resulted in us running into an issue with our video driver on the current version of VirtualBox.
+#### VGA just ain't what it used to be...
 
 > Come on Tod it's 2016 this GNU/Linux thing is supposed to be easy!
 
 Not always my young Padawans, not always... But here's how you can fix it.
 
-1. Mount the _VirtualBox Guest Additions ISO_ by selecting __Devices => Insert Guest Additions CD image...__.
+1. Run the following command to install some tools we will use for compiling some kernel modules build and testing our OpenGL acceleration is working:
 
-2. Once you see the following prompt select __run__ to begin the process.
+  ```
+  sudo apt-get install mesa-utils
+  sudo apt-get install dkms build-essential linux-headers-$(uname -r)
+  ```
+
+2. Mount the _VirtualBox Guest Additions ISO_ by selecting __Devices => Insert Guest Additions CD image...__.
+
+3. Once you see the following prompt select __run__ to begin the process.
 
   ![2-run-vbox-guest-tools](Step2/2-run-vbox-guest-tools.png)
 
-3. Enter your _password_ and select __Authenticate__ to run the installation script as _root_.
+4. Enter your _password_ and select __Authenticate__ to run the installation script as _root_.
 
   ![3-enter-your-password.png](Step2/3-enter-your-password.png)
 
-4. You should see the following output indicating you've succeeded.
+5. You should see the following output indicating you've succeeded.
 
   ![4-press-return-to-close.png](Step2/4-press-return-to-close.png)
 
-5. Press `ENTER` to close the terminal.
+6. Press `ENTER` to close the terminal.
 
-6. Open a new terminal `CTRL+ALT+T` and run `sudo reboot` to restart your VM.
+7. Open a new terminal `CTRL+ALT+T` and run `sudo reboot` to restart your VM.
 
 After reboot you might notice that your VM is running at a higher resolution. The good news is that we can now run at Ubuntu's minimum resolution... ;)
 
@@ -66,7 +71,9 @@ To confirm that everything's working OK do the following:
 
 1. Open _System Settings_ by pressing the `SUPER` (Windows) key, typing `s` and then hitting `ENTER`. This is how you launch applications in Ubuntu GNU/Linux i.e. it's the same as in Windows.
 
-2. Open the _Screen Display_ option and then select whatever resolution takes your fancy. I selected `1024x768` which in "retina mode 200% scale factor" will look like `2048x1536`.
+2. Open the _Screen Display_ option and then select whichever resolution takes your fancy. I selected `1024x768` which in "retina mode + 200% scale factor" will be `2048x1536` size-wise.
+
+3. Run `glxgears`. If the "world falls over" then shut down your VM `sudo shutdown -h now` and reconfigure your VM to deselect __enable 3D acceleration__. Start your VM again and re-run `glxgears` to make sure all is now well.
 
 ## Updating your new system
 
@@ -84,7 +91,7 @@ If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) i
 
 4. You will see that you are prompted for your password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created as part of the installation gets sudoers access automatically.
 
-5. Now that we have an up-to-date package definition list we can run `sudo apt-get upgrade` to upgrade our system to the latest packages and security updates:
+5. Now that we have an up-to-date package definition list we can run `sudo apt-get upgrade` to upgrade our system to the latest package and security updates:
 
   ![7-sudo-apt-get-upgrade-start](Step2/7-sudo-apt-get-upgrade-start.png)
 
@@ -98,39 +105,75 @@ If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) i
 
 OK so what's next? Let's install some general programs we'll need later.
 
-  1. We'll need `git` for sure, so let's `sudo aptitude install git`.
+#### Git
 
-  2. We'll need a text editor and I'm a `vim` man so let's `sudo aptitude install vim`.
+We'll need `git` for sure, so let's `sudo aptitude install git` now.
 
-  3. If you prefer `emacs` you could `sudo aptitude install emacs` and then add the awesome [spacemacs](https://github.com/syl20bnr/spacemacs) distribution like so `git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d && emacs --insecure`.
+#### Vim
 
-  4. So we have even more text-editing options let's install _Sublime Text 3_. There are two options for doing this which I will use to illustrate some other ways of getting software installed over and above _just downloading a binary_.
+We'll need a text editor and I'm a `vim` man so let's `sudo aptitude install vim` now.
 
-    1. Our first option is to download a `.dpkg` from the [Sublime Text 3](https://www.sublimetext.com/3) homepage and then install it using the `dpkg -i` command i.e. run the `wget https://download.sublimetext.com/sublime-text_build-3103_amd64.deb && sudo dpkg -i sublime-text_build-3103_amd64.deb` command.
+#### Emacs (optional)
 
-    2. Our second (and the better) option is to use the _Sublime Text 3 Installer PPA_. A [PPA](https://en.wikipedia.org/wiki/Personal_Package_Archive) is a _Personal Package Archive_ which is simply just an unofficial APT repository hosted by an individual on Canonical's [Launchpad](https://launchpad.net/) software collaboration service. Run the following commands to install Sublime Text 3 using the PPA.
+If you prefer `emacs` you could `sudo aptitude install emacs` and then add the awesome [spacemacs](https://github.com/syl20bnr/spacemacs) distribution like so `git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d && emacs --insecure`.
 
-      > [Canonical](http://www.canonical.com/) is the company behind the Ubuntu GNU/Linux distribution.
+#### Sublime Text 3
 
-      ```
-      sudo add-apt-repository ppa:webupd8team/sublime-text-3
-      ```
+So we have even more text-editing options let's install _Sublime Text 3_. There are two options for doing this which I will use to illustrate some other ways of getting software installed over and above _just downloading a binary_.
 
-      ![9-ppa-sublime-one](Step2/9-ppa-sublime-one.png)
+1. Our first option is to download a `.dpkg` from the [Sublime Text 3](https://www.sublimetext.com/3) homepage and then install it using the `dpkg -i` command i.e. run the `wget https://download.sublimetext.com/sublime-text_build-3103_amd64.deb && sudo dpkg -i sublime-text_build-3103_amd64.deb` command.
 
-      ```
-      sudo aptitude update
-      ```
+2. Our second (and the better) option is to use the _Sublime Text 3 Installer PPA_. A [PPA](https://en.wikipedia.org/wiki/Personal_Package_Archive) is a _Personal Package Archive_ which is simply just an unofficial APT repository hosted by an individual on Canonical's [Launchpad](https://launchpad.net/) software collaboration service. Run the following commands to install Sublime Text 3 using the PPA.
 
-      ![10-ppa-sublime-two](Step2/10-ppa-sublime-two.png)
+  > [Canonical](http://www.canonical.com/) is the company behind the Ubuntu GNU/Linux distribution.
 
-      ```
-      sudo aptitude install sublime-text-installer
-      ```
+  ```
+  sudo add-apt-repository ppa:webupd8team/sublime-text-3
+  ```
 
-      ![11-ppa-sublime-three](Step2/11-ppa-sublime-three.png)
+  ![9-ppa-sublime-one](Step2/9-ppa-sublime-one.png)
 
-  3. Now run `subl` to confirm that Sublime Text 3 is available and working ok.
+  ```
+  sudo aptitude update
+  ```
+
+  ![10-ppa-sublime-two](Step2/10-ppa-sublime-two.png)
+
+  ```
+  sudo aptitude install sublime-text-installer
+  ```
+
+  ![11-ppa-sublime-three](Step2/11-ppa-sublime-three.png)
+
+Now run `subl` to confirm that Sublime Text 3 is available and working ok.
+
+#### Atom (optional)
+
+You might like [Atom](https://atom.io/) if so run `wget https://github.com/atom/atom/releases/download/v1.5.4/atom-amd64.deb && sudo dpkg -i atom-amd64.deb` now.
+
+__Note:__ Atom seems buggy on 14.04.4 LTS so your mileage may vary...
+
+#### Brackets (optional)
+
+You want [Brackets](http://brackets.io/)? If so here's what you do:
+
+```
+sudo add-apt-repository ppa:webupd8team/brackets
+sudo aptitude update
+sudo aptitude install brackets
+```
+
+__Note:__ Brackets wouldn't load for me on 14.04.4 LTS so your mileage may vary...
+
+#### Visual Studio Code
+
+You must have thought I was forgetting something by now :P Here's what you do:
+
+```
+wget https://go.microsoft.com/fwlink/?LinkID=620884 -O VSCode-linux-x64-stable.zip
+unzip -a VSCode-linux-x64-stable.zip
+./VSCode-linux-x64/code
+```
 
 ## End of step 2
 
