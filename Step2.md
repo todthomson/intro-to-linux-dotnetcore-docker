@@ -75,6 +75,8 @@ To confirm that everything's working OK do the following:
 
 3. Run `glxgears`. If the "world falls over" then shut down your VM `sudo shutdown -h now` and reconfigure your VM to deselect __enable 3D acceleration__. Start your VM again and re-run `glxgears` to make sure all is now well.
 
+__Note:__ See [VirtualBox ticket 12941](https://www.virtualbox.org/ticket/12941) for more information.
+
 ## Updating your new system
 
 If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) is open (it opens automatically on startup if there are updates) then close it. We're going to use the terminal-based update system (described above) to update our system now.
@@ -177,9 +179,14 @@ unzip -a VSCode-linux-x64-stable.zip
 
 ## Updating to Linux kernel version 4.2.0
 
-TODO: ???
+The [LTS Enablement Stack](https://wiki.ubuntu.com/Kernel/LTSEnablementStack) is a project to bring newer Linux Kernel versions to the LTS branch of Ubuntu. The advantage of this is newer hardware support combined with reliable long-term-supported _user-land_ software.
 
-[Linux kernel version 4.2.0](http://askubuntu.com/questions/690149/when-will-4-2-0-kernel-be-available-for-14-04-lts)
+Let's upgrade to the [Linux kernel version 4.2.0](http://askubuntu.com/questions/690149/when-will-4-2-0-kernel-be-available-for-14-04-lts):
+
+```
+sudo aptitude update
+sudo aptitude upgrade
+```
 
 ## End of step 2
 
