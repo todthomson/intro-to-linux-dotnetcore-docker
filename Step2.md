@@ -175,6 +175,12 @@ unzip -a VSCode-linux-x64-stable.zip
 ./VSCode-linux-x64/code
 ```
 
+## Updating to Linux kernel version 4.2.0
+
+TODO: ???
+
+[Linux kernel version 4.2.0](http://askubuntu.com/questions/690149/when-will-4-2-0-kernel-be-available-for-14-04-lts)
+
 ## End of step 2
 
 Good job! You are now in possession of a configured and maintainable Linux VM! :)
