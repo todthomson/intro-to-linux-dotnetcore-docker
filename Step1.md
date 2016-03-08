@@ -1,6 +1,6 @@
 # Step 1 - GNU/Linux Installation
 
-![gnu-linux](Step1/1-gnu-linux.jpg)
+![1-gnu-linux](Step1/1-gnu-linux.jpg)
 
 First we'll get a basic GNU/Linux installation up and running.
 
