@@ -186,6 +186,7 @@ Let's upgrade to the [Linux kernel version 4.2.0](http://askubuntu.com/questions
 ```
 sudo aptitude update
 sudo aptitude upgrade
+sudo apt-get install --install-recommends linux-generic-lts-wily xserver-xorg-core-lts-wily xserver-xorg-lts-wily xserver-xorg-video-all-lts-wily xserver-xorg-input-all-lts-wily libwayland-egl1-mesa-lts-wily
 ```
 
 ## End of step 2
