@@ -16,7 +16,7 @@ Once you have a _configured_ Ubuntu 14.04.4 LTS VM (or my preconfigured VM) head
 
 ## Step 4 - ASP.NET Core "Hello, world!"
 
-?
+Once you have _said hello_ to .NET Core continue on with [Step 4](Step4.md).
 
 ## Step 5 - Docker "Hello, world!"
 
