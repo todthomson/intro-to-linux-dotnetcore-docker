@@ -1,6 +1,6 @@
-# Step 3 - .NET Core "Hello, world!"
+# Step 4 - ASP.NET Core "Hello, world!"
 
-![1-dotnet-core-dev-stack](Step3/1-dotnet-core-dev-stack.png)
+![1-aspnet-core](Step4/1-aspnet-core.png)
 
 ## .NET Core on Ubuntu GNU/Linux 14.04.4 LTS
 
@@ -85,7 +85,9 @@ dotnet run
 
 ![9-dotnet-run](Step3/9-dotnet-run.png)
 
-## End of step 3
+## End of step 4
+
+TODO: FIX THE BELOW!
 
 Excellent! You have said hello to the world of .NET Core :D
 
