@@ -2,93 +2,70 @@
 
 ![1-aspnet-core](Step4/1-aspnet-core.png)
 
-## .NET Core on Ubuntu GNU/Linux 14.04.4 LTS
+## ASP.NET Core on Ubuntu GNU/Linux 14.04.4 LTS
 
-__Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install .NET Core on Ubuntu GNU/Linux 14.04.4 LTS.
+__Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install ASP.NET Core on Ubuntu GNU/Linux 14.04.4 LTS.
 
-For more information see [here](http://dotnet.github.io/getting-started/). The following is practically verbatim from that source.
+For more information see [here](https://docs.asp.net/en/latest/getting-started/installing-on-linux.html#installing-on-ubuntu-14-04). The following is practically verbatim from that source.
 
-#### Add the .Net Core APT feed (verbatim)
+#### Install the .NET version manager
 
 ```
-sudo sh -c 'echo "deb [arch=amd64] http://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
-sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
+curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | \
+DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
+```
+
+![2-dnvm-install](Step4/2-dnvm-install.png)
+
+```
+source ~/.dnx/dnvm/dnvm.sh
+```
+
+```
+dnvm --version
+```
+
+![3-dnvm-version](Step4/3-dnvm-version.png)
+
+#### Install the .NET execution environment (DNX)
+
+```
 sudo aptitude update
 ```
 
-![2-add-dotnet-core-apt-feed](Step3/2-add-dotnet-core-apt-feed.png)
-
-#### Install .NET Core (verbatim)
-
 ```
-sudo aptitude install dotnet=1.0.0.001598-1
+sudo aptitude install libunwind8 gettext libssl-dev libcurl4-openssl-dev zlib1g libicu-dev uuid-dev
 ```
 
-![3-install-dotnet-core](Step3/3-install-dotnet-core.png)
-
-#### Upgrade to latest (new step)
-
-There's a newer version of .NET Core available so let's upgrade to that right away.
+![4-dnx-prerequisites](Step4/4-dnx-prerequisites.png)
 
 ```
-sudo aptitude update
-sudo aptitude upgrade
+dnvm upgrade -r coreclr
 ```
 
-![4-upgrade-dotnet-core](Step3/4-upgrade-dotnet-core.png)
+![5-upgrade-latest-coreclr](Step4/5-upgrade-latest-coreclr].png)
 
-#### .NET Core version (new step)
-
-Let's check the version of `dotnet` that we've just upgraded to.
+#### Install DNX for Mono
 
 ```
-dotnet --version
+sudo aptitude install mono-complete
 ```
 
-![5-check-dotnet-version](Step3/5-check-dotnet-version.png)
+TODO: REDO THIS AS I DIDN'T GET A SCREENSHOT :(
 
-Awesome! We now have version `1.0.0-beta-001673` of .NET Core.
 
-#### Initialise some code (verbatim)
+HOW TO `ca-certificates-mono`???
 
-```
-mkdir DotNetCoreTestApp
-cd DotNetCoreTestApp
-dotnet new
-```
 
-![6-dotnet-new-project](Step3/6-dotnet-new-project.png)
 
-#### Run package restore (verbatim)
+TODO: CONTINUE FROM HERE
 
-```
-dotnet restore
-```
 
-![7-dotnet-restore-fail](Step3/7-dotnet-restore-fail.png)
-
-#### Oh no! (new step)
-
-So it turns out that `api.nuget.org` does not yet contain the .NET Core packages. You can find out more about this issue [here](https://github.com/dotnet/cli/issues/535). Let's try `dotnet restore` again, but this time we'll supply the package source as an extra parameter.
-
-```
-dotnet restore -s https://myget.org/f/dotnet-core
-```
-
-![8-dotnet-restore-success](Step3/8-dotnet-restore-success.png)
-
-#### Run the app (verbatim)
-
-```
-dotnet run
-```
-
-![9-dotnet-run](Step3/9-dotnet-run.png)
 
 ## End of step 4
 
 TODO: FIX THE BELOW!
 
-Excellent! You have said hello to the world of .NET Core :D
+Excellent! You have said `HELO` to the world of ASP.NET Core ;)
 
-Have a quick break and then continue with [Step 4 - ASP.NET Core "Hello, world!"](Step4.md).
+Have a quick break and then continue with [Step 5 - LXC/Docker](Step5.md).

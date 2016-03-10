@@ -20,10 +20,14 @@ Once you have a _configured_ __Ubuntu 14.04.4 LTS VM__ (or my preconfigured VM) 
 
 Once you have _said hello_ to __.NET Core__ continue on with [Step 4](Step4.md).
 
-## Step 5 - Docker "Hello, world!"
+## Step 5 - LXC/Docker
 
-?
+Once you made your `ELHO` to __ASP.NET Core__ put on your helmet for [Step 5](Step5.md).
 
 ## Step 6 - Putting it all together...
 
 ?
+
+## Feedback?
+
+TODO => ?

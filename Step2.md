@@ -44,6 +44,9 @@ Not always my young Padawans, not always... But here's how you can fix it.
 
   ```
   sudo apt-get install mesa-utils
+  ```
+
+  ```
   sudo apt-get install dkms build-essential linux-headers-$(uname -r)
   ```
 
@@ -161,7 +164,13 @@ You want [Brackets](http://brackets.io/)? If so here's what you do:
 
 ```
 sudo add-apt-repository ppa:webupd8team/brackets
+```
+
+```
 sudo aptitude update
+```
+
+```
 sudo aptitude install brackets
 ```
 
@@ -173,7 +182,13 @@ You must have thought I was forgetting something by now :P Here's what you do:
 
 ```
 wget https://go.microsoft.com/fwlink/?LinkID=620884 -O VSCode-linux-x64-stable.zip
+```
+
+```
 unzip -a VSCode-linux-x64-stable.zip
+```
+
+```
 ./VSCode-linux-x64/code
 ```
 
@@ -185,8 +200,16 @@ Let's upgrade to the [Linux kernel version 4.2.0](http://askubuntu.com/questions
 
 ```
 sudo aptitude update
+```
+
+```
 sudo aptitude upgrade
-sudo apt-get install --install-recommends linux-generic-lts-wily xserver-xorg-core-lts-wily xserver-xorg-lts-wily xserver-xorg-video-all-lts-wily xserver-xorg-input-all-lts-wily libwayland-egl1-mesa-lts-wily
+```
+
+```
+sudo aptitude install --install-recommends linux-generic-lts-wily xserver-xorg-core-lts-wily \
+xserver-xorg-lts-wily xserver-xorg-video-all-lts-wily xserver-xorg-input-all-lts-wily \
+libwayland-egl1-mesa-lts-wily
 ```
 
 ## End of step 2
