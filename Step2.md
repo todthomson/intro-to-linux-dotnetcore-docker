@@ -16,16 +16,6 @@ Before we begin here's a little background.
 
 The [Advanced Packaging Tool](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool) APT is the "package manager" of Debian GNU/Linux and its variants (e.g. Ubuntu). It provides for the (almost) completely-automated discovery, retrieval, configuration, installation and removal of both binary and source packages. APT is wrapper around `dpkg` adding useful extra functionality like automated package download, bulk package update, automatic package dependency tree resolution, etc...
 
-#### Aptitude
-
-> Aptitude has Super Cow Powers
-
-Yes. It is true. Aptitude has Super Cow Powers. Never. Forget. This. Ever.
-
-[Aptitude](https://wiki.debian.org/Aptitude) is an [ncurses](https://en.wikipedia.org/wiki/Ncurses)-based terminal front-end to to APT. It also contains a "like for like" CLI-wrapper around `apt-get` and `apt-cache` e.g. `apt-get install foo` is the same as `aptitude install foo` and so on...
-
-_But why should I care?_ When you install package X `aptitude` (via `apt-get`) will recursively install all dependencies (same for both `apt-get` or `aptitude`). Then when you remove package X down the line with `aptitude` it will _automatically recursively remove all the parent package dependencies_ without breaking other applications that are also using those dependencies or removing dependencies that you have explicitly installed previously. There are more reasons to prefer `aptitude` to `apt-get`, but this is all I will say about it for now.
-
 ## Ironing out the wrinkles
 
 Time to switch back to our Ubuntu GNU/Linux VM.
@@ -104,23 +94,21 @@ If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) i
 
   ![8-sudo-apt-get-upgrade-end](Step2/8-sudo-apt-get-upgrade-end.png)
 
-7. Now we have an up-to-date Ubuntu system let's `sudo apt-get install aptitude` the _super-cow-powered GUI_ on top of `apt-get`.
-
 ## Adding some useful programs
 
 OK so what's next? Let's install some general programs we'll need later.
 
 #### Git
 
-We'll need `git` for sure, so let's `sudo aptitude install git` now.
+We'll need `git` for sure, so let's `sudo apt-get install git` now.
 
 #### Vim
 
-We'll need a text editor and I'm a `vim` man so let's `sudo aptitude install vim` now.
+We'll need a text editor and I'm a `vim` man so let's `sudo apt-get install vim` now.
 
 #### Emacs (optional)
 
-If you prefer `emacs` you could `sudo aptitude install emacs` and then add the awesome [spacemacs](https://github.com/syl20bnr/spacemacs) distribution like so `git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d && emacs --insecure`.
+If you prefer `emacs` you could `sudo apt-get install emacs` and then add the awesome [spacemacs](https://github.com/syl20bnr/spacemacs) distribution like so `git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d && emacs --insecure`.
 
 #### Sublime Text 3
 
@@ -139,13 +127,13 @@ So we have even more text-editing options let's install _Sublime Text 3_. There 
   ![9-ppa-sublime-one](Step2/9-ppa-sublime-one.png)
 
   ```
-  sudo aptitude update
+  sudo apt-get update
   ```
 
   ![10-ppa-sublime-two](Step2/10-ppa-sublime-two.png)
 
   ```
-  sudo aptitude install sublime-text-installer
+  sudo apt-get install sublime-text-installer
   ```
 
   ![11-ppa-sublime-three](Step2/11-ppa-sublime-three.png)
@@ -167,11 +155,11 @@ sudo add-apt-repository ppa:webupd8team/brackets
 ```
 
 ```
-sudo aptitude update
+sudo apt-get update
 ```
 
 ```
-sudo aptitude install brackets
+sudo apt-get install brackets
 ```
 
 __Note:__ Brackets wouldn't load for me on 14.04.4 LTS so your mileage may vary...
@@ -199,15 +187,15 @@ The [LTS Enablement Stack](https://wiki.ubuntu.com/Kernel/LTSEnablementStack) is
 Let's upgrade to the [Linux kernel version 4.2.0](http://askubuntu.com/questions/690149/when-will-4-2-0-kernel-be-available-for-14-04-lts):
 
 ```
-sudo aptitude update
+sudo apt-get update
 ```
 
 ```
-sudo aptitude upgrade
+sudo apt-get upgrade
 ```
 
 ```
-sudo aptitude install --install-recommends linux-generic-lts-wily xserver-xorg-core-lts-wily \
+sudo apt-get install --install-recommends linux-generic-lts-wily xserver-xorg-core-lts-wily \
 xserver-xorg-lts-wily xserver-xorg-video-all-lts-wily xserver-xorg-input-all-lts-wily \
 libwayland-egl1-mesa-lts-wily
 ```

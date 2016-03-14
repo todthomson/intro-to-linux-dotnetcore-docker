@@ -20,7 +20,7 @@ sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
 ```
 
 ```
-sudo aptitude update
+sudo apt-get update
 ```
 
 ![2-add-dotnet-core-apt-feed](Step3/2-add-dotnet-core-apt-feed.png)
@@ -28,7 +28,7 @@ sudo aptitude update
 #### Install .NET Core
 
 ```
-sudo aptitude install dotnet=1.0.0.001598-1
+sudo apt-get install dotnet=1.0.0.001598-1
 ```
 
 ![3-install-dotnet-core](Step3/3-install-dotnet-core.png)
@@ -38,11 +38,11 @@ sudo aptitude install dotnet=1.0.0.001598-1
 There's a newer version of .NET Core available so let's upgrade to that right away.
 
 ```
-sudo aptitude update
+sudo apt-get update
 ```
 
 ```
-sudo aptitude upgrade
+sudo apt-get upgrade
 ```
 
 ![4-upgrade-dotnet-core](Step3/4-upgrade-dotnet-core.png)
