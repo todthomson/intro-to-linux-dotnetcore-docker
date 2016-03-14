@@ -16,7 +16,7 @@ First we'll get a basic GNU/Linux installation up and running.
 
 2. Double-click the VirtualBox extension pack and __accept__ to install. VirtualBox should now be open.
 
-3. Open VirtualBox __Preferences... => Input => Virtual Machine__ and update the __Host Key Combination__ to _Right COMMAND_ if you're on Mac or _Right CTRL_ if you're on non-Mac hardware.
+3. Open VirtualBox __Preferences... => Input => Virtual Machine__ or __File => Preferences... => Input => Virtual Machine__ if you're on non-Mac hardware and update the __Host Key Combination__ to _Right COMMAND_ if you're on Mac or _Right CTRL_ if you're on non-Mac hardware.
 
   ![2-virtualbox-host-key](Step1/2-virtualbox-host-key.png)
 
