@@ -30,7 +30,9 @@ Yes. Yes it is. But let's fix it anyhow ;)
 
 Not always my young Padawans, not always... But here's how you can fix it.
 
-1. Run the following command to install some tools we will use for compiling some kernel modules build and testing our OpenGL acceleration is working:
+1. Open a new Terminal by pressing the shortcut `CTRL+ALT+T` or by pressing the `SUPER` (Windows) key, typing `term` and then pressing `ENTER`. This is how you launch applications in Ubuntu GNU/Linux i.e. it's the same as in Windows.
+
+2. Run the following command to install some tools we will use for compiling some kernel modules build and testing our OpenGL acceleration is working:
 
   ```
   sudo apt-get install mesa-utils
@@ -40,29 +42,29 @@ Not always my young Padawans, not always... But here's how you can fix it.
   sudo apt-get install dkms build-essential linux-headers-$(uname -r)
   ```
 
-2. Mount the _VirtualBox Guest Additions ISO_ by selecting __Devices => Insert Guest Additions CD image...__.
+3. Mount the _VirtualBox Guest Additions ISO_ by selecting __Devices => Insert Guest Additions CD image...__.
 
-3. Once you see the following prompt select __run__ to begin the process.
+4. Once you see the following prompt select __run__ to begin the process.
 
   ![2-run-vbox-guest-tools](Step2/2-run-vbox-guest-tools.png)
 
-4. Enter your _password_ and select __Authenticate__ to run the installation script as _root_.
+5. Enter your _password_ and select __Authenticate__ to run the installation script as _root_.
 
   ![3-enter-your-password.png](Step2/3-enter-your-password.png)
 
-5. You should see the following output indicating you've succeeded.
+6. You should see the following output indicating you've succeeded.
 
   ![4-press-return-to-close.png](Step2/4-press-return-to-close.png)
 
-6. Press `ENTER` to close the terminal.
+7. Press `ENTER` to close the terminal.
 
-7. Open a new terminal `CTRL+ALT+T` and run `sudo reboot` to restart your VM.
+8. Open a new terminal and run `sudo reboot` to restart your VM.
 
 After reboot you might notice that your VM is running at a higher resolution. The good news is that we can now run at Ubuntu's minimum resolution... ;)
 
 To confirm that everything's working OK do the following:
 
-1. Open _System Settings_ by pressing the `SUPER` (Windows) key, typing `s` and then hitting `ENTER`. This is how you launch applications in Ubuntu GNU/Linux i.e. it's the same as in Windows.
+1. Open _System Settings_ by pressing the `SUPER` (Windows) key, typing `s` and then hitting `ENTER`.
 
 2. Open the _Screen Display_ option and then select whichever resolution takes your fancy. I selected `1024x768` which in "retina mode + 200% scale factor" will be `2048x1536` size-wise.
 
@@ -74,23 +76,21 @@ __Note:__ See [VirtualBox ticket 12941](https://www.virtualbox.org/ticket/12941)
 
 If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) is open (it opens automatically on startup if there are updates) then close it. We're going to use the terminal-based update system (described above) to update our system now.
 
-1. Open a new `Terminal` by pressing the `SUPER` (Windows) key, typing `term` and then pressing `ENTER`.
-
-2. Once a new Terminal has opened run `apt-get update` to update to the latest package definition list. You should see the following error message:
+1. Open a new Terminal and run `apt-get update` to update to the latest package definition list. You should see the following error message:
 
   ![5-apt-get-update-no-sudo-fail](Step2/5-apt-get-update-no-sudo-fail.png)
 
-3. So we _need root_ eh? Indeed. Root is the _super user_ (administrator) on all Unix variants. Let's try our command again but this time we'll preface it with the `sudo` (super-user do) command to run it "as root". Run the command `sudo apt-get update` and let's see what happens:
+2. So we _need root_ eh? Indeed. Root is the _super user_ (administrator) on all Unix variants. Let's try our command again but this time we'll preface it with the `sudo` (super-user do) command to run it "as root". Run the command `sudo apt-get update` and let's see what happens:
 
   ![6-sudo-apt-get-update](Step2/6-sudo-apt-get-update.png)
 
-4. You will see that you are prompted for your password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created as part of the installation gets sudoers access automatically.
+3. You will see that you are prompted for your password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created as part of the installation gets sudoers access automatically.
 
-5. Now that we have an up-to-date package definition list we can run `sudo apt-get upgrade` to upgrade our system to the latest package and security updates:
+4. Now that we have an up-to-date package definition list we can run `sudo apt-get upgrade` to upgrade our system to the latest package and security updates:
 
   ![7-sudo-apt-get-upgrade-start](Step2/7-sudo-apt-get-upgrade-start.png)
 
-6. Once `sudo apt-get upgrade` has completed running you should see that it has "done" its job successfully:
+5. Once `sudo apt-get upgrade` has completed running you should see that it has "done" its job successfully:
 
   ![8-sudo-apt-get-upgrade-end](Step2/8-sudo-apt-get-upgrade-end.png)
 
