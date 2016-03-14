@@ -46,7 +46,7 @@ sudo apt-get install libunwind8 gettext libssl-dev libcurl4-openssl-dev zlib1g l
 ![4-dnx-prerequisites](Step4/4-dnx-prerequisites.png)
 
 ```
-dnvm upgrade -r coreclr
+dnvm upgrade -r coreclr -alias coreclr-latest
 ```
 
 ![5-upgrade-latest-coreclr](Step4/5-upgrade-latest-coreclr.png)
@@ -104,7 +104,7 @@ sudo apt-get upgrade
 The following command will upgrade to the latest version of DNX which wraps Mono. After this you should have access to both the latest CoreCLR and Mono via DNX.
 
 ```
-dnvm upgrade -r mono
+dnvm upgrade -r mono -alias mono-latest
 ```
 
 ![15-dnvm-upgrade-mono](Step4/15-dnvm-upgrade-mono.png)
@@ -139,31 +139,21 @@ dnvm list
 
 Great. We have access to the CoreCLR and Mono runtimes via DNX.
 
-The small problem is we have our _default_ alias set to Mono. Let's remove that.
+The small problem is we have our _default_ alias set to Mono. Let's update that.
 
 ```
-dnvm alias -d default
+dnvm alias default coreclr-latest
 ```
 
-![18-dnvm-alias-delete-default](Step4/18-dnvm-alias-delete-default.png)
+![18-dnvm-alias-coreclr-as-default](Step4/18-dnvm-alias-coreclr-as-default.png)
 
+#### Initialise some code
 
-
-
-
-
-
-
-
-
-
-
-
-#### ?
-
+Now we have our ASP.NET Core toolchain up and running let's make some code.
 
 
 TODO: Continue from here :)
+
 
 ## End of step 4
 
