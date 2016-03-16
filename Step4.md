@@ -147,13 +147,161 @@ dnvm alias default coreclr-latest
 
 ![18-dnvm-alias-coreclr-as-default](Step4/18-dnvm-alias-coreclr-as-default.png)
 
+#### Build and install libuv
+
+[Libuv](https://github.com/libuv/libuv) is a multi-platform support library with a focus on asynchronous I/O. It was primarily developed for use by [Node.js](https://nodejs.org), but we use it via [Kestrel](https://github.com/aspnet/KestrelHttpServer), a cross-platform HTTP server for hosting ASP.NET Core web applications.
+
+```
+sudo apt-get install make automake libtool curl
+```
+
+![19-build-libuv-1](Step4/19-build-libuv-1.png)
+
+```
+curl -sSL https://github.com/libuv/libuv/archive/v1.8.0.tar.gz | sudo tar zxfv - -C /usr/local/src
+```
+
+![20-build-libuv-2](Step4/20-build-libuv-2.png)
+
+```
+cd /usr/local/src/libuv-1.8.0
+```
+
+```
+sudo sh autogen.sh
+```
+
+![21-build-libuv-3](Step4/21-build-libuv-3.png)
+
+```
+sudo ./configure
+```
+
+![22-build-libuv-4](Step4/22-build-libuv-4.png)
+
+![23-build-libuv-5](Step4/23-build-libuv-5.png)
+
+```
+sudo make
+```
+
+![24-build-libuv-6](Step4/24-build-libuv-6.png)
+
+```
+sudo make install
+```
+
+![25-build-libuv-7](Step4/25-build-libuv-7.png)
+
+```
+sudo rm -rf /usr/local/src/libuv-1.8.0 && cd ~/
+```
+
+```
+sudo ldconfig
+```
+
+Great. We have `libuv` ready to go.
+
+#### Install Node.js (via NVM)
+
+We'll be using Node.js to scaffold our ASP.NET Core application via [Yeoman](http://yeoman.io/).
+
+```
+sudo apt-get install build-essential libssl-dev
+```
+
+![26-install-node-1](Step4/26-install-node-1.png)
+
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+```
+
+![27-install-node-2](Step4/27-install-node-2.png)
+
+__Note:__ Close and reopen your terminal to start using `NVM`.
+
+OK let's take a look to see which versions of Node.js we have installed:
+
+```
+nvm list
+```
+
+![28-install-node-3](Step4/28-install-node-3.png)
+
+Right you guessed it, we don't have _any_ version of Node.js installed.
+
+So let's take a look at the versions of Node.js that are available to us:
+
+```
+nvm list-remote
+```
+
+![29-install-node-4](Step4/29-install-node-4.png)
+
+![30-install-node-5](Step4/30-install-node-5.png)
+
+OK now we can install the latest LTS version of Node:
+
+```
+nvm install v4.4.0
+```
+
+![31-install-node-6](Step4/31-install-node-6.png)
+
+Great. Let's confirm that Node and NPM are installed.
+
+```
+node -v && npm -v
+```
+
+![32-install-node-7](Step4/32-install-node-7.png)
+
+Awesome! Oh wow! ... ;)
+
+#### Install Yeoman
+
+> Yeoman is the web's scaffolding tool for modern webapps.
+
+```
+npm install -g gulp grunt-cli bower yo
+```
+
+![33-install-yo-1](Step4/33-install-yo-1.png)
+
+![34-install-yo-2](Step4/34-install-yo-2.png)
+
+#### Upgrade NPM
+
+You'll note in the screenshot above that Yeoman is recommending that we upgrade NPM so let's do that:
+
+```
+npm install -g npm
+```
+
+![35-upgrade-npm](Step4/35-upgrade-npm.png)
+
+#### Install the Yeoman ASP.NET Core generators
+
+Yeoman generators are just regular NPM packages.
+
+```
+npm install -g generator-aspnet
+```
+
+![36-generator-aspnet](Step4/36-generator-aspnet.png)
+
+
+
+TODO: Continue from here => :|
+
+
+
 #### Initialise some code
 
 Now we have our ASP.NET Core toolchain up and running let's make some code.
 
-
 TODO: Continue from here :)
-
 
 ## End of step 4
 
