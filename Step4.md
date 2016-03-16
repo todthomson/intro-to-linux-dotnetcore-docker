@@ -291,22 +291,66 @@ npm install -g generator-aspnet
 
 ![36-generator-aspnet](Step4/36-generator-aspnet.png)
 
-
-
-TODO: Continue from here => :|
-
-
-
 #### Initialise some code
 
-Now we have our ASP.NET Core toolchain up and running let's make some code.
+Now we're going to scaffold a new __ASP.NET Core Web API__ application.
 
-TODO: Continue from here :)
+Run `yo aspnet` and follow the prompts as shown below.
+
+![37-yo-aspnet](Step4/37-yo-aspnet.png)
+
+As above, run the following commands to test your new application.
+
+```
+cd AspNetCoreWebApiTestApp
+```
+
+```
+dnu restore
+```
+
+![38-dnu-restore-1](Step4/38-dnu-restore-1.png)
+
+![39-dnu-restore-2](Step4/39-dnu-restore-2.png)
+
+OK so far so good, let's see what's next...
+
+```
+dnu build
+```
+
+![40-dnu-build-1](Step4/40-dnu-build-1.png)
+
+![41-dnu-build-2](Step4/41-dnu-build-2.png)
+
+Boom! OK that's not awesome, but the first screenshot above should make it obvious.
+
+```
+dnu build --framework dnxcore50
+```
+
+![42-dnu-build-dnxcore50-1](Step4/42-dnu-build-dnxcore50-1.png)
+
+![43-dnu-build-dnxcore50-2](Step4/43-dnu-build-dnxcore50-2.png)
+
+And all is now well.
+
+#### Run the application
+
+Running the application is as simple as.
+
+```
+dnx web
+```
+
+![44-dnx-web](Step4/44-dnx-web.png)
+
+Open Firefox and navigate to `http://localhost:5000/api/values` to see your new Web API in action.
+
+![45-web-api-in-action](Step4/45-web-api-in-action.png)
 
 ## End of step 4
 
-TODO: FIX THE BELOW!
-
-Excellent! You have said `HELO` to the world of ASP.NET Core ;)
+Winning! You have a new Web API written in ASP.NET Core.
 
 Have a quick break and then continue with [Step 5 - LXC/Docker](Step5.md).
