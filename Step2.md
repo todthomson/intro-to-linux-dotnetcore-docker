@@ -202,6 +202,6 @@ libwayland-egl1-mesa-lts-wily
 
 ## End of step 2
 
-Good job! You are now in possession of a configured and maintainable Linux VM! :)
+__Good job!__ You are now in possession of a configured and maintainable GNU/Linux VM.
 
 Have some morning tea and then head over to [Step 3 - .NET Core "Hello, world!"](Step3.md).

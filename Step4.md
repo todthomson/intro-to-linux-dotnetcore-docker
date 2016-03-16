@@ -31,7 +31,7 @@ dnvm --version
 
 #### Install the .NET Execution Environment (DNX)
 
-[DNX](https://github.com/aspnet/dnx) contains the code required to bootstrap and run an application, including the compilation system, SDK tools, and the native CLR hosts.
+> [DNX](https://github.com/aspnet/dnx) contains the code required to bootstrap and run an application, including the compilation system, SDK tools, and the native CLR hosts.
 
 The .NET Execution Environment (DNX) is used to build and run .NET projects.
 
@@ -53,7 +53,7 @@ dnvm upgrade -r coreclr -alias coreclr-latest
 
 #### Install Mono
 
-[Mono](http://www.mono-project.com/) is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime.
+> [Mono](http://www.mono-project.com/) is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime.
 
 ```
 sudo apt-get install mono-complete
@@ -67,7 +67,7 @@ sudo apt-get install mono-complete
 
 #### Upgrade to the latest Mono
 
-As you can see above Ubuntu 14.04.4 LTS comes with version `3.2.8` of Mono. Let's upgrade to the latest version `4.2.2` directly from the The Mono Project.
+As you can see above Ubuntu 14.04.4 LTS comes with version `3.2.8` of Mono. Let's upgrade to the latest version `4.2.2` directly from the _The Mono Project_.
 
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
@@ -111,11 +111,7 @@ dnvm upgrade -r mono -alias mono-latest
 
 #### DNVM housekeeping
 
-Awesome! We now have DNVM, DNX, CoreCLR and Mono installed and up to date.
-
-Now let's take a look at a few DNVM housekeeping commands that will be used moving forward.
-
-First let's make sure we know how to upgrade DNX itself.
+We now have DNVM, DNX, CoreCLR and Mono installed and up to date. Now let's take a look at a few DNVM housekeeping commands that will be used moving forward. First let's make sure we know how to upgrade DNX itself.
 
 ```
 dnvm update-self
@@ -127,9 +123,7 @@ dnvm
 
 ![16-dnvm](Step4/16-dnvm.png)
 
-Excellent. We're up-to-date and we have access to the `dnvm` command.
-
-Next let's see how we can list the DNX runtimes installed.
+We're up-to-date and we have access to the `dnvm` command. Next let's see how we can list the DNX runtimes installed.
 
 ```
 dnvm list
@@ -137,9 +131,7 @@ dnvm list
 
 ![17-dnvm-list](Step4/17-dnvm-list.png)
 
-Great. We have access to the CoreCLR and Mono runtimes via DNX.
-
-The small problem is we have our _default_ alias set to Mono. Let's update that.
+We have access to the CoreCLR and Mono runtimes via DNX. The small problem is we have our _default_ alias set to Mono. Let's update that.
 
 ```
 dnvm alias default coreclr-latest
@@ -149,7 +141,9 @@ dnvm alias default coreclr-latest
 
 #### Build and install libuv
 
-[Libuv](https://github.com/libuv/libuv) is a multi-platform support library with a focus on asynchronous I/O. It was primarily developed for use by [Node.js](https://nodejs.org), but we use it via [Kestrel](https://github.com/aspnet/KestrelHttpServer), a cross-platform HTTP server for hosting ASP.NET Core web applications.
+> [Libuv](https://github.com/libuv/libuv) is a multi-platform support library with a focus on asynchronous I/O.
+
+It was primarily developed for use by [Node.js](https://nodejs.org), but we use it via [Kestrel](https://github.com/aspnet/KestrelHttpServer), a cross-platform HTTP server for hosting ASP.NET Core web applications.
 
 ```
 sudo apt-get install make automake libtool curl
@@ -201,7 +195,7 @@ sudo rm -rf /usr/local/src/libuv-1.8.0 && cd ~/
 sudo ldconfig
 ```
 
-Great. We have `libuv` ready to go.
+We now have `libuv` ready to go.
 
 #### Install Node.js (via NVM)
 
@@ -221,7 +215,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | b
 
 __Note:__ Close and reopen your terminal to start using `NVM`.
 
-OK let's take a look to see which versions of Node.js we have installed:
+Let's take a look to see which versions of Node.js we have installed.
 
 ```
 nvm list
@@ -229,9 +223,7 @@ nvm list
 
 ![28-install-node-3](Step4/28-install-node-3.png)
 
-Right you guessed it, we don't have _any_ version of Node.js installed.
-
-So let's take a look at the versions of Node.js that are available to us:
+You guessed it, we don't have _any_ version of Node.js. Take a look at the versions of Node.js that are available to us.
 
 ```
 nvm list-remote
@@ -241,7 +233,7 @@ nvm list-remote
 
 ![30-install-node-5](Step4/30-install-node-5.png)
 
-OK now we can install the latest LTS version of Node:
+Now we can install the latest LTS version of Node.
 
 ```
 nvm install v4.4.0
@@ -249,7 +241,7 @@ nvm install v4.4.0
 
 ![31-install-node-6](Step4/31-install-node-6.png)
 
-Great. Let's confirm that Node and NPM are installed.
+Let's confirm that Node and NPM are installed.
 
 ```
 node -v && npm -v
@@ -257,7 +249,7 @@ node -v && npm -v
 
 ![32-install-node-7](Step4/32-install-node-7.png)
 
-Awesome! Oh wow! ... ;)
+> Awesome! Oh wow! Like totally... ;)
 
 #### Install Yeoman
 
@@ -273,7 +265,7 @@ npm install -g gulp grunt-cli bower yo
 
 #### Upgrade NPM
 
-You'll note in the screenshot above that Yeoman is recommending that we upgrade NPM so let's do that:
+Yeoman is recommending that we upgrade NPM so let's do that.
 
 ```
 npm install -g npm
@@ -283,7 +275,7 @@ npm install -g npm
 
 #### Install the Yeoman ASP.NET Core generators
 
-Yeoman generators are just regular NPM packages.
+__Note:__ Yeoman generators are just regular NPM packages.
 
 ```
 npm install -g generator-aspnet
@@ -295,11 +287,13 @@ npm install -g generator-aspnet
 
 Now we're going to scaffold a new __ASP.NET Core Web API__ application.
 
-Run `yo aspnet` and follow the prompts as shown below.
+```
+yo aspnet
+```
 
 ![37-yo-aspnet](Step4/37-yo-aspnet.png)
 
-As above, run the following commands to test your new application.
+As directed run the following commands to test your newly scaffolded application.
 
 ```
 cd AspNetCoreWebApiTestApp
@@ -313,7 +307,7 @@ dnu restore
 
 ![39-dnu-restore-2](Step4/39-dnu-restore-2.png)
 
-OK so far so good, let's see what's next...
+So far so good. Let's see what's next.
 
 ```
 dnu build
@@ -323,7 +317,7 @@ dnu build
 
 ![41-dnu-build-2](Step4/41-dnu-build-2.png)
 
-Boom! OK that's not awesome, but the first screenshot above should make it obvious.
+That's not awesome. The first screenshot above should make the fix obvious. For some background information [see here](https://github.com/aspnet/Home/issues/1104).
 
 ```
 dnu build --framework dnxcore50
@@ -333,11 +327,11 @@ dnu build --framework dnxcore50
 
 ![43-dnu-build-dnxcore50-2](Step4/43-dnu-build-dnxcore50-2.png)
 
-And all is now well.
+__Note:__ Another option is to remove the line `"dnx451": {},` from the `frameworks` section of `project.json`.
 
 #### Run the application
 
-Running the application is as simple as.
+Running the application is simple.
 
 ```
 dnx web
@@ -345,12 +339,12 @@ dnx web
 
 ![44-dnx-web](Step4/44-dnx-web.png)
 
-Open Firefox and navigate to `http://localhost:5000/api/values` to see your new Web API in action.
+Open Firefox and navigate to `http://localhost:5000/api/values` to see your new _Web API_ in action.
 
 ![45-web-api-in-action](Step4/45-web-api-in-action.png)
 
 ## End of step 4
 
-Winning! You have a new Web API written in ASP.NET Core.
+__Winning!__ You have a basic _Web API_ written in _ASP.NET Core_.
 
 Have a quick break and then continue with [Step 5 - LXC/Docker](Step5.md).

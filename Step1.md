@@ -202,6 +202,6 @@ __Done!__ Click __OK__ to save the VM settings.
 
 ## End of step 1
 
-Congrats! You now have a Linux VM! :)
+__Congrats!__ You now have fresh GNU/Linux VM.
 
 Take a 5 minute coffee break and then head over to [Step 2 - Ubuntu GNU/Linux Configuration & Maintenance](Step2.md).

@@ -103,6 +103,6 @@ dotnet run
 
 ## End of step 3
 
-Excellent! You have said hello to the world of .NET Core :D
+__Excellent!__ You have said hello to the world of _.NET Core_.
 
 Have a quick break and then continue with [Step 4 - ASP.NET Core "Hello, world!"](Step4.md).
