@@ -118,11 +118,102 @@ exit
 
 _Simples..._ ;)
 
+There's a lot more to Docker than just running up a prebaked Docker image then scaffolding and running an application.
+
+## Making Visual Studio Code available (a.k.a. the VIM crash-course)
+
+Before we dig into Docker a little more let's make _Visual Studio Code_ easily available from the terminal. We added VS Code to our VM in [Step 2](Step2.md) so if you missed Step 2 you might need to go back and do at least the VS Code section.
+
+#### Creating a user-specific `bin` folder
+
+To avoid polluting `/bin` or `/usr/local/bin` let's create our own `bin` folder.
+
+1. Run `mkdir ~/bin` to create a new `bin` directory in your `home` directory.
+
+2. Run `vim ~/.bashrc` to edit your "Bash RC" file with `vim`.
+
+3. Type `SHIFT+g` _(upper-case G)_ to go to the end of the file.
+
+4. Type `o` _(lower-case o)_ to insert a new line at the end of the file.
+
+  __Note:__ `vim` will automatically enter `-- INSERT --` mode.
+
+5. Add the line `export PATH="/home/$USER/bin:$PATH"` to the end of the file.
+
+6. Press `ESC` to exit _insert_ mode and enter _command_ mode.
+
+7. Type `:wq` and hit `ENTER` to save (write) the file and quit `vim`.
+
+__Woah!__ That was intense...
+
+Let's take a quick look at the current value of our `PATH` environment variable.
+
+```
+echo $PATH | sed s/:/\\n/g
+```
+
+![11-home-bin-1](Step5/11-home-bin-1.png)
+
+As you can see our new `bin` directory `/home/$USER/bin` is not yet in our `PATH`. We need to close and re-open our terminal for the `PATH` change to take effect so let's do that now.
+
+```
+echo $PATH | sed s/:/\\n/g
+```
+
+![12-home-bin-2](Step5/12-home-bin-2.png)
+
+Now we can see that all is well.
+
+#### "Linking" VS Code to our `bin` directory
+
+Following the same basic process as above use the command `vim ~/bin/code` to create a new file in `~/home/$USER/bin` called `code` containing the following.
+
+```
+#!/bin/bash
+~/VSCode-linux-x64/code "$@" 2>/dev/null &
+```
+
+![13-vs-code-bash-script](Step5/13-vs-code-bash-script.png)
+
+Add the executable permission to `code` as follows.
+
+```
+chmod +x ~/bin/code
+```
+
+![14-vs-code-chmod-x](Step5/14-vs-code-chmod-x.png)
+
+Run `code` to verify that everything has worked correctly.
+
+![15-vs-code-works](Step5/15-vs-code-works.png)
+
+__Excellent!__ You can close VS Code (for now).
+
 ## ASP.NET Core on LXC/Docker on Ubuntu GNU/Linux 14.04.4 LTS
 
-There's a lot more to Docker than just running a Docker image then scaffolding and running an application.
+Before we dig into ASP.NET Core on LXC/Docker let's learn about `Dockerfiles`.
 
-__TODO ? Continue on from here...__
+#### Dockerfiles
+
+> Docker can build images automatically by reading the instructions from a [Dockerfile](https://docs.docker.com/engine/reference/builder/). A `Dockerfile` is a text document that contains all the commands a user could call on the command line to assemble a [Docker image](https://docs.docker.com/engine/userguide/containers/dockerimages/). Using `docker build` users can create an automated build that executes several command-line instructions in succession.
+
+Let's take a look at how we might build a `Dockerfile` for ASP.NET Core.
+
+```
+cd ~/AspNetCoreWebApiTestApp/ && code .
+```
+
+Great news! We already have a `Dockerfile` prepared for us by `Yeoman` and the ASP.NET Core team.
+
+![16-aspnet-core-dockerfile](Step5/16-aspnet-core-dockerfile.png)
+
+#### Building your container and application
+
+TODO: continue from here ;)
+
+```
+docker build -t yourapplication .
+```
 
 ## End of step 5
 
