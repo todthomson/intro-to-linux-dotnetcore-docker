@@ -1,6 +1,6 @@
 # GNU/Linux + .NET/ASP.NET Core + LXC/Docker
 
-A tutorial on "how to" GNU/Linux + .NET/ASP.NET Core + LXC/Docker...
+__A tutorial on "how to" GNU/Linux + .NET/ASP.NET Core + LXC/Docker...__
 
 ![1-nadella-loves-linux](README/1-nadella-loves-linux.jpg)
 
