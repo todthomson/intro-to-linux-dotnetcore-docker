@@ -219,23 +219,17 @@ Next we want to run `docker build` to build our application container from the `
 docker build -t yourapplication .
 ```
 
-![17-aspnet-core-docker-build-1](Step5/17-aspnet-core-docker-build-1.png)
+__Note:__ This is an excellent time for another coffee break.
 
-![18-aspnet-core-docker-build-2](Step5/18-aspnet-core-docker-build-2.png)
+![18-aspnet-core-docker-build-1](Step5/18-aspnet-core-docker-build-1.png)
+
+![19-aspnet-core-docker-build-2](Step5/19-aspnet-core-docker-build-2.png)
 
 Now let's `docker run` our application in our new container.
 
 ```
 docker run -t -p 8080:5000 yourapplication
 ```
-
-![19-aspnet-core-docker-run-fail](Step5/19-aspnet-core-docker-run-fail.png)
-
-As you can see the the application is failing to run as our application is targeting
-
-
-
-
 
 Open Firefox and navigate to `http://localhost:8080` to confirm it is all working.
 
