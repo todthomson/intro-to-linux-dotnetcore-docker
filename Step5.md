@@ -209,6 +209,12 @@ Great news! We already have a `Dockerfile` prepared for us by `Yeoman` and the A
 
 __Note:__ We need to be careful as the [default base image](https://hub.docker.com/r/microsoft/aspnet/) `microsoft/aspnet:1.0.0-rc1-update1` targets Mono not CoreCLR. The image we need is `microsoft/aspnet:1.0.0-rc1-update1-coreclr`. Let's update our `Dockerfile` accordingly.
 
+Also let's __remove__ the following line as it's a duplicate from the [CoreCLR base image](https://github.com/aspnet/aspnet-docker/blob/master/1.0.0-rc1-update1-coreclr/Dockerfile).
+
+```
+RUN printf "deb http://ftp.us.debian.org/debian jessie main\n" >> /etc/apt/sources.list
+```
+
 ![17-aspnet-core-dockerfile-2](Step5/17-aspnet-core-dockerfile-2.png)
 
 #### Building your container and application
