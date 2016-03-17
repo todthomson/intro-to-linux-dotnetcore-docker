@@ -205,15 +205,41 @@ cd ~/AspNetCoreWebApiTestApp/ && code .
 
 Great news! We already have a `Dockerfile` prepared for us by `Yeoman` and the ASP.NET Core team.
 
-![16-aspnet-core-dockerfile](Step5/16-aspnet-core-dockerfile.png)
+![16-aspnet-core-dockerfile-1](Step5/16-aspnet-core-dockerfile-1.png)
+
+__Note:__ We need to be careful as the [default base image](https://hub.docker.com/r/microsoft/aspnet/) `microsoft/aspnet:1.0.0-rc1-update1` targets Mono not CoreCLR. The image we need is `microsoft/aspnet:1.0.0-rc1-update1-coreclr`. Let's update our `Dockerfile` accordingly.
+
+![17-aspnet-core-dockerfile-2](Step5/17-aspnet-core-dockerfile-2.png)
 
 #### Building your container and application
 
-TODO: continue from here ;)
+Next we want to run `docker build` to build our application container from the `Dockerfile`.
 
 ```
 docker build -t yourapplication .
 ```
+
+![17-aspnet-core-docker-build-1](Step5/17-aspnet-core-docker-build-1.png)
+
+![18-aspnet-core-docker-build-2](Step5/18-aspnet-core-docker-build-2.png)
+
+Now let's `docker run` our application in our new container.
+
+```
+docker run -t -p 8080:5000 yourapplication
+```
+
+![19-aspnet-core-docker-run-fail](Step5/19-aspnet-core-docker-run-fail.png)
+
+As you can see the the application is failing to run as our application is targeting
+
+
+
+
+
+Open Firefox and navigate to `http://localhost:8080` to confirm it is all working.
+
+![20-aspnet-core-docker-firefox](Step5/20-aspnet-core-docker-firefox.png)
 
 ## End of step 5
 
