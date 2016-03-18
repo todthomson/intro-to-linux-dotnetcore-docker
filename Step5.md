@@ -237,9 +237,11 @@ Now let's `docker run` our application in our new container.
 docker run -t --net host yourapplication
 ```
 
+![20-aspnet-core-docker-run](Step5/20-aspnet-core-docker-run.png)
+
 Open Firefox and navigate to `http://localhost:5000` to confirm it is all working.
 
-![20-aspnet-core-docker-firefox](Step5/20-aspnet-core-docker-firefox.png)
+![21-aspnet-core-docker-firefox](Step5/21-aspnet-core-docker-firefox.png)
 
 ## End of step 5
 
