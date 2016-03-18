@@ -219,29 +219,49 @@ RUN printf "deb http://ftp.us.debian.org/debian jessie main\n" >> /etc/apt/sourc
 
 #### Building your container and application
 
+Let's take a look at our current list of Docker images.
+
+```
+docker images
+```
+
+![18-docker-images-1](Step5/18-docker-images-1.png)
+
+We have the `hello-world` image and `microsoft/dotnet` image from earlier.
+
 Next we want to run `docker build` to build our application container from the `Dockerfile`.
 
 ```
-docker build -t yourapplication .
+docker build -t aspnet-core-webapi:latest .
 ```
 
 __Note:__ This is an excellent time for another coffee break.
 
-![18-aspnet-core-docker-build-1](Step5/18-aspnet-core-docker-build-1.png)
+![19-aspnet-core-docker-build-1](Step5/19-aspnet-core-docker-build-1.png)
 
-![19-aspnet-core-docker-build-2](Step5/19-aspnet-core-docker-build-2.png)
+![20-aspnet-core-docker-build-2](Step5/20-aspnet-core-docker-build-2.png)
 
-Now let's `docker run` our application in our new container.
+Let's take another look at our updated list of Docker images.
 
 ```
-docker run -t --net host yourapplication
+docker images
 ```
 
-![20-aspnet-core-docker-run](Step5/20-aspnet-core-docker-run.png)
+![21-docker-images-2](Step5/21-docker-images-2.png)
+
+We also now have the `microsoft/aspnet` and `aspnet-core-webapi` images.
+
+Now let's run our application in our new container.
+
+```
+docker run --net host aspnet-core-webapi
+```
+
+![22-aspnet-core-docker-run](Step5/22-aspnet-core-docker-run.png)
 
 Open Firefox and navigate to `http://localhost:5000` to confirm it is all working.
 
-![21-aspnet-core-docker-firefox](Step5/21-aspnet-core-docker-firefox.png)
+![23-aspnet-core-docker-firefox](Step5/23-aspnet-core-docker-firefox.png)
 
 ## End of step 5
 
