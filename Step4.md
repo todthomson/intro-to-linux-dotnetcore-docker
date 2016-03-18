@@ -99,6 +99,20 @@ sudo apt-get upgrade
 
 ![14-upgrade-mono-6](Step4/14-upgrade-mono-6.png)
 
+If mono has not upgraded correctly, then it may be because a new version has been released and the dependencies aren't working. Try removing mono, removing dependencies, and then reinstalling:
+
+```
+sudo apt-get remove mono-complete
+```
+
+```
+sudo apt-get autoremove
+```
+
+```
+sudo apt-get install mono-complete
+```
+
 #### Upgrade to the latest DNX Mono
 
 The following command will upgrade to the latest version of DNX which wraps Mono. After this you should have access to both the latest CoreCLR and Mono via DNX.
