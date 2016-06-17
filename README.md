@@ -1,4 +1,4 @@
-# An Introduction to Linux, .NET Core, ASP.NET Core & Docker
+# An Introduction to Linux, .NET/ASP.NET Core & Docker
 
 ![1-nadella-loves-linux](README/1-nadella-loves-linux.jpg)
 
