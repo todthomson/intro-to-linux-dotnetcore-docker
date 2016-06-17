@@ -1,6 +1,6 @@
 # Step 3 - .NET Core "Hello, world!"
 
-![1-dotnet-core-dev-stack](Step3/1-dotnet-core-dev-stack.png)
+![1-dotnet-core-dev-stack](Part3/1-dotnet-core-dev-stack.png)
 
 ## .NET Core on Ubuntu GNU/Linux 14.04.4 LTS
 
@@ -23,7 +23,7 @@ sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
 sudo apt-get update
 ```
 
-![2-add-dotnet-core-apt-feed](Step3/2-add-dotnet-core-apt-feed.png)
+![2-add-dotnet-core-apt-feed](Part3/2-add-dotnet-core-apt-feed.png)
 
 #### Install .NET Core
 
@@ -31,7 +31,7 @@ sudo apt-get update
 sudo apt-get install dotnet=1.0.0.001598-1
 ```
 
-![3-install-dotnet-core](Step3/3-install-dotnet-core.png)
+![3-install-dotnet-core](Part3/3-install-dotnet-core.png)
 
 #### Upgrade to latest
 
@@ -45,7 +45,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-![4-upgrade-dotnet-core](Step3/4-upgrade-dotnet-core.png)
+![4-upgrade-dotnet-core](Part3/4-upgrade-dotnet-core.png)
 
 #### .NET Core version
 
@@ -55,7 +55,7 @@ Let's check the version of `dotnet` that we've just upgraded to.
 dotnet --version
 ```
 
-![5-check-dotnet-version](Step3/5-check-dotnet-version.png)
+![5-check-dotnet-version](Part3/5-check-dotnet-version.png)
 
 Awesome! We now have version `1.0.0-beta-001673` of .NET Core.
 
@@ -73,7 +73,7 @@ cd DotNetCoreTestApp
 dotnet new
 ```
 
-![6-dotnet-new-project](Step3/6-dotnet-new-project.png)
+![6-dotnet-new-project](Part3/6-dotnet-new-project.png)
 
 #### Run package restore
 
@@ -81,7 +81,7 @@ dotnet new
 dotnet restore
 ```
 
-![7-dotnet-restore-fail](Step3/7-dotnet-restore-fail.png)
+![7-dotnet-restore-fail](Part3/7-dotnet-restore-fail.png)
 
 #### Oh no!
 
@@ -91,7 +91,7 @@ So it turns out that `api.nuget.org` does not yet contain the .NET Core packages
 dotnet restore -s https://myget.org/f/dotnet-core
 ```
 
-![8-dotnet-restore-success](Step3/8-dotnet-restore-success.png)
+![8-dotnet-restore-success](Part3/8-dotnet-restore-success.png)
 
 #### Run the application
 
@@ -99,10 +99,10 @@ dotnet restore -s https://myget.org/f/dotnet-core
 dotnet run
 ```
 
-![9-dotnet-run](Step3/9-dotnet-run.png)
+![9-dotnet-run](Part3/9-dotnet-run.png)
 
 ## End of step 3
 
 __Excellent!__ You have said hello to the world of _.NET Core_.
 
-Have a quick break and then continue with [Step 4 - ASP.NET Core "Hello, world!"](Step4.md).
+Have a quick break and then continue with [Step 4 - ASP.NET Core "Hello, world!"](Part4.md).

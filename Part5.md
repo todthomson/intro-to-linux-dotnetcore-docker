@@ -1,6 +1,6 @@
 # Step 5 - LXC/Docker "Hello, world!"
 
-![1-lxc-docker](Step5/1-lxc-docker.png)
+![1-lxc-docker](Part5/1-lxc-docker.png)
 
 ## .NET Core on LXC/Docker on Ubuntu GNU/Linux 14.04.4 LTS
 
@@ -26,9 +26,9 @@ __Note:__ You may be prompted to supply your password for `sudo` this is ok.
 curl -fsSL https://get.docker.com/ | sh
 ```
 
-![2-install-docker-1](Step5/2-install-docker-1.png)
+![2-install-docker-1](Part5/2-install-docker-1.png)
 
-![3-install-docker-2](Step5/3-install-docker-2.png)
+![3-install-docker-2](Part5/3-install-docker-2.png)
 
 #### Allow Docker to run as your non-root user
 
@@ -52,7 +52,7 @@ sudo reboot
 docker run hello-world
 ```
 
-![4-verify-docker](Step5/4-verify-docker.png)
+![4-verify-docker](Part5/4-verify-docker.png)
 
 All is well.
 
@@ -68,7 +68,7 @@ docker run -it microsoft/dotnet:latest
 
 __Note:__ This is a good time for a coffee break.
 
-![5-docker-run-dotnet-latest](Step5/5-docker-run-dotnet-latest.png)
+![5-docker-run-dotnet-latest](Part5/5-docker-run-dotnet-latest.png)
 
 You may have noticed that you're no longer `consultant@readify` instead you are now `root@e7865f7968bf` (or something like that). This is because Docker has _sshed_ you into the running container. Yes it's that awesome and that fast.
 
@@ -88,7 +88,7 @@ cd hello_world
 dotnet new
 ```
 
-![6-docker-dotnet-new](Step5/6-docker-dotnet-new.png)
+![6-docker-dotnet-new](Part5/6-docker-dotnet-new.png)
 
 #### Run the application
 
@@ -98,15 +98,15 @@ dotnet new
 dotnet restore
 ```
 
-![7-docker-dotnet-restore-1](Step5/7-docker-dotnet-restore-1.png)
+![7-docker-dotnet-restore-1](Part5/7-docker-dotnet-restore-1.png)
 
-![8-docker-dotnet-restore-2](Step5/8-docker-dotnet-restore-2.png)
+![8-docker-dotnet-restore-2](Part5/8-docker-dotnet-restore-2.png)
 
 ```
 dotnet run
 ```
 
-![9-docker-dotnet-run](Step5/9-docker-dotnet-run.png)
+![9-docker-dotnet-run](Part5/9-docker-dotnet-run.png)
 
 #### Exiting your Docker container
 
@@ -114,7 +114,7 @@ dotnet run
 exit
 ```
 
-![10-docker-container-exit](Step5/10-docker-container-exit.png)
+![10-docker-container-exit](Part5/10-docker-container-exit.png)
 
 _Simples..._ ;)
 
@@ -122,7 +122,7 @@ There's a lot more to Docker than just running up a prebaked Docker image then s
 
 ## Making Visual Studio Code available (a.k.a. the VIM crash-course)
 
-Before we dig into Docker a little more let's make _Visual Studio Code_ easily available from the terminal. We added VS Code to our VM in [Step 2](Step2.md) so if you missed Step 2 you might need to go back and do at least the VS Code section.
+Before we dig into Docker a little more let's make _Visual Studio Code_ easily available from the terminal. We added VS Code to our VM in [Step 2](Part2.md) so if you missed Step 2 you might need to go back and do at least the VS Code section.
 
 #### Creating a user-specific `bin` folder
 
@@ -152,7 +152,7 @@ Let's take a quick look at the current value of our `PATH` environment variable.
 echo $PATH | sed s/:/\\n/g
 ```
 
-![11-home-bin-1](Step5/11-home-bin-1.png)
+![11-home-bin-1](Part5/11-home-bin-1.png)
 
 As you can see our new `bin` directory `/home/$USER/bin` is not yet in our `PATH`. We need to close and re-open our terminal for the `PATH` change to take effect so let's do that now.
 
@@ -160,7 +160,7 @@ As you can see our new `bin` directory `/home/$USER/bin` is not yet in our `PATH
 echo $PATH | sed s/:/\\n/g
 ```
 
-![12-home-bin-2](Step5/12-home-bin-2.png)
+![12-home-bin-2](Part5/12-home-bin-2.png)
 
 Now we can see that all is well.
 
@@ -173,7 +173,7 @@ Following the same basic process as above use the command `vim ~/bin/code` to cr
 ~/VSCode-linux-x64/code "$@" 2>/dev/null &
 ```
 
-![13-vs-code-bash-script](Step5/13-vs-code-bash-script.png)
+![13-vs-code-bash-script](Part5/13-vs-code-bash-script.png)
 
 Add the executable permission to `code` as follows.
 
@@ -181,11 +181,11 @@ Add the executable permission to `code` as follows.
 chmod +x ~/bin/code
 ```
 
-![14-vs-code-chmod-x](Step5/14-vs-code-chmod-x.png)
+![14-vs-code-chmod-x](Part5/14-vs-code-chmod-x.png)
 
 Run `code` to verify that everything has worked correctly.
 
-![15-vs-code-works](Step5/15-vs-code-works.png)
+![15-vs-code-works](Part5/15-vs-code-works.png)
 
 __Excellent!__ You can close VS Code (for now).
 
@@ -205,7 +205,7 @@ cd ~/AspNetCoreWebApiTestApp/ && code .
 
 Great news! We already have a `Dockerfile` prepared for us by `Yeoman` and the ASP.NET Core team.
 
-![16-aspnet-core-dockerfile-1](Step5/16-aspnet-core-dockerfile-1.png)
+![16-aspnet-core-dockerfile-1](Part5/16-aspnet-core-dockerfile-1.png)
 
 __Note:__ We need to be careful as the [default base image](https://hub.docker.com/r/microsoft/aspnet/) `microsoft/aspnet:1.0.0-rc1-update1` targets Mono not CoreCLR. The image we need is `microsoft/aspnet:1.0.0-rc1-update1-coreclr`. Let's update our `Dockerfile` accordingly.
 
@@ -215,7 +215,7 @@ Also let's __remove__ the following line as it's a duplicate from the [CoreCLR b
 RUN printf "deb http://ftp.us.debian.org/debian jessie main\n" >> /etc/apt/sources.list
 ```
 
-![17-aspnet-core-dockerfile-2](Step5/17-aspnet-core-dockerfile-2.png)
+![17-aspnet-core-dockerfile-2](Part5/17-aspnet-core-dockerfile-2.png)
 
 #### Building your container and application
 
@@ -225,7 +225,7 @@ Let's take a look at our current list of Docker images.
 docker images
 ```
 
-![18-docker-images-1](Step5/18-docker-images-1.png)
+![18-docker-images-1](Part5/18-docker-images-1.png)
 
 We have the `hello-world` image and `microsoft/dotnet` image from earlier.
 
@@ -237,9 +237,9 @@ docker build -t aspnet-core-webapi:latest .
 
 __Note:__ This is an excellent time for another coffee break.
 
-![19-aspnet-core-docker-build-1](Step5/19-aspnet-core-docker-build-1.png)
+![19-aspnet-core-docker-build-1](Part5/19-aspnet-core-docker-build-1.png)
 
-![20-aspnet-core-docker-build-2](Step5/20-aspnet-core-docker-build-2.png)
+![20-aspnet-core-docker-build-2](Part5/20-aspnet-core-docker-build-2.png)
 
 Let's take another look at our updated list of Docker images.
 
@@ -247,7 +247,7 @@ Let's take another look at our updated list of Docker images.
 docker images
 ```
 
-![21-docker-images-2](Step5/21-docker-images-2.png)
+![21-docker-images-2](Part5/21-docker-images-2.png)
 
 We also now have the `microsoft/aspnet` and `aspnet-core-webapi` images.
 
@@ -257,11 +257,11 @@ Now let's run our application in our new container.
 docker run --net host aspnet-core-webapi
 ```
 
-![22-aspnet-core-docker-run](Step5/22-aspnet-core-docker-run.png)
+![22-aspnet-core-docker-run](Part5/22-aspnet-core-docker-run.png)
 
 Open Firefox and navigate to `http://localhost:5000` to confirm it is all working.
 
-![23-aspnet-core-docker-firefox](Step5/23-aspnet-core-docker-firefox.png)
+![23-aspnet-core-docker-firefox](Part5/23-aspnet-core-docker-firefox.png)
 
 ## End of step 5
 

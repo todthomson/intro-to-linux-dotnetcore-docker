@@ -1,6 +1,6 @@
 # Step 4 - ASP.NET Core "Hello, world!"
 
-![1-aspnet-core](Step4/1-aspnet-core.png)
+![1-aspnet-core](Part4/1-aspnet-core.png)
 
 ## ASP.NET Core on Ubuntu GNU/Linux 14.04.4 LTS
 
@@ -17,7 +17,7 @@ curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | \
 DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
 ```
 
-![2-dnvm-install](Step4/2-dnvm-install.png)
+![2-dnvm-install](Part4/2-dnvm-install.png)
 
 ```
 source ~/.dnx/dnvm/dnvm.sh
@@ -27,7 +27,7 @@ source ~/.dnx/dnvm/dnvm.sh
 dnvm --version
 ```
 
-![3-dnvm-version](Step4/3-dnvm-version.png)
+![3-dnvm-version](Part4/3-dnvm-version.png)
 
 #### Install the .NET Execution Environment (DNX)
 
@@ -43,13 +43,13 @@ sudo apt-get update
 sudo apt-get install libunwind8 gettext libssl-dev libcurl4-openssl-dev zlib1g libicu-dev uuid-dev
 ```
 
-![4-dnx-prerequisites](Step4/4-dnx-prerequisites.png)
+![4-dnx-prerequisites](Part4/4-dnx-prerequisites.png)
 
 ```
 dnvm upgrade -r coreclr -alias coreclr-latest
 ```
 
-![5-upgrade-latest-coreclr](Step4/5-upgrade-latest-coreclr.png)
+![5-upgrade-latest-coreclr](Part4/5-upgrade-latest-coreclr.png)
 
 #### Install Mono
 
@@ -59,11 +59,11 @@ dnvm upgrade -r coreclr -alias coreclr-latest
 sudo apt-get install mono-complete
 ```
 
-![6-install-mono-complete-1](Step4/6-install-mono-complete-1.png)
+![6-install-mono-complete-1](Part4/6-install-mono-complete-1.png)
 
-![7-install-mono-complete-2](Step4/7-install-mono-complete-2.png)
+![7-install-mono-complete-2](Part4/7-install-mono-complete-2.png)
 
-![8-install-mono-complete-3](Step4/8-install-mono-complete-3.png)
+![8-install-mono-complete-3](Part4/8-install-mono-complete-3.png)
 
 #### Upgrade to the latest Mono
 
@@ -74,14 +74,14 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 ```
 
-![9-upgrade-mono-1](Step4/9-upgrade-mono-1.png)
+![9-upgrade-mono-1](Part4/9-upgrade-mono-1.png)
 
 ```
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | \
 sudo tee /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
-![10-upgrade-mono-2](Step4/10-upgrade-mono-2.png)
+![10-upgrade-mono-2](Part4/10-upgrade-mono-2.png)
 
 ```
 sudo apt-get update
@@ -91,13 +91,13 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-![11-upgrade-mono-3](Step4/11-upgrade-mono-3.png)
+![11-upgrade-mono-3](Part4/11-upgrade-mono-3.png)
 
-![12-upgrade-mono-4](Step4/12-upgrade-mono-4.png)
+![12-upgrade-mono-4](Part4/12-upgrade-mono-4.png)
 
-![13-upgrade-mono-5](Step4/13-upgrade-mono-5.png)
+![13-upgrade-mono-5](Part4/13-upgrade-mono-5.png)
 
-![14-upgrade-mono-6](Step4/14-upgrade-mono-6.png)
+![14-upgrade-mono-6](Part4/14-upgrade-mono-6.png)
 
 If mono has not upgraded correctly, then it may be because a new version has been released and the dependencies aren't working. Try removing mono, removing dependencies, and then reinstalling:
 
@@ -121,7 +121,7 @@ The following command will upgrade to the latest version of DNX which wraps Mono
 dnvm upgrade -r mono -alias mono-latest
 ```
 
-![15-dnvm-upgrade-mono](Step4/15-dnvm-upgrade-mono.png)
+![15-dnvm-upgrade-mono](Part4/15-dnvm-upgrade-mono.png)
 
 #### DNVM housekeeping
 
@@ -135,7 +135,7 @@ dnvm update-self
 dnvm
 ```
 
-![16-dnvm](Step4/16-dnvm.png)
+![16-dnvm](Part4/16-dnvm.png)
 
 We're up-to-date and we have access to the `dnvm` command. Next let's see how we can list the DNX runtimes installed.
 
@@ -143,7 +143,7 @@ We're up-to-date and we have access to the `dnvm` command. Next let's see how we
 dnvm list
 ```
 
-![17-dnvm-list](Step4/17-dnvm-list.png)
+![17-dnvm-list](Part4/17-dnvm-list.png)
 
 We have access to the CoreCLR and Mono runtimes via DNX. The small problem is we have our _default_ alias set to Mono. Let's update that.
 
@@ -151,7 +151,7 @@ We have access to the CoreCLR and Mono runtimes via DNX. The small problem is we
 dnvm alias default coreclr-latest
 ```
 
-![18-dnvm-alias-coreclr-as-default](Step4/18-dnvm-alias-coreclr-as-default.png)
+![18-dnvm-alias-coreclr-as-default](Part4/18-dnvm-alias-coreclr-as-default.png)
 
 #### Build and install libuv
 
@@ -163,13 +163,13 @@ It was primarily developed for use by [Node.js](https://nodejs.org), but we use 
 sudo apt-get install make automake libtool curl
 ```
 
-![19-build-libuv-1](Step4/19-build-libuv-1.png)
+![19-build-libuv-1](Part4/19-build-libuv-1.png)
 
 ```
 curl -sSL https://github.com/libuv/libuv/archive/v1.8.0.tar.gz | sudo tar zxfv - -C /usr/local/src
 ```
 
-![20-build-libuv-2](Step4/20-build-libuv-2.png)
+![20-build-libuv-2](Part4/20-build-libuv-2.png)
 
 ```
 cd /usr/local/src/libuv-1.8.0
@@ -179,27 +179,27 @@ cd /usr/local/src/libuv-1.8.0
 sudo sh autogen.sh
 ```
 
-![21-build-libuv-3](Step4/21-build-libuv-3.png)
+![21-build-libuv-3](Part4/21-build-libuv-3.png)
 
 ```
 sudo ./configure
 ```
 
-![22-build-libuv-4](Step4/22-build-libuv-4.png)
+![22-build-libuv-4](Part4/22-build-libuv-4.png)
 
-![23-build-libuv-5](Step4/23-build-libuv-5.png)
+![23-build-libuv-5](Part4/23-build-libuv-5.png)
 
 ```
 sudo make
 ```
 
-![24-build-libuv-6](Step4/24-build-libuv-6.png)
+![24-build-libuv-6](Part4/24-build-libuv-6.png)
 
 ```
 sudo make install
 ```
 
-![25-build-libuv-7](Step4/25-build-libuv-7.png)
+![25-build-libuv-7](Part4/25-build-libuv-7.png)
 
 ```
 sudo rm -rf /usr/local/src/libuv-1.8.0 && cd ~/
@@ -219,13 +219,13 @@ We'll be using Node.js to scaffold our ASP.NET Core application via [Yeoman](htt
 sudo apt-get install build-essential libssl-dev
 ```
 
-![26-install-node-1](Step4/26-install-node-1.png)
+![26-install-node-1](Part4/26-install-node-1.png)
 
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 ```
 
-![27-install-node-2](Step4/27-install-node-2.png)
+![27-install-node-2](Part4/27-install-node-2.png)
 
 __Note:__ Close and reopen your terminal to start using `NVM`.
 
@@ -235,7 +235,7 @@ Let's take a look to see which versions of Node.js we have installed.
 nvm list
 ```
 
-![28-install-node-3](Step4/28-install-node-3.png)
+![28-install-node-3](Part4/28-install-node-3.png)
 
 You guessed it, we don't have _any_ version of Node.js. Take a look at the versions of Node.js that are available to us.
 
@@ -243,9 +243,9 @@ You guessed it, we don't have _any_ version of Node.js. Take a look at the versi
 nvm list-remote
 ```
 
-![29-install-node-4](Step4/29-install-node-4.png)
+![29-install-node-4](Part4/29-install-node-4.png)
 
-![30-install-node-5](Step4/30-install-node-5.png)
+![30-install-node-5](Part4/30-install-node-5.png)
 
 Now we can install the latest LTS version of Node.
 
@@ -253,7 +253,7 @@ Now we can install the latest LTS version of Node.
 nvm install v4.4.0
 ```
 
-![31-install-node-6](Step4/31-install-node-6.png)
+![31-install-node-6](Part4/31-install-node-6.png)
 
 Let's confirm that Node and NPM are installed.
 
@@ -261,7 +261,7 @@ Let's confirm that Node and NPM are installed.
 node -v && npm -v
 ```
 
-![32-install-node-7](Step4/32-install-node-7.png)
+![32-install-node-7](Part4/32-install-node-7.png)
 
 > Awesome! Oh wow! Like totally... ;)
 
@@ -273,9 +273,9 @@ node -v && npm -v
 npm install -g gulp grunt-cli bower yo
 ```
 
-![33-install-yo-1](Step4/33-install-yo-1.png)
+![33-install-yo-1](Part4/33-install-yo-1.png)
 
-![34-install-yo-2](Step4/34-install-yo-2.png)
+![34-install-yo-2](Part4/34-install-yo-2.png)
 
 #### Upgrade NPM
 
@@ -285,7 +285,7 @@ Yeoman is recommending that we upgrade NPM so let's do that.
 npm install -g npm
 ```
 
-![35-upgrade-npm](Step4/35-upgrade-npm.png)
+![35-upgrade-npm](Part4/35-upgrade-npm.png)
 
 #### Install the Yeoman ASP.NET Core generators
 
@@ -295,7 +295,7 @@ __Note:__ Yeoman generators are just regular NPM packages.
 npm install -g generator-aspnet
 ```
 
-![36-generator-aspnet](Step4/36-generator-aspnet.png)
+![36-generator-aspnet](Part4/36-generator-aspnet.png)
 
 #### Initialise some code
 
@@ -305,7 +305,7 @@ Now we're going to scaffold a new __ASP.NET Core Web API__ application.
 yo aspnet
 ```
 
-![37-yo-aspnet](Step4/37-yo-aspnet.png)
+![37-yo-aspnet](Part4/37-yo-aspnet.png)
 
 As directed run the following commands to test your newly scaffolded application.
 
@@ -317,9 +317,9 @@ cd AspNetCoreWebApiTestApp
 dnu restore
 ```
 
-![38-dnu-restore-1](Step4/38-dnu-restore-1.png)
+![38-dnu-restore-1](Part4/38-dnu-restore-1.png)
 
-![39-dnu-restore-2](Step4/39-dnu-restore-2.png)
+![39-dnu-restore-2](Part4/39-dnu-restore-2.png)
 
 So far so good. Let's see what's next.
 
@@ -327,9 +327,9 @@ So far so good. Let's see what's next.
 dnu build
 ```
 
-![40-dnu-build-1](Step4/40-dnu-build-1.png)
+![40-dnu-build-1](Part4/40-dnu-build-1.png)
 
-![41-dnu-build-2](Step4/41-dnu-build-2.png)
+![41-dnu-build-2](Part4/41-dnu-build-2.png)
 
 That's not awesome. The first screenshot above should make the fix obvious. For some background information [see here](https://github.com/aspnet/Home/issues/1104).
 
@@ -337,9 +337,9 @@ That's not awesome. The first screenshot above should make the fix obvious. For 
 dnu build --framework dnxcore50
 ```
 
-![42-dnu-build-dnxcore50-1](Step4/42-dnu-build-dnxcore50-1.png)
+![42-dnu-build-dnxcore50-1](Part4/42-dnu-build-dnxcore50-1.png)
 
-![43-dnu-build-dnxcore50-2](Step4/43-dnu-build-dnxcore50-2.png)
+![43-dnu-build-dnxcore50-2](Part4/43-dnu-build-dnxcore50-2.png)
 
 __Note:__ Another option is to remove the line `"dnx451": {},` from the `frameworks` section of `project.json`.
 
@@ -351,14 +351,14 @@ Running the application is simple.
 dnx web
 ```
 
-![44-dnx-web](Step4/44-dnx-web.png)
+![44-dnx-web](Part4/44-dnx-web.png)
 
 Open Firefox and navigate to `http://localhost:5000/api/values` to see your new _Web API_ in action.
 
-![45-web-api-in-action](Step4/45-web-api-in-action.png)
+![45-web-api-in-action](Part4/45-web-api-in-action.png)
 
 ## End of step 4
 
 __Winning!__ You have a basic _Web API_ written in _ASP.NET Core_.
 
-Have a quick break and then continue with [Step 5 - LXC/Docker](Step5.md).
+Have a quick break and then continue with [Step 5 - LXC/Docker](Part5.md).

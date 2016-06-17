@@ -1,6 +1,6 @@
 # Step 2 - GNU/Linux Configuration & Maintenance
 
-![1-debian-is-under-ubuntu](Step2/1-debian-is-under-ubuntu.jpg)
+![1-debian-is-under-ubuntu](Part2/1-debian-is-under-ubuntu.jpg)
 
 Now we have a basic [Ubuntu](http://www.ubuntu.com/) [GNU/Linux](https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy) installation up and running we'll look a few basic pieces of installation and configuration that will make your life easy.
 
@@ -46,15 +46,15 @@ Not always my young Padawans, not always... But here's how you can fix it.
 
 4. Once you see the following prompt select __run__ to begin the process.
 
-  ![2-run-vbox-guest-tools](Step2/2-run-vbox-guest-tools.png)
+  ![2-run-vbox-guest-tools](Part2/2-run-vbox-guest-tools.png)
 
 5. Enter your _password_ and select __Authenticate__ to run the installation script as _root_.
 
-  ![3-enter-your-password.png](Step2/3-enter-your-password.png)
+  ![3-enter-your-password.png](Part2/3-enter-your-password.png)
 
 6. You should see the following output indicating you've succeeded.
 
-  ![4-press-return-to-close.png](Step2/4-press-return-to-close.png)
+  ![4-press-return-to-close.png](Part2/4-press-return-to-close.png)
 
 7. Press `ENTER` to close the terminal.
 
@@ -78,21 +78,21 @@ If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) i
 
 1. Open a new Terminal and run `apt-get update` to update to the latest package definition list. You should see the following error message:
 
-  ![5-apt-get-update-no-sudo-fail](Step2/5-apt-get-update-no-sudo-fail.png)
+  ![5-apt-get-update-no-sudo-fail](Part2/5-apt-get-update-no-sudo-fail.png)
 
 2. So we _need root_ eh? Indeed. Root is the _super user_ (administrator) on all Unix variants. Let's try our command again but this time we'll preface it with the `sudo` (super-user do) command to run it "as root". Run the command `sudo apt-get update` and let's see what happens:
 
-  ![6-sudo-apt-get-update](Step2/6-sudo-apt-get-update.png)
+  ![6-sudo-apt-get-update](Part2/6-sudo-apt-get-update.png)
 
 3. You will see that you are prompted for your password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created as part of the installation gets sudoers access automatically.
 
 4. Now that we have an up-to-date package definition list we can run `sudo apt-get upgrade` to upgrade our system to the latest package and security updates:
 
-  ![7-sudo-apt-get-upgrade-start](Step2/7-sudo-apt-get-upgrade-start.png)
+  ![7-sudo-apt-get-upgrade-start](Part2/7-sudo-apt-get-upgrade-start.png)
 
 5. Once `sudo apt-get upgrade` has completed running you should see that it has "done" its job successfully:
 
-  ![8-sudo-apt-get-upgrade-end](Step2/8-sudo-apt-get-upgrade-end.png)
+  ![8-sudo-apt-get-upgrade-end](Part2/8-sudo-apt-get-upgrade-end.png)
 
 ## Adding some useful programs
 
@@ -124,19 +124,19 @@ So we have even more text-editing options let's install _Sublime Text 3_. There 
   sudo add-apt-repository ppa:webupd8team/sublime-text-3
   ```
 
-  ![9-ppa-sublime-one](Step2/9-ppa-sublime-one.png)
+  ![9-ppa-sublime-one](Part2/9-ppa-sublime-one.png)
 
   ```
   sudo apt-get update
   ```
 
-  ![10-ppa-sublime-two](Step2/10-ppa-sublime-two.png)
+  ![10-ppa-sublime-two](Part2/10-ppa-sublime-two.png)
 
   ```
   sudo apt-get install sublime-text-installer
   ```
 
-  ![11-ppa-sublime-three](Step2/11-ppa-sublime-three.png)
+  ![11-ppa-sublime-three](Part2/11-ppa-sublime-three.png)
 
 Now run `subl` to confirm that Sublime Text 3 is available and working ok.
 
@@ -204,4 +204,4 @@ libwayland-egl1-mesa-lts-wily
 
 __Good job!__ You are now in possession of a configured and maintainable GNU/Linux VM.
 
-Have some morning tea and then head over to [Step 3 - .NET Core "Hello, world!"](Step3.md).
+Have some morning tea and then head over to [Step 3 - .NET Core "Hello, world!"](Part3.md).

@@ -1,32 +1,38 @@
-# GNU/Linux + .NET/ASP.NET Core + LXC/Docker
-
-__A tutorial on "how to" GNU/Linux + .NET/ASP.NET Core + LXC/Docker...__
+# An Introduction to Linux, .NET Core, ASP.NET Core & Docker
 
 ![1-nadella-loves-linux](README/1-nadella-loves-linux.jpg)
 
-## Step 1 - GNU/Linux Installation
+## 1. Ubuntu Linux Installation
 
-If you _don't have a preexisting_ __Ubuntu 14.04.4 LTS VM__ then start at [Step 1](Step1.md).
+If you don't have a __fresh__ _Ubuntu 16.04 LTS x64_ installation then start at [Part 1](Part1.md).
 
-## Step 2 - GNU/Linux Configuration & Maintenance
+## 2. Ubuntu Linux Configuration & Maintenance
 
-Once you have a _fresh_ __Ubuntu 14.04.4 LTS VM__ go to [Step 2](Step2.md).
+Now you have a __fresh__ _Ubuntu 16.04 LTS x64_ installation go to [Part 2](Part2.md).
 
-## Step 3 - .NET Core "Hello, world!"
+## 3. "Hello, world!" .NET Core
 
-Once you have a _configured_ __Ubuntu 14.04.4 LTS VM__ (or my preconfigured VM) head over to [Step 3](Step3.md).
+Once you have a __configured__ _Ubuntu 16.04 LTS x64_ head over to [Part 3](Part3.md).
 
-## Step 4 - ASP.NET Core "Hello, world!"
+## 4. - ASP.NET Core "Hello, world!"
 
-Once you have said hello to __.NET Core__ continue on with [Step 4](Step4.md).
+So you have said your "first hello" to _.NET Core_? Continue on with [Part 4](Part4.md).
 
-## Step 5 - LXC/Docker "Hello, world!"
+## 5. "Hello, world!" Docker
 
-Once you made your `HELO` to __ASP.NET Core__ strap on your helmet for [Step 5](Step5.md).
+And a "second hello" to _ASP.NET Core_? Strap on your helmet for [Part 5](Part5.md).
 
-## Step 6 - Putting it all together
+## 6. OmniSharp
 
-_Left as an exercise for the reader..._
+Once you made your "third hello" to _Docker_ embark on [Part 6](Step6.md).
+
+## 7. Visual Studio Code
+
+Lastly check out [Part 7](Step7.md).
+
+## 8. Putting it all together...
+
+_Left as an exercise for the reader ;)_
 
 ## Feedback?
 
