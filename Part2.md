@@ -1,8 +1,8 @@
-# Step 2 - GNU/Linux Configuration & Maintenance
+# 2. Ubuntu Linux Configuration & Maintenance
 
 ![1-debian-is-under-ubuntu](Part2/1-debian-is-under-ubuntu.jpg)
 
-Now we have a basic [Ubuntu](http://www.ubuntu.com/) [GNU/Linux](https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy) installation up and running we'll look a few basic pieces of installation and configuration that will make your life easy.
+Now we have a basic [Ubuntu](http://www.ubuntu.com/) [Linux](https://en.wikipedia.org/wiki/Linux_naming_controversy) installation up and running we'll look a few basic pieces of installation and configuration that will make your life easy.
 
 ## Background
 
@@ -14,11 +14,11 @@ Before we begin here's a little background.
 
 #### APT (the Advanced Packaging Tool)
 
-The [Advanced Packaging Tool](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool) APT is the "package manager" of Debian GNU/Linux and its variants (e.g. Ubuntu). It provides for the (almost) completely-automated discovery, retrieval, configuration, installation and removal of both binary and source packages. APT is wrapper around `dpkg` adding useful extra functionality like automated package download, bulk package update, automatic package dependency tree resolution, etc...
+The [Advanced Packaging Tool](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool) APT is the "package manager" of Debian Linux and its variants (e.g. Ubuntu). It provides for the (almost) completely-automated discovery, retrieval, configuration, installation and removal of both binary and source packages. APT is wrapper around `dpkg` adding useful extra functionality like automated package download, bulk package update, automatic package dependency tree resolution, etc...
 
 ## Ironing out the wrinkles
 
-Time to switch back to our Ubuntu GNU/Linux VM.
+Time to switch back to our Ubuntu Linux VM.
 
 > Whoa! That's one teeny tiny VM!
 
@@ -26,11 +26,11 @@ Yes. Yes it is. But let's fix it anyhow ;)
 
 #### VGA just ain't what it used to be...
 
-> Come on Tod it's 2016 this GNU/Linux thing is supposed to be easy!
+> Come on Tod it's 2016 this Linux thing is supposed to be easy!
 
 Not always my young Padawans, not always... But here's how you can fix it.
 
-1. Open a new Terminal by pressing the shortcut `CTRL+ALT+T` or by pressing the `SUPER` (Windows) key, typing `term` and then pressing `ENTER`. This is how you launch applications in Ubuntu GNU/Linux i.e. it's the same as in Windows.
+1. Open a new Terminal by pressing the shortcut `CTRL+ALT+T` or by pressing the `SUPER` (Windows) key, typing `term` and then pressing `ENTER`. This is how you launch applications in Ubuntu Linux i.e. it's the same as in Windows.
 
 2. Run the following command to install some tools we will use for compiling some kernel modules build and testing our OpenGL acceleration is working:
 
@@ -118,7 +118,7 @@ So we have even more text-editing options let's install _Sublime Text 3_. There 
 
 2. Our second (and the better) option is to use the _Sublime Text 3 Installer PPA_. A [PPA](https://en.wikipedia.org/wiki/Personal_Package_Archive) is a _Personal Package Archive_ which is simply just an unofficial APT repository hosted by an individual on Canonical's [Launchpad](https://launchpad.net/) software collaboration service. Run the following commands to install Sublime Text 3 using the PPA.
 
-  > [Canonical](http://www.canonical.com/) is the company behind the Ubuntu GNU/Linux distribution.
+  > [Canonical](http://www.canonical.com/) is the company behind the Ubuntu Linux distribution.
 
   ```
   sudo add-apt-repository ppa:webupd8team/sublime-text-3
@@ -200,8 +200,8 @@ xserver-xorg-lts-wily xserver-xorg-video-all-lts-wily xserver-xorg-input-all-lts
 libwayland-egl1-mesa-lts-wily
 ```
 
-## End of step 2
+## End of Part 2
 
-__Good job!__ You are now in possession of a configured and maintainable GNU/Linux VM.
+__Good job!__ You are now in possession of a configured and maintainable Linux VM.
 
-Have some morning tea and then head over to [Step 3 - .NET Core "Hello, world!"](Part3.md).
+Have some morning tea and then head over to [3. "Hello, world!" .NET Core ](Part3.md).

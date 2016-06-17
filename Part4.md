@@ -1,10 +1,10 @@
-# Step 4 - ASP.NET Core "Hello, world!"
+# 4. "Hello, world!" ASP.NET Core
 
 ![1-aspnet-core](Part4/1-aspnet-core.png)
 
-## ASP.NET Core on Ubuntu GNU/Linux 14.04.4 LTS
+## ASP.NET Core on Ubuntu Linux
 
-__Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install ASP.NET Core on Ubuntu GNU/Linux 14.04.4 LTS.
+__Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install ASP.NET Core on Ubuntu Linux.
 
 For more information see [here](https://docs.asp.net/en/latest/getting-started/installing-on-linux.html#installing-on-ubuntu-14-04). The following is practically verbatim from that source.
 
@@ -357,8 +357,8 @@ Open Firefox and navigate to `http://localhost:5000/api/values` to see your new 
 
 ![45-web-api-in-action](Part4/45-web-api-in-action.png)
 
-## End of step 4
+## End of Part 4
 
 __Winning!__ You have a basic _Web API_ written in _ASP.NET Core_.
 
-Have a quick break and then continue with [Step 5 - LXC/Docker](Part5.md).
+Have a quick break and then continue with [5. "Hello, world!" Docker](Part5.md).

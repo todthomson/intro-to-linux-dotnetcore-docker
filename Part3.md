@@ -1,10 +1,10 @@
-# Step 3 - .NET Core "Hello, world!"
+# 3. "Hello, world!" .NET Core
 
 ![1-dotnet-core-dev-stack](Part3/1-dotnet-core-dev-stack.png)
 
-## .NET Core on Ubuntu GNU/Linux 14.04.4 LTS
+## .NET Core on Ubuntu Linux
 
-__Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install .NET Core on Ubuntu GNU/Linux 14.04.4 LTS.
+__Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install .NET Core on Ubuntu Linux.
 
 For more information see [here](http://dotnet.github.io/getting-started/). The following is practically verbatim from that source.
 
@@ -101,8 +101,8 @@ dotnet run
 
 ![9-dotnet-run](Part3/9-dotnet-run.png)
 
-## End of step 3
+## End of Part 3
 
 __Excellent!__ You have said hello to the world of _.NET Core_.
 
-Have a quick break and then continue with [Step 4 - ASP.NET Core "Hello, world!"](Part4.md).
+Have a quick break and then continue with [4. "Hello, world!" ASP.NET Core](Part4.md).

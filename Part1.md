@@ -1,12 +1,12 @@
-# Step 1 - GNU/Linux Installation
+# 1. Ubuntu Linux Installation
 
 ![1-gnu-linux](Part1/1-gnu-linux.jpg)
 
-First we'll get a basic GNU/Linux installation up and running.
+First we'll get a basic Ubuntu Linux Installation up and running.
 
 ## Prerequisites
 
-1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.04-desktop-amd64.iso`) from your local Ubuntu mirror to save your quota and to download it as fast as possible. We're using _Ubuntu Desktop 'Xenial Xerus' 16.04 LTS_ as it's "unofficially supported" (full support is coming in the RTW) and it's the primary GNU/Linux distribution (and version) being used by the .NET Core team.
+1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.04-desktop-amd64.iso`) from your local Ubuntu mirror to save your quota and to download it as fast as possible. We're using _Ubuntu Desktop 'Xenial Xerus' 16.04 LTS_ as it's "unofficially supported" (full support is coming in the RTW) and it's the primary Linux distribution (and version) being used by the .NET Core team.
 
 2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. Windows `VirtualBox-5.0.22-108108-Win.exe` or MacOSX `VirtualBox-5.0.22-108108-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.0.22-108108.vbox-extpack`). This extension pack contains host drivers for USB etc.
 
@@ -206,8 +206,8 @@ __Done!__ Click __OK__ to save the VM settings.
 
 9. Once you see the message __installation complete__ click _restart now_.
 
-## End of step 1
+## End of Part 1
 
-__Congrats!__ You now have fresh GNU/Linux VM.
+__Congrats!__ You now have fresh Linux VM.
 
-Take a 5 minute coffee break and then head over to [Step 2 - Ubuntu GNU/Linux Configuration & Maintenance](Part2.md).
+Take a 5 minute coffee break and then head over to [2. Ubuntu Linux Configuration & Maintenance](Part2.md).

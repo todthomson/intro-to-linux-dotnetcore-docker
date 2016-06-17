@@ -1,8 +1,8 @@
-# Step 5 - LXC/Docker "Hello, world!"
+# 5. "Hello, world!" Docker
 
 ![1-lxc-docker](Part5/1-lxc-docker.png)
 
-## .NET Core on LXC/Docker on Ubuntu GNU/Linux 14.04.4 LTS
+## .NET Core on Docker on Ubuntu Linux
 
 _What a mouthful..._
 
@@ -122,7 +122,7 @@ There's a lot more to Docker than just running up a prebaked Docker image then s
 
 ## Making Visual Studio Code available (a.k.a. the VIM crash-course)
 
-Before we dig into Docker a little more let's make _Visual Studio Code_ easily available from the terminal. We added VS Code to our VM in [Step 2](Part2.md) so if you missed Step 2 you might need to go back and do at least the VS Code section.
+Before we dig into Docker a little more let's make _Visual Studio Code_ easily available from the terminal. We added VS Code to our VM in [Part 2](Part2.md) so if you missed Part 2 you might need to go back and do at least the VS Code section.
 
 #### Creating a user-specific `bin` folder
 
@@ -189,9 +189,9 @@ Run `code` to verify that everything has worked correctly.
 
 __Excellent!__ You can close VS Code (for now).
 
-## ASP.NET Core on LXC/Docker on Ubuntu GNU/Linux 14.04.4 LTS
+## ASP.NET Core on Docker on Ubuntu Linux
 
-Before we dig into ASP.NET Core on LXC/Docker let's learn about `Dockerfiles`.
+Before we dig into ASP.NET Core on Docker let's learn about `Dockerfiles`.
 
 #### Dockerfiles
 
@@ -263,8 +263,8 @@ Open Firefox and navigate to `http://localhost:5000` to confirm it is all workin
 
 ![23-aspnet-core-docker-firefox](Part5/23-aspnet-core-docker-firefox.png)
 
-## End of step 5
+## End of Part 5
 
-__Done!__ You know how to LXC/Docker "all the things".
+__Done!__ You know how to do a little Docker now!
 
 The rest _as they say_ is history...
