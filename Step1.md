@@ -6,17 +6,23 @@ First we'll get a basic GNU/Linux installation up and running.
 
 ## Prerequisites
 
-1. Download the latest [Ubuntu Desktop 14.04.4 LTS 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-14.04.4-desktop-amd64.iso`) from your local Ubuntu mirror to save your quota and to download it as fast as possible. We're using 14.04.4 LTS as it's the primary GNU/Linux distribution (and version) being used by the .NET Core team.
+1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.04-desktop-amd64.iso`) from your local Ubuntu mirror to save your quota and to download it as fast as possible. We're using _Ubuntu Desktop 'Xenial Xerus' 16.04 LTS_ as it's "unofficially supported" (full support is coming in the RTW) and it's the primary GNU/Linux distribution (and version) being used by the .NET Core team.
 
-2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. for Mac OS X `VirtualBox-5.0.16-105871-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.0.16-105871.vbox-extpack`). This extension pack contains host drivers for USB etc.
+2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. Windows `VirtualBox-5.0.22-108108-Win.exe` or MacOSX `VirtualBox-5.0.22-108108-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.0.22-108108.vbox-extpack`). This extension pack contains host drivers for USB etc.
 
 ## Installing and configuring VirtualBox
 
 1. Install VirtualBox by following the prompts. You should include __all__ options.
 
-2. Double-click the VirtualBox extension pack and __accept__ to install. VirtualBox should now be open.
+2. Double-click the VirtualBox Extension Pack and click __accept__ to install.
 
-3. Open VirtualBox __Preferences... => Input => Virtual Machine__ or __File => Preferences... => Input => Virtual Machine__ if you're on non-Mac hardware and update the __Host Key Combination__ to _Right COMMAND_ if you're on Mac or _Right CTRL_ if you're on non-Mac hardware.
+3. VirtualBox should now be open.
+
+4. Update the "host key combination" in VirtualBox Preferences as follows:
+
+  a. (Macintosh) __Preferences... => Input => Virtual Machine__ and update the __Host Key Combination__ to _Right COMMAND_.
+
+  b. (Wintel) __File => Preferences... => Input => Virtual Machine__ and update the __Host Key Combination__ to _Right CTRL_.
 
   ![2-virtualbox-host-key](Step1/2-virtualbox-host-key.png)
 
