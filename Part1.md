@@ -58,7 +58,7 @@ First we'll get a basic Ubuntu Linux Installation up and running.
 
 ## Configuring your new VM
 
-Now you have a new __powered off__ VM we want to update the configuration using some more-optimal defaults prior to installing Linux. Click __settings__ to configure your new VM.
+You now have a new __powered off__ VM so we want to update the configuration using some "more-optimal" defaults prior to installing Linux. Click __settings__ to configure your new VM.
 
 ![9-powered-off](Part1/9-powered-off.png)
 
@@ -74,17 +74,17 @@ Now you have a new __powered off__ VM we want to update the configuration using 
 
 2. Set __chipset__ to _ICH9_.
 
-3. Set __pointing device__ to a setting which matches your host hardware e.g. I'm on a `2015 MacBook Pro` so I set it to _USB multi-touch tablet_.
+3. Set __pointing device__ to a setting which matches your host hardware e.g. I'm on a `2015 MacBook Pro` so I set it to _USB multi-touch tablet_ when in MacOSX. When in Windows I set it to _PS/2 Mouse_ (as I'm using just a mouse).
 
 4. If the _only_ host operating system you run on your PC is Windows __unselect__ _Hardware Clock in UTC Time_.
 
   ![11-system-motherboard](Part1/11-system-motherboard.png)
 
-  __Note:__ Windows expects its hardware clock in to be in _local time_. Macintosh (and most other operating systems) run their hardware clocks in _UTC by default_.
+  __Note:__ Windows generally expects its hardware clock in to be in _local time_. Macintosh (and most other operating systems) run their hardware clocks in _UTC by default_. Windows can be told it's hardware clock is in UTC using via the registry as described [here](http://superuser.com/a/975764/120578).
 
 #### System => Processor
 
-1. Determine how many __Processor(s)__ to assign to your new VM. I recommend a minimum of `1` and a maximum of `half the number` of logical CPU cores of your host machine e.g. in my case I have a `2015 MacBook Pro` with `4 physical / 8 logical` CPU cores, so I _could_ set the virtual CPU cores to `4`, however I just selected `1` as that's all I will need.
+1. Determine how many __Processor(s)__ to assign to your new VM. I recommend a minimum of `1` and a maximum of `half the number` of __logical__ CPU cores of your host machine e.g. in my case I have a `2015 MacBook Pro` with `4 physical / 8 logical` CPU cores, so I _could_ set the virtual CPU cores to `4`, however I just selected `1` as that's all I will need for Linux.
 
 2. Check __enable PAE/NX__.
 
@@ -108,9 +108,7 @@ Now you have a new __powered off__ VM we want to update the configuration using 
 
 1. Increase the __video memory__ to the maximum available setting. In my case this is `128MB`.
 
-2. If you have a _retina_ display then check __use unscaled HiDPI Output__.
-
-3. Check __enable 3D acceleration__.
+2. Check __enable 3D acceleration__.
 
   ![14-display-screen](Part1/14-display-screen.png)
 
@@ -162,7 +160,7 @@ __Done!__ Click __OK__ to save the VM settings.
 
   ![19-install-ubuntu](Part1/19-install-ubuntu.png)
 
-3. Make sure you have __three green ticks__ then check _download updates while installing_. If you want to be able to play _patent-encumbered audio formats_ you should also check _install this third-party software_. Once you're happy click _continue_.
+3. Check _download updates while installing Ubuntu_. If you want to be able to play _patent-encumbered audio formats_ et al you should also check _install this third-party software..._. Once you're happy click _continue_.
 
   ![20-preparing-to-install](Part1/20-preparing-to-install.png)
 
