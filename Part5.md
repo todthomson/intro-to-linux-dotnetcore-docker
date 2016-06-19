@@ -20,7 +20,7 @@ __Note:__ The following guide is really just a combo of [here](https://docs.dock
 
 Run the following to download and install the latest Docker package.
 
-__Note:__ You may be prompted to supply your password for `sudo` this is ok.
+__Note:__ You may be prompted to supply your password for `sudo` this is OK.
 
 ```
 curl -fsSL https://get.docker.com/ | sh

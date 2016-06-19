@@ -208,8 +208,16 @@ __Done!__ Click __OK__ to save the VM settings.
 
 ![26-intel-hd-audio-reboot-error](Part1/26-intel-hd-audio-reboot-error.png)
 
+## An exercise for the reader...
+
+Login to your "new shiny" Linux VM and see if you can work out how to play a game of __Beneath a Steel Sky, Freeware CD Version__. The game files `bass-cd-1.2.zip` are available on the USB flash drive though you probably won't need them.
+
+You'll know you have it working when you see the following:
+
+![27-scumm-vm](Part1/27-scumm-vm.png)
+
 ## End of Part 1
 
 __Congrats!__ You now have fresh Linux VM.
 
-Take a 5 minute coffee break and then head over to [2. Ubuntu Linux Configuration & Maintenance](Part2.md).
+Have some morning tea and then head over to [2. Ubuntu Linux Configuration & Maintenance](Part2.md).

@@ -76,15 +76,15 @@ If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) i
 
   ![7-sudo-apt-get-update](Part2/7-sudo-apt-get-update.png)
 
-3. You will see that you are prompted for your password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created as part of the installation gets sudoers access automatically.
+3. You will see that you are prompted for _your_ password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created as part of the installation gets sudoers access automatically.
 
 4. Now that we have an up-to-date package definition list we can run `sudo apt-get upgrade` to upgrade our system to the latest package and security updates:
 
-  ![7-sudo-apt-get-upgrade-start](Part2/7-sudo-apt-get-upgrade-start.png)
+  ![8-sudo-apt-get-upgrade-start](Part2/8-sudo-apt-get-upgrade-start.png)
 
 5. Once `sudo apt-get upgrade` has completed running you should see that it has "done" its job successfully:
 
-  ![8-sudo-apt-get-upgrade-end](Part2/8-sudo-apt-get-upgrade-end.png)
+  ![9-sudo-apt-get-upgrade-end](Part2/9-sudo-apt-get-upgrade-end.png)
 
 ## Adding some useful programs
 
@@ -96,9 +96,9 @@ We'll need `git` for sure, so let's `sudo apt-get install git` now.
 
 #### Vim
 
-We'll need a text editor and I'm a `vim` man so let's `sudo apt-get install vim` now.
+We'll need a text editor and I'm a `vim` _mouse potato_ so let's `sudo apt-get install vim` now.
 
-#### Emacs (optional)
+#### Emacs
 
 If you prefer `emacs` you could `sudo apt-get install emacs` and then add the awesome [spacemacs](https://github.com/syl20bnr/spacemacs) distribution like so `git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d && emacs --insecure`.
 
@@ -106,7 +106,7 @@ If you prefer `emacs` you could `sudo apt-get install emacs` and then add the aw
 
 So we have even more text-editing options let's install _Sublime Text 3_. There are two options for doing this which I will use to illustrate some other ways of getting software installed over and above _just downloading a binary_.
 
-1. Our first option is to download a `.dpkg` from the [Sublime Text 3](https://www.sublimetext.com/3) homepage and then install it using the `dpkg -i` command i.e. run the `wget https://download.sublimetext.com/sublime-text_build-3103_amd64.deb && sudo dpkg -i sublime-text_build-3103_amd64.deb` command.
+1. Our first option is to download a `.dpkg` from the [Sublime Text 3](https://www.sublimetext.com/3) homepage and then install it using the `dpkg -i` command i.e. run the `wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb && sudo dpkg -i sublime-text_build-3114_amd64.deb` command.
 
 2. Our second (and the better) option is to use the _Sublime Text 3 Installer PPA_. A [PPA](https://en.wikipedia.org/wiki/Personal_Package_Archive) is a _Personal Package Archive_ which is simply just an unofficial APT repository hosted by an individual on Canonical's [Launchpad](https://launchpad.net/) software collaboration service. Run the following commands to install Sublime Text 3 using the PPA.
 
@@ -116,31 +116,33 @@ So we have even more text-editing options let's install _Sublime Text 3_. There 
   sudo add-apt-repository ppa:webupd8team/sublime-text-3
   ```
 
-  ![9-ppa-sublime-one](Part2/9-ppa-sublime-one.png)
+  ![10-ppa-sublime-one](Part2/10-ppa-sublime-one.png)
 
   ```
   sudo apt-get update
   ```
 
-  ![10-ppa-sublime-two](Part2/10-ppa-sublime-two.png)
+  ![11-ppa-sublime-two](Part2/11-ppa-sublime-two.png)
 
   ```
   sudo apt-get install sublime-text-installer
   ```
 
-  ![11-ppa-sublime-three](Part2/11-ppa-sublime-three.png)
+  ![12-ppa-sublime-three](Part2/12-ppa-sublime-three.png)
 
-Now run `subl` to confirm that Sublime Text 3 is available and working ok.
+Now run `subl` to confirm that Sublime Text 3 is available and working OK.
 
-#### Atom (optional)
+#### Atom
 
-You might like [Atom](https://atom.io/) if so run `wget https://github.com/atom/atom/releases/download/v1.5.4/atom-amd64.deb && sudo dpkg -i atom-amd64.deb` now.
+If you're like me you want GitHub's [Atom](https://atom.io/)! If so run `wget https://github.com/atom/atom/releases/download/v1.8.0/atom-amd64.deb && sudo dpkg -i atom-amd64.deb` now.
 
-__Note:__ Atom seems buggy on 14.04.4 LTS so your mileage may vary...
+![13-github-atom](Part2/13-github-atom.png)
 
-#### Brackets (optional)
+Now run `atom` to confirm that Atom is available and working OK.
 
-You want [Brackets](http://brackets.io/)? If so here's what you do:
+#### Brackets _(optional)_
+
+You might use Adobe [Brackets](http://brackets.io/)? If so here's what you do:
 
 ```
 sudo add-apt-repository ppa:webupd8team/brackets
@@ -154,46 +156,112 @@ sudo apt-get update
 sudo apt-get install brackets
 ```
 
-__Note:__ Brackets wouldn't load for me on 14.04.4 LTS so your mileage may vary...
+![14-adobe-brackets](Part2/14-adobe-brackets.png)
 
-#### Visual Studio Code
+Now run `brackets` to confirm that Adobe Brackets is available and working OK.
 
-You must have thought I was forgetting something by now :P Here's what you do:
+__Note:__ Brackets wouldn't load correctly for me so your mileage may vary...
 
-```
-wget https://go.microsoft.com/fwlink/?LinkID=620884 -O VSCode-linux-x64-stable.zip
-```
+#### Visual Studio Code _(the dpkg method)_
 
-```
-unzip -a VSCode-linux-x64-stable.zip
-```
+You must have thought I was forgetting something by now! Here's what you do:
 
 ```
-./VSCode-linux-x64/code
+wget https://go.microsoft.com/fwlink/?LinkID=760868 -O vscode-amd64.deb
 ```
 
-## Updating to Linux kernel version 4.2.0
+```
+sudo dpkg -i vscode-amd64.deb
+```
 
-The [LTS Enablement Stack](https://wiki.ubuntu.com/Kernel/LTSEnablementStack) is a project to bring newer Linux Kernel versions to the LTS branch of Ubuntu. The advantage of this is newer hardware support combined with reliable long-term-supported _user-land_ software.
+![15-vs-code-1](Part2/15-vs-code-1.png)
 
-Let's upgrade to the [Linux kernel version 4.2.0](http://askubuntu.com/questions/690149/when-will-4-2-0-kernel-be-available-for-14-04-lts):
+Now run `code` to confirm that Visual Studio Code is available and working OK...
+
+![16-vs-code-2](Part2/16-vs-code-2.png)
+
+You'll see that it's _not_ working, so let's fix that now.
+
+#### Fixing Visual Studio Code
+
+Let's take stock of what we know:
+
+1.  The issue we're seeing here looks to be a GPU rendering issue.
+
+2. We know that Visual Studio Code is an [Electron](http://electron.atom.io) application, so "under the hood" it has [Node](https://nodejs.org), [Chromium](https://www.chromium.org) and [V8](https://developers.google.com/v8/).
+
+3. We know that Chromium (Chrome) has hardware accelerated rendering.
+
+__Hypothesis =>__ Our issue is caused by a combination of the "VirtualBox virtual GPU" and "Chromium's hardware accelerated rendering".
+
+__Solution?__ Disable the hardware accelerated rendering (for now).
+
+Fortunately someone else has the [workaround](http://stackoverflow.com/a/30007549/372666) for us. Run Visual Studio Code again as follows:
+
+```
+code --disable-gpu
+```
+
+![17-vs-code-3](Part2/17-vs-code-3.png)
+
+#### Visual Studio Code _(the umake method)_
+
+A better idea is to install Visual Studio Code with `umake` which will help us automatically keep it up to date.
+
+> [_Ubuntu Make_](https://wiki.ubuntu.com/ubuntu-make) `umake` is a command line tool which allows you to download the latest version of popular developer tools on your installation, installing it alongside all of the required dependencies (which will only ask for root access if you don't have all the required dependencies installed already), enable multi-arch on your system if you are on a 64 bit machine, integrate it with the Unity launcher. Basically, one command to get your system ready to develop with!
+
+Firstly let's _remove_ the version of Visual Studio Code previously installed.
+
+1. Hit the __SUPER__ _(Windows/Command)_ key and type `remove`.
+
+2. Click on `Ubuntu Software`.
+
+3. Select `Installed` and scroll down to `Visual Studio Code`.
+
+4. Click on `Remove` and then confirm `Remove` to remove Visual Studio Code.
+
+![18-vs-code-uninstall](Part2/18-vs-code-uninstall.png)
+
+Then run the following (sourced from [Ask Ubuntu](http://askubuntu.com/a/616363/42342)) to install Visual Studio Code again:
+
+```
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+```
 
 ```
 sudo apt-get update
 ```
 
 ```
-sudo apt-get upgrade
+sudo apt-get install ubuntu-make
 ```
 
+![19-umake-1](Part2/19-umake-1.png)
+
 ```
-sudo apt-get install --install-recommends linux-generic-lts-wily xserver-xorg-core-lts-wily \
-xserver-xorg-lts-wily xserver-xorg-video-all-lts-wily xserver-xorg-input-all-lts-wily \
-libwayland-egl1-mesa-lts-wily
+umake ide visual-studio-code
 ```
+
+![20-umake-2](Part2/20-umake-2.png)
+
+If you were paying attention you would have noticed a reference to the new location of Visual Studio Code, so let's go there now:
+
+```
+cd /home/readify/.local/share/umake/ide/visual-studio-code
+```
+
+Now run `code --disable-gpu` again to confirm that Visual Studio Code is still available and working correctly.
+
+![21-umake-3](Part2/21-umake-3.png)
+
+## An exercise for the reader...
+
+Add `/home/readify/.local/share/umake/ide/visual-studio-code` to your `$PATH` and reboot to confirm that it's permanent (survives a reboot).
+
+You'll know you have it working when you can run `code --disable-gpu` from any location.
 
 ## End of Part 2
 
 __Good job!__ You are now in possession of a configured and maintainable Linux VM.
 
-Have some morning tea and then head over to [3. "Hello, world!" .NET Core ](Part3.md).
+Take a 5 minute coffee break and then head over to [3. "Hello, world!" .NET Core ](Part3.md).
