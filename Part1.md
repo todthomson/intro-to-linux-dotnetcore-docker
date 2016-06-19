@@ -204,6 +204,10 @@ __Done!__ Click __OK__ to save the VM settings.
 
 9. Once you see the message __installation complete__ click _restart now_.
 
+10. If you see an error with `snd_hda_intel` then select __Machine => Reset => Do not show this message again => Reset__. We will fix this in part 2.
+
+![26-intel-hd-audio-reboot-error](Part1/26-intel-hd-audio-reboot-error.png)
+
 ## End of Part 1
 
 __Congrats!__ You now have fresh Linux VM.
