@@ -14,25 +14,17 @@ Before we begin here's a little background.
 
 #### APT (the Advanced Packaging Tool)
 
-The [Advanced Packaging Tool](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool) APT is the "package manager" of Debian Linux and its variants (e.g. Ubuntu). It provides for the (almost) completely-automated discovery, retrieval, configuration, installation and removal of both binary and source packages. APT is wrapper around `dpkg` adding useful extra functionality like automated package download, bulk package update, automatic package dependency tree resolution, etc...
+The [Advanced Packaging Tool](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool) APT is the "package manager" of Debian GNU/Linux and its variants (e.g. Ubuntu). It provides for the (almost) completely-automated discovery, retrieval, configuration, installation and removal of both binary and source packages. APT is wrapper around `dpkg` adding useful extra functionality like automated package download, bulk package update, automatic package dependency tree resolution, etc...
 
 ## Ironing out the wrinkles
 
 Time to switch back to our Ubuntu Linux VM.
 
-> Whoa! That's one teeny tiny VM!
+#### VirtualBox Guest Additions
 
-Yes. Yes it is. But let's fix it anyhow ;)
+1. Open a new Terminal by pressing the shortcut `CTRL+ALT+T` or by pressing the `SUPER` (Windows or Command) key, typing `term` and then pressing `ENTER`. This is how you launch applications in Ubuntu Linux i.e. it's the same as in Windows.
 
-#### VGA just ain't what it used to be...
-
-> Come on Tod it's 2016 this Linux thing is supposed to be easy!
-
-Not always my young Padawans, not always... But here's how you can fix it.
-
-1. Open a new Terminal by pressing the shortcut `CTRL+ALT+T` or by pressing the `SUPER` (Windows) key, typing `term` and then pressing `ENTER`. This is how you launch applications in Ubuntu Linux i.e. it's the same as in Windows.
-
-2. Run the following command to install some tools we will use for compiling some kernel modules build and testing our OpenGL acceleration is working:
+2. Run the following command to install some tools we will use for compiling some kernel modules build and testing our OpenGL acceleration is working (_apologies you will probably have to type this bit yourself_):
 
   ```
   sudo apt-get install mesa-utils
@@ -60,15 +52,15 @@ Not always my young Padawans, not always... But here's how you can fix it.
 
 8. Open a new terminal and run `sudo reboot` to restart your VM.
 
-After reboot you might notice that your VM is running at a higher resolution. The good news is that we can now run at Ubuntu's minimum resolution... ;)
-
 To confirm that everything's working OK do the following:
 
-1. Open _System Settings_ by pressing the `SUPER` (Windows) key, typing `s` and then hitting `ENTER`.
+1. Open _System Settings_ by pressing the `SUPER` (Windows) key, typing `system se` and then hitting `ENTER`.
 
 2. Open the _Screen Display_ option and then select whichever resolution takes your fancy. I selected `1024x768` which in "retina mode + 200% scale factor" will be `2048x1536` size-wise.
 
 3. Run `glxgears`. If the "world falls over" then shut down your VM `sudo shutdown -h now` and reconfigure your VM to deselect __enable 3D acceleration__. Start your VM again and re-run `glxgears` to make sure all is now well.
+
+![5-glxgears.png](Part2/5-glxgears.png)
 
 __Note:__ See [VirtualBox ticket 12941](https://www.virtualbox.org/ticket/12941) for more information.
 
@@ -78,11 +70,11 @@ If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) i
 
 1. Open a new Terminal and run `apt-get update` to update to the latest package definition list. You should see the following error message:
 
-  ![5-apt-get-update-no-sudo-fail](Part2/5-apt-get-update-no-sudo-fail.png)
+  ![6-apt-get-update-no-sudo-fail](Part2/6-apt-get-update-no-sudo-fail.png)
 
-2. So we _need root_ eh? Indeed. Root is the _super user_ (administrator) on all Unix variants. Let's try our command again but this time we'll preface it with the `sudo` (super-user do) command to run it "as root". Run the command `sudo apt-get update` and let's see what happens:
+2. So we _need root_ eh? Indeed. Root is the _super user_ (administrator) on Unix variants. Let's try our command again but this time we'll preface it with the `sudo` (super-user do) command to run it "as root". Run the command `sudo apt-get update` and let's see what happens:
 
-  ![6-sudo-apt-get-update](Part2/6-sudo-apt-get-update.png)
+  ![7-sudo-apt-get-update](Part2/7-sudo-apt-get-update.png)
 
 3. You will see that you are prompted for your password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created as part of the installation gets sudoers access automatically.
 
