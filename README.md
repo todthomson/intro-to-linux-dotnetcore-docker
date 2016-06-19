@@ -12,19 +12,19 @@ Now you have a __fresh__ Ubuntu 16.04 LTS x64 installation go to __[Part 2](Part
 
 #### 3. "Hello, world!" .NET Core
 
-Once you have a __configured__ Ubuntu 16.04 LTS x64 head over to __[Part 3](Part3.md)__.
+Once you have __configured__ Ubuntu 16.04 LTS x64 head over to __[Part 3](Part3.md)__.
 
 #### 4. "Hello, world!" ASP.NET Core
 
-So you have said your "first hello" to .NET Core? Continue on with __[Part 4](Part4.md)__.
+So you have said your _first hello_ to .NET Core? Continue on with __[Part 4](Part4.md)__.
 
 #### 5. "Hello, world!" Docker
 
-And a "second hello" to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.md)__.
+And a _second hello_ to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.md)__.
 
 #### 6. OmniSharp
 
-Once you made your "third hello" to Docker embark on __[Part 6](Step6.md)__.
+Once you made your _third hello_ to Docker embark on __[Part 6](Step6.md)__.
 
 #### 7. Visual Studio Code
 
