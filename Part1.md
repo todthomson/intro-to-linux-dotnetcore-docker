@@ -6,7 +6,7 @@ First we'll get a basic Ubuntu Linux Installation up and running.
 
 ## Prerequisites
 
-1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.04-desktop-amd64.iso`) from your local Ubuntu mirror to save your quota and to download it as fast as possible. We're using _Ubuntu Desktop 'Xenial Xerus' 16.04 LTS_ as it's "unofficially supported" (full support is coming in the RTW) and it's the primary Linux distribution (and version) being used by the .NET Core team.
+1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.04-desktop-amd64.iso`) from your local Ubuntu mirror (so as to save your quota and to download it as fast as possible). We're using _Ubuntu Desktop 'Xenial Xerus' 16.04 LTS_ as it's "unofficially supported" (full support is coming in the RTW) and it's the primary Linux distribution (and version) being used by the .NET Core team.
 
 2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. Windows `VirtualBox-5.0.22-108108-Win.exe` or MacOSX `VirtualBox-5.0.22-108108-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.0.22-108108.vbox-extpack`). This extension pack contains host drivers for USB etc.
 
@@ -30,23 +30,23 @@ First we'll get a basic Ubuntu Linux Installation up and running.
 
 1. Click __New__ in VirtualBox to begin the process of creating your new VM.
 
-2. Give your VM a __name__ (e.g. Ubuntu), select __type__ _Linux_, __version__ _Ubuntu (64-bit)_ and then click __continue__.
+2. Give your VM a __name__ (e.g. Ubuntu), select __type__ _Linux_, __version__ _Ubuntu (64-bit)_ and then click __next__.
 
   ![3-name-and-os](Part1/3-name-and-os.png)
 
-3. Determine how much memory (RAM) to dedicate to your VM. I recommend a minimum of `2048MiB` and a maximum of `50%` of your host's physical memory e.g. in my case I have a MacBook Pro with `16GiB` of memory so I chose to configure my new VM with `4096MiB` of memory. Then click __continue__.
+3. Determine how much memory (RAM) to dedicate to your VM. I recommend a minimum of `2048MiB` and a maximum of `50%` of your host's physical memory e.g. in my case I have a MacBook Pro with `16GiB` of memory so I chose to configure my new VM with `4096MiB` of memory. Then click __next__.
 
   ![4-memory-size](Part1/4-memory-size.png)
 
-4. Leave the option _Create a virtual hard disk now_ in place and click __continue__.
+4. Leave the option _Create a virtual hard disk now_ in place and click __create__.
 
   ![5-create-hdd](Part1/5-create-hdd.png)
 
-5. Leave the option _VDI (VirtualBox Disk Image)_ in place and click __continue__.
+5. Leave the option _VDI (VirtualBox Disk Image)_ in place and click __next__.
 
   ![6-hdd-file-type](Part1/6-hdd-file-type.png)
 
-6. Leave the option _Dynamically allocated_ in place and click __continue__.
+6. Leave the option _Dynamically allocated_ in place and click __next__.
 
   ![7-dynamically-allocated-disk](Part1/7-dynamically-allocated-disk.png)
 
@@ -198,7 +198,7 @@ __Done!__ Click __OK__ to save the VM settings.
 
   e. For ease of use (and as this is just a VM) select __log in automatically__.
 
-  f. Click __continue__ to begin the process of installing your new Linux system.
+  f. click __next__ to begin the process of installing your new Linux system.
 
   ![25-who-are-you](Part1/25-who-are-you.png)
 
