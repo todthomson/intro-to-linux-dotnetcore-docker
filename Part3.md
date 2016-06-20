@@ -134,4 +134,4 @@ Explore and build a .NET Core application.
 
 __Excellent!__ You have said hello to the world of _.NET Core_.
 
-Have a quick break and then continue with [4. "Hello, world!" ASP.NET Core](Part4.md).
+It's time to break for lunch before continuing with [4. "Hello, world!" ASP.NET Core](Part4.md).
