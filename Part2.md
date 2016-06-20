@@ -254,7 +254,7 @@ Now run `code --disable-gpu` again to confirm that Visual Studio Code is still a
 
 ![21-umake-3](Part2/21-umake-3.png)
 
-## An exercise for the reader...
+## _All right stop, collaborate and listen!_
 
 Add `/home/readify/.local/share/umake/ide/visual-studio-code` to your `$PATH` and reboot to confirm that it's permanent (survives a reboot).
 

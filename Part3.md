@@ -126,7 +126,7 @@ cat Program.cs
 
 Superb! The world of .NET Core on Ubuntu Linux is now open to us...
 
-## An exercise for the reader...
+## _All right stop, collaborate and listen!_
 
 Explore and build a .NET Core application.
 

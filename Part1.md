@@ -208,7 +208,7 @@ __Done!__ Click __OK__ to save the VM settings.
 
 ![26-intel-hd-audio-reboot-error](Part1/26-intel-hd-audio-reboot-error.png)
 
-## An exercise for the reader...
+## _All right stop, collaborate and listen!_
 
 Login to your "new shiny" Linux VM and see if you can work out how to play a game of __Beneath a Steel Sky, Freeware CD Version__. The game files `bass-cd-1.2.zip` are available on the USB flash drive though you probably won't need them.
 
