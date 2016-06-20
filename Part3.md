@@ -42,11 +42,15 @@ sudo apt-get update
 
 Next let's see what .NET Core versions are now available.
 
+```
+apt-cache search dotnet*
+```
+
 ![3-list-dotnet-core-versions](Part3/3-list-dotnet-core-versions.png)
 
 #### Installing .NET Core
 
-OK now we can install the _newest_ version of .NET Core.
+Now we can install the _newest_ version of .NET Core.
 
 ```
 sudo apt-get install dotnet-dev-1.0.0-preview2-003119
@@ -56,11 +60,11 @@ sudo apt-get install dotnet-dev-1.0.0-preview2-003119
 
 ![5-install-latest-dotnet-core-2](Part3/5-install-latest-dotnet-core-2.png)
 
-You can find more information about versions of the .NET CLI [here](https://github.com/dotnet/cli).
+You can find out more information on versions of the .NET CLI [here](https://github.com/dotnet/cli).
 
 #### Smoke Testing .NET Core
 
-Let's check the version of `dotnet` that we now have available.
+Let's check the version of `dotnet` we now have available.
 
 ```
 dotnet --version
@@ -68,11 +72,13 @@ dotnet --version
 
 ![6-checking-dotnet-core-version](Part3/6-checking-dotnet-core-version.png)
 
-Awesome! We now have version `1.0.0-preview2-003119` of .NET Core.
+Excellent! We now have version `1.0.0-preview2-003119` of .NET Core.
 
 __TODO: (Tod) CONTINUE UPDATING FROM HERE...__
 
-#### Initialise some code
+#### Creating a .NET Core Project
+
+Let's create a new .NET Core Project using the `new` project scaffolding command.
 
 ```
 mkdir DotNetCoreTestApp
@@ -86,33 +92,43 @@ cd DotNetCoreTestApp
 dotnet new
 ```
 
-![6-dotnet-new-project](Part3/6-dotnet-new-project.png)
+![7-dotnet-new-project](Part3/7-dotnet-new-project.png)
 
-#### Run package restore
+#### Executing NuGet Package Restore
+
+To run our new `DotNetCoreTestApp` we'll need to restore our NuGet packages first.
 
 ```
 dotnet restore
 ```
 
-![7-dotnet-restore-fail](Part3/7-dotnet-restore-fail.png)
+![8-dotnet-restore](Part3/8-dotnet-restore.png)
 
-#### Oh no!
+#### Executing the Application
 
-So it turns out that `api.nuget.org` does not yet contain the .NET Core packages. You can find out more about this issue [here](https://github.com/dotnet/cli/issues/535). Let's try `dotnet restore` again, but this time we'll supply the package source as an extra parameter.
-
-```
-dotnet restore -s https://myget.org/f/dotnet-core
-```
-
-![8-dotnet-restore-success](Part3/8-dotnet-restore-success.png)
-
-#### Run the application
+All that is left now is to execute our new .NET Core Application.
 
 ```
 dotnet run
 ```
 
 ![9-dotnet-run](Part3/9-dotnet-run.png)
+
+#### Smoke & Mirrors...
+
+Let's confirm it's not all _"an illusion Michael"_.
+
+```
+cat Program.cs
+```
+
+![10-view-source](Part3/10-view-source.png)
+
+Superb! The world of .NET Core on Ubuntu Linux is now open to us...
+
+## An exercise for the reader...
+
+Explore and build a .NET Core application.
 
 ## End of Part 3
 
