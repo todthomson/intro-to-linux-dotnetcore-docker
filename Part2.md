@@ -27,11 +27,7 @@ Time to switch back to our Ubuntu Linux VM.
 2. Run the following command to install some tools we will use for compiling some kernel modules build and testing our OpenGL acceleration is working (_apologies you will probably have to type this bit yourself_):
 
   ```
-  sudo apt-get install mesa-utils
-  ```
-
-  ```
-  sudo apt-get install dkms build-essential linux-headers-$(uname -r)
+  sudo apt-get install mesa-utils dkms build-essential linux-headers-$(uname -r)
   ```
 
 3. Mount the _VirtualBox Guest Additions ISO_ by selecting __Devices => Insert Guest Additions CD image...__.
