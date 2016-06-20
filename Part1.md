@@ -218,6 +218,6 @@ You'll know you have it working when you see the following:
 
 ## End of Part 1
 
-__Congrats!__ You now have fresh Linux VM.
+__Congrats!__ You now have fresh Ubuntu Linux VM.
 
 Have some morning tea and then head over to [2. Ubuntu Linux Configuration & Maintenance](Part2.md).
