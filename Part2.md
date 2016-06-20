@@ -258,7 +258,7 @@ Now run `code --disable-gpu` again to confirm that Visual Studio Code is still a
 
 Add `/home/readify/.local/share/umake/ide/visual-studio-code` to your `$PATH` and reboot to confirm that it's permanent (survives a reboot).
 
-You'll know you have it working when you can run `code --disable-gpu` from any location.
+You'll know you have it working when you can run `code --disable-gpu` from any location...
 
 ## End of Part 2
 

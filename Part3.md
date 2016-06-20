@@ -128,7 +128,9 @@ Superb! The world of .NET Core on Ubuntu Linux is now open to us...
 
 ## _All right stop, collaborate and listen!_
 
-Explore and build a .NET Core application.
+Explore .NET Core and/or build a new .NET Core application.
+
+The [.NET Core Concepts](https://dotnet.github.io/docs/core-concepts/index.html) may be useful to you...
 
 ## End of Part 3
 
