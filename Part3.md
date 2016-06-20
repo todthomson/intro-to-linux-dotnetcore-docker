@@ -8,12 +8,24 @@ __Note:__ In order to avoid excessive rehashing of work that's currently in a st
 
 For more information see [here](https://www.microsoft.com/net/core#ubuntu). The following is practically verbatim from that source, except that we're installing it on Ubuntu 16.04 LTS (the latest) not 14.04.4 LTS (from two years ago).
 
-#### Add the .NET Core APT feed
+#### Are we up to date?
 
-First let's add the .Net Core APT feed.
+First let's check we're completely up to date.
 
 ```
-sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
+sudo apt-get update && sudo apt-get upgrade
+```
+
+__Note:__ If you see any errors here please resolve them before continuing.
+
+#### Adding the .NET Core APT feed
+
+Now we're up to date let's add the .NET Core APT feed.
+
+__Note:__ That we are specifying `xenial main` not `trusty main` here as we're using Ubuntu 16.04 LTS ([Xenial Xerus](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes)) rather than Ubuntu 14.04.4 LTS ([Trusty Tahr](https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes)).
+
+```
+sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
 ```
 
 ```
@@ -26,151 +38,39 @@ sudo apt-get update
 
 ![2-add-dotnet-core-apt-feed](Part3/2-add-dotnet-core-apt-feed.png)
 
-#### Install .NET Core (Take 1)
+#### Checking Available .NET Core Versions
 
-Next let's install .Net Core.
+Next let's see what .NET Core versions are now available.
 
-```
-sudo apt-get install dotnet-dev-1.0.0-preview1-002702
-```
+![3-list-dotnet-core-versions](Part3/3-list-dotnet-core-versions.png)
 
-![3-install-dotnet-core-failure](Part3/3-install-dotnet-core-failure.png)
+#### Installing .NET Core
 
-Whoops! That didn't work too well. We've encountered an issue due to installing on Ubuntu 16.04 not 14.04.4 (the RC2 supported platform). Let's fix that now.
-
-#### Fixing .NET Core on Ubuntu 16.04
-
-From a 1 minute Google search we can [find the solution](http://donovanbrown.com/post/2016/05/29/Installing-NET-Core-RC2-on-Ubuntu-1604).
+OK now we can install the _newest_ version of .NET Core.
 
 ```
-wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu52_52.1-8ubuntu0.2_amd64.deb
+sudo apt-get install dotnet-dev-1.0.0-preview2-003119
 ```
 
-```
-sudo dpkg -i libicu52_52.1-8ubuntu0.2_amd64.deb
-```
+![4-install-latest-dotnet-core-1](Part3/4-install-latest-dotnet-core-1.png)
 
-![4-fix-dotnet-core-1604](Part3/4-fix-dotnet-core-1604.png)
+![5-install-latest-dotnet-core-2](Part3/5-install-latest-dotnet-core-2.png)
 
-#### Install .NET Core (Take 2)
+You can find more information about versions of the .NET CLI [here](https://github.com/dotnet/cli).
 
-OK let's try installing .Net Core again.
+#### Smoke Testing .NET Core
 
-```
-sudo apt-get install dotnet-dev-1.0.0-preview1-002702
-```
-
-![5-install-dotnet-core-success-1](Part3/5-install-dotnet-core-success-1.png)
-
-![6-install-dotnet-core-success-2](Part3/6-install-dotnet-core-success-2.png)
-
-Success! Let's see what's next...
-
-#### Check for a newer version of .NET Core
-
-Let's see if there's a newer version of .NET Core available.
-
-```
-sudo apt-get update && sudo apt-get upgrade
-```
-
-![7-update-and-upgrade-dotnet-core](Part3/7-update-and-upgrade-dotnet-core.png)
-
-There isn't, which is good news. We are completely up to date.
-
-#### Testing .NET Core version
-
-Let's check the version of `dotnet` that we've have.
+Let's check the version of `dotnet` that we now have available.
 
 ```
 dotnet --version
 ```
 
-![8-check-dotnet-core-version-failure](Part3/8-check-dotnet-core-version-failure.png)
+![6-checking-dotnet-core-version](Part3/6-checking-dotnet-core-version.png)
 
-Oh no! The "classic" Unix [segfault](https://en.wikipedia.org/wiki/Segmentation_fault). Let's see what we can do about fixing this up...
+Awesome! We now have version `1.0.0-preview2-003119` of .NET Core.
 
-#### Fixing .NET Core on Ubuntu 16.04 (again)
-
-Firstly let's take a look at the version of `libicu52` we installed earlier.
-
-```
-ls ~
-```
-
-![9-check-libicu52-version](Part3/9-check-libicu52-version.png)
-
-We can see that we're currently using `libicu52_52.1-8ubuntu0.2_amd64.deb`.
-
-It turns out this is not the version of `libicu52_52.1` we want.
-
-The [version we actually want](http://zablo.net/blog/post/run-and-debug-asp-net-core-rc2-ubuntu-16-04) is  `libicu52_52.1-3ubuntu0.4_amd64.deb`.
-
-![10-check-latest-libicu52-version.png](Part3/10-check-latest-libicu52-version.png)
-
-Yep we're trying to run .NET Core on an as-yet-unsupported platform.
-
-But let's see if we can fix that up now.
-
-1. Firstly let's remove the version install in error.
-
-  ```
-  sudo dpkg --purge --force-all libicu52
-  ```
-
-  ![11-dpkg-force-purge-libicu52](Part3/11-dpkg-force-purge-libicu52.png)
-
-2. Then let's delete the old `.deb` package file so we don't get confused.
-
-  ```
-  rm ~/libicu52_52.1-8ubuntu0.2_amd64.deb
-  ```
-
-  ![12-remove-old-debian-package](Part3/12-remove-old-debian-package.png)
-
-3. Next we'll download the correct `libicu52` package version.
-
-  ```
-  wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu52_52.1-3ubuntu0.4_amd64.deb
-  ```
-
-  ![13-wget-other-libicu52-version](Part3/13-wget-other-libicu52-version.png)
-
-4. Finally we'll install the new version of `libicu52`.
-
-  ```
-  sudo dpkg -i libicu52_52.1-3ubuntu0.4_amd64.deb
-  ```
-
-  ![14-install-new-libicu52](Part3/14-install-new-libicu52.png)
-
-#### Testing .NET Core version (again)
-
-Let's again check the version of `dotnet` that we've have.
-
-```
-dotnet --version
-```
-
-![8-check-dotnet-core-version-failure](Part3/8-check-dotnet-core-version-failure.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Awesome! We now have version `1.0.0-beta-001673` of .NET Core.
+__TODO: (Tod) CONTINUE UPDATING FROM HERE...__
 
 #### Initialise some code
 
