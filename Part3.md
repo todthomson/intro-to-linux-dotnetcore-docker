@@ -124,7 +124,7 @@ cat Program.cs
 
 ![10-view-source](Part3/10-view-source.png)
 
-Superb! The world of .NET Core on Ubuntu Linux is now open to us...
+Superb! The world of .NET Core on Ubuntu Linux is now open to you...
 
 ## _All right stop, collaborate and listen!_
 
