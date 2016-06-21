@@ -18,9 +18,7 @@ The world of ASP.NET Core has changed significantly from RC1 to RC2.
 
   ![4-dnu-is-out](Part4/4-dnu-is-out.png)
 
-For anyone with RC1 applications there _is_ a [migration path](https://dotnet.github.io/docs/core-concepts/dnx-migration.html).
-
-But that's nothing to worry about. The functions previously provided by `dnx`, `dnvm` and `dnu` are now provided by the `dotnet` CLI.
+But that's nothing to worry about. For anyone with an RC1 application there _is_ a [migration path](https://dotnet.github.io/docs/core-concepts/dnx-migration.html) and the functions previously provided by `dnx`, `dnvm` and `dnu` are now provided by the `dotnet` CLI.
 
 __Awesome!__ Interacting with ASP.NET Core is now very simple indeed.
 
@@ -38,7 +36,7 @@ So I lied... Clearly you _already_ had it installed... ;)
 
 ## Creating an ASP.NET Core Project
 
-Let's create a new ASP.NET Core Project. We begin the process exactly as we did for .NET Core; by using the `new` project scaffolding command.
+OK. Let's create a new ASP.NET Core Project. We begin the process exactly as we did for .NET Core; by using the `new` project scaffolding command.
 
 ```
 mkdir AspDotNetCoreTestApp
@@ -78,7 +76,7 @@ As we've seen before a "vanilla" .NET Core / ASP.NET Core application is just a 
 
 #### Program.cs
 
-Let's add some "web stuff" to our .NET Core application to make it into an ASP.NET Core application. Open `Program.cs` with your text editor of choice and update it as follows.
+Fine. Let's add some "web stuff" to our .NET Core application to make it into an ASP.NET Core application. Open `Program.cs` with your text editor of choice and update it as follows.
 
 ```C#
 using Microsoft.AspNetCore.Hosting;
