@@ -2,363 +2,240 @@
 
 ![1-aspnet-core](Part4/1-aspnet-core.png)
 
-## ASP.NET Core on Ubuntu Linux
+## ASP.NET Core on Ubuntu Linux (RC1)
 
-__Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install ASP.NET Core on Ubuntu Linux.
+The world of ASP.NET Core has changed significantly from RC1 to RC2.
 
-For more information see [here](https://docs.asp.net/en/latest/getting-started/installing-on-linux.html#installing-on-ubuntu-14-04). The following is practically verbatim from that source.
+1. `DNX` the _.NET Execution Runtime_ is no more.
 
-#### Install the .NET Version Manager (DNVM)
+  ![2-dnx-is-no-more](Part4/2-dnx-is-no-more.png)
 
-[DNVM](https://github.com/aspnet/dnvm) is used to install different versions of the .NET Execution Environment (DNX).
+2. `DNVM` the _.NET Version Manager_ (the install script for obtaining `DNX`) is gone.
 
-```
-curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | \
-DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
-```
-
-![2-dnvm-install](Part4/2-dnvm-install.png)
-
-```
-source ~/.dnx/dnvm/dnvm.sh
-```
-
-```
-dnvm --version
-```
-
-![3-dnvm-version](Part4/3-dnvm-version.png)
-
-#### Install the .NET Execution Environment (DNX)
-
-> [DNX](https://github.com/aspnet/dnx) contains the code required to bootstrap and run an application, including the compilation system, SDK tools, and the native CLR hosts.
-
-The .NET Execution Environment (DNX) is used to build and run .NET projects.
-
-```
-sudo apt-get update
-```
-
-```
-sudo apt-get install libunwind8 gettext libssl-dev libcurl4-openssl-dev zlib1g libicu-dev uuid-dev
-```
-
-![4-dnx-prerequisites](Part4/4-dnx-prerequisites.png)
-
-```
-dnvm upgrade -r coreclr -alias coreclr-latest
-```
-
-![5-upgrade-latest-coreclr](Part4/5-upgrade-latest-coreclr.png)
-
-#### Install Mono
-
-> [Mono](http://www.mono-project.com/) is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime.
-
-```
-sudo apt-get install mono-complete
-```
-
-![6-install-mono-complete-1](Part4/6-install-mono-complete-1.png)
-
-![7-install-mono-complete-2](Part4/7-install-mono-complete-2.png)
-
-![8-install-mono-complete-3](Part4/8-install-mono-complete-3.png)
-
-#### Upgrade to the latest Mono
-
-As you can see above Ubuntu 14.04.4 LTS comes with version `3.2.8` of Mono. Let's upgrade to the latest version `4.2.2` directly from the _The Mono Project_.
-
-```
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
---recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-```
-
-![9-upgrade-mono-1](Part4/9-upgrade-mono-1.png)
-
-```
-echo "deb http://download.mono-project.com/repo/debian wheezy main" | \
-sudo tee /etc/apt/sources.list.d/mono-xamarin.list
-```
-
-![10-upgrade-mono-2](Part4/10-upgrade-mono-2.png)
-
-```
-sudo apt-get update
-```
-
-```
-sudo apt-get upgrade
-```
-
-![11-upgrade-mono-3](Part4/11-upgrade-mono-3.png)
-
-![12-upgrade-mono-4](Part4/12-upgrade-mono-4.png)
-
-![13-upgrade-mono-5](Part4/13-upgrade-mono-5.png)
-
-![14-upgrade-mono-6](Part4/14-upgrade-mono-6.png)
-
-If mono has not upgraded correctly, then it may be because a new version has been released and the dependencies aren't working. Try removing mono, removing dependencies, and then reinstalling:
-
-```
-sudo apt-get remove mono-complete
-```
-
-```
-sudo apt-get autoremove
-```
-
-```
-sudo apt-get install mono-complete
-```
-
-#### Upgrade to the latest DNX Mono
-
-The following command will upgrade to the latest version of DNX which wraps Mono. After this you should have access to both the latest CoreCLR and Mono via DNX.
-
-```
-dnvm upgrade -r mono -alias mono-latest
-```
+  ![3-dnvm-is-gone](Part4/3-dnvm-is-gone.png)
 
-![15-dnvm-upgrade-mono](Part4/15-dnvm-upgrade-mono.png)
+3. `DNU` the _.NET Developer Utility_ (for managing dependencies, building and publishing your applications) is out the window.
 
-#### DNVM housekeeping
+  ![4-dnu-is-out](Part4/4-dnu-is-out.png)
 
-We now have DNVM, DNX, CoreCLR and Mono installed and up to date. Now let's take a look at a few DNVM housekeeping commands that will be used moving forward. First let's make sure we know how to upgrade DNX itself.
+For anyone with RC1 applications there _is_ a [migration path](https://dotnet.github.io/docs/core-concepts/dnx-migration.html).
 
-```
-dnvm update-self
-```
-
-```
-dnvm
-```
-
-![16-dnvm](Part4/16-dnvm.png)
+But that's nothing to worry about. The functions previously provided by `dnx`, `dnvm` and `dnu` are now provided by the `dotnet` CLI.
 
-We're up-to-date and we have access to the `dnvm` command. Next let's see how we can list the DNX runtimes installed.
-
-```
-dnvm list
-```
+__Awesome!__ Interacting with ASP.NET Core is now very simple indeed.
 
-![17-dnvm-list](Part4/17-dnvm-list.png)
+## ASP.NET Core on Ubuntu Linux (RC2)
 
-We have access to the CoreCLR and Mono runtimes via DNX. The small problem is we have our _default_ alias set to Mono. Let's update that.
+All you need to do install ASP.NET Core is to run the following command.
 
 ```
-dnvm alias default coreclr-latest
+dotnet
 ```
 
-![18-dnvm-alias-coreclr-as-default](Part4/18-dnvm-alias-coreclr-as-default.png)
+![5-installing-aspnet-core.png](Part4/5-installing-aspnet-core.png)
 
-#### Build and install libuv
+So I lied... Clearly you _already_ had it installed... ;)
 
-> [Libuv](https://github.com/libuv/libuv) is a multi-platform support library with a focus on asynchronous I/O.
+## Creating an ASP.NET Core Project
 
-It was primarily developed for use by [Node.js](https://nodejs.org), but we use it via [Kestrel](https://github.com/aspnet/KestrelHttpServer), a cross-platform HTTP server for hosting ASP.NET Core web applications.
+Let's create a new ASP.NET Core Project. We begin the process exactly as we did for .NET Core; by using the `new` project scaffolding command.
 
 ```
-sudo apt-get install make automake libtool curl
+mkdir AspDotNetCoreTestApp
 ```
 
-![19-build-libuv-1](Part4/19-build-libuv-1.png)
-
 ```
-curl -sSL https://github.com/libuv/libuv/archive/v1.8.0.tar.gz | sudo tar zxfv - -C /usr/local/src
+cd AspDotNetCoreTestApp
 ```
-
-![20-build-libuv-2](Part4/20-build-libuv-2.png)
 
 ```
-cd /usr/local/src/libuv-1.8.0
+dotnet new
 ```
 
-```
-sudo sh autogen.sh
-```
+![6-dotnet-new-project](Part4/6-dotnet-new-project.png)
 
-![21-build-libuv-3](Part4/21-build-libuv-3.png)
+Let's take a closer look this time at what the `dotnet new` command creates for us.
 
 ```
-sudo ./configure
+ls
 ```
-
-![22-build-libuv-4](Part4/22-build-libuv-4.png)
-
-![23-build-libuv-5](Part4/23-build-libuv-5.png)
 
 ```
-sudo make
+cat Program.cs
 ```
 
-![24-build-libuv-6](Part4/24-build-libuv-6.png)
-
 ```
-sudo make install
+cat project.json
 ```
 
-![25-build-libuv-7](Part4/25-build-libuv-7.png)
+![7-new-program-cs-project-json](Part4/7-new-program-cs-project-json.png)
 
-```
-sudo rm -rf /usr/local/src/libuv-1.8.0 && cd ~/
-```
+## Our first ASP.NET Core Web API
 
-```
-sudo ldconfig
-```
+As we've seen before a "vanilla" .NET Core / ASP.NET Core application is just a "main method" and a "project file".
 
-We now have `libuv` ready to go.
+> _But hang on... like... where's the web man?_
 
-#### Install Node.js (via NVM)
+#### Program.cs
 
-We'll be using Node.js to scaffold our ASP.NET Core application via [Yeoman](http://yeoman.io/).
+Let's add some "web stuff" to our .NET Core application to make it into an ASP.NET Core application. Open `Program.cs` with your text editor of choice and update it as follows.
 
-```
-sudo apt-get install build-essential libssl-dev
-```
+```C#
+using Microsoft.AspNetCore.Hosting;
 
-![26-install-node-1](Part4/26-install-node-1.png)
+namespace HelloUniverse
+{
+    public class HelloWorld
+    {
+        public static void Main(string[] args)
+        {
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseStartup<Startup>()
+                .Build();
 
-```
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+            host.Run();
+        }
+    }
+}
 ```
 
-![27-install-node-2](Part4/27-install-node-2.png)
+You can see that the job of the "main method" in an ASP.NET Core application is to:
 
-__Note:__ Close and reopen your terminal to start using `NVM`.
+1. Create the new `WebHostBuilder()` used to fluently configure the web host before execution.
 
-Let's take a look to see which versions of Node.js we have installed.
+2. `UseKestrel()` to instruct that the web server to be used in development is [Kestrel](https://github.com/aspnet/KestrelHttpServer).
 
-```
-nvm list
-```
-
-![28-install-node-3](Part4/28-install-node-3.png)
+3. To configure the web host to `.UseStartup<Startup>()` where `Startup` is the name of the class containing our bootstrapping code (more on this in a second).
 
-You guessed it, we don't have _any_ version of Node.js. Take a look at the versions of Node.js that are available to us.
+4. To `Build()` the web host configuration.
 
-```
-nvm list-remote
-```
+5. And lastly to `Run()` the web host i.e. Run `Startup` inside of Kestrel.
 
-![29-install-node-4](Part4/29-install-node-4.png)
+_Kestrel is built on top of [`libuv`](https://github.com/libuv/libuv) the HTTP server made famous by the [Node.js](https://nodejs.org/en/) project._
 
-![30-install-node-5](Part4/30-install-node-5.png)
+#### Startup.cs
 
-Now we can install the latest LTS version of Node.
-
-```
-nvm install v4.4.0
-```
+I'm sure you've realised we now need a class `Startup`. Create `Startup.cs` with your text editor of choice and update it as follows.
 
-![31-install-node-6](Part4/31-install-node-6.png)
+```C#
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
-Let's confirm that Node and NPM are installed.
+namespace HelloUniverse
+{
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMvc();
+        }
 
-```
-node -v && npm -v
+        public void Configure(IApplicationBuilder app) { }
+    }
+}
 ```
-
-![32-install-node-7](Part4/32-install-node-7.png)
-
-> Awesome! Oh wow! Like totally... ;)
 
-#### Install Yeoman
+You can see that the job of the "startup class" in an ASP.NET Core application is to:
 
-> Yeoman is the web's scaffolding tool for modern webapps.
+1. `ConfigureServices` used by your app (e.g. ASP.NET MVC Core, ASP.NET Web API Core, Entity Framework Core, Identity). In our case we're just using `AddMvc()` to add ASP.NET MVC (Web API) Core.
 
-```
-npm install -g gulp grunt-cli bower yo
-```
+2. `Configure` the _middleware_ in the request pipeline. At this point we're simply going to `UseMvc()` to use ASP.NET MVC (Web API) Core.
 
-![33-install-yo-1](Part4/33-install-yo-1.png)
+_If you're interested take a deeper look at [application startup](https://docs.asp.net/en/latest/fundamentals/startup.html)._
 
-![34-install-yo-2](Part4/34-install-yo-2.png)
+#### HelloWorldController.cs
 
-#### Upgrade NPM
+Lastly we need to implement our Web API endpoint. Create `HelloWorldController.cs` with your text editor of choice and update it as follows.
 
-Yeoman is recommending that we upgrade NPM so let's do that.
-
-```
-npm install -g npm
 ```
+using Microsoft.AspNetCore.Mvc;
 
-![35-upgrade-npm](Part4/35-upgrade-npm.png)
-
-#### Install the Yeoman ASP.NET Core generators
-
-__Note:__ Yeoman generators are just regular NPM packages.
-
+namespace HelloUniverse
+{
+    [Route("api/[controller]")]
+    public class HelloWorldController : Controller
+    {
+        // GET api/HelloWorld
+        [HttpGet]
+        public string Get()
+        {
+            return "Hello, world!";
+        }
+    }
+}
 ```
-npm install -g generator-aspnet
-```
-
-![36-generator-aspnet](Part4/36-generator-aspnet.png)
 
-#### Initialise some code
+#### Project.json
 
-Now we're going to scaffold a new __ASP.NET Core Web API__ application.
+Let's take another look at our `Project.json`.
 
 ```
-yo aspnet
+cat project.json
 ```
 
-![37-yo-aspnet](Part4/37-yo-aspnet.png)
+![8-project-json](Part4/8-project-json.png)
 
-As directed run the following commands to test your newly scaffolded application.
-
-```
-cd AspNetCoreWebApiTestApp
-```
+With your text editor of choice update `project.json` as follows.
 
-```
-dnu restore
+```json
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "debugType": "portable",
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0"
+    },
+    "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final"
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [
+        "dnxcore50"
+      ]
+    }
+  }
+}
 ```
 
-![38-dnu-restore-1](Part4/38-dnu-restore-1.png)
+That's all we should need for our first Web API.
 
-![39-dnu-restore-2](Part4/39-dnu-restore-2.png)
+## Running our ASP.NET Core Web API
 
-So far so good. Let's see what's next.
+First let's restore our NuGet pacages.
 
 ```
-dnu build
+dotnet restore
 ```
 
-![40-dnu-build-1](Part4/40-dnu-build-1.png)
+![9-dotnet-restore-1](Part4/9-dotnet-restore-1.png)
 
-![41-dnu-build-2](Part4/41-dnu-build-2.png)
+![10-dotnet-restore-2](Part4/10-dotnet-restore-2.png)
 
-That's not awesome. The first screenshot above should make the fix obvious. For some background information [see here](https://github.com/aspnet/Home/issues/1104).
+Now let's run our application.
 
 ```
-dnu build --framework dnxcore50
+dotnet run
 ```
-
-![42-dnu-build-dnxcore50-1](Part4/42-dnu-build-dnxcore50-1.png)
-
-![43-dnu-build-dnxcore50-2](Part4/43-dnu-build-dnxcore50-2.png)
 
-__Note:__ Another option is to remove the line `"dnx451": {},` from the `frameworks` section of `project.json`.
+![11-dotnet-run](Part4/11-dotnet-run.png)
 
-#### Run the application
-
-Running the application is simple.
-
-```
-dnx web
-```
+## Testing our ASP.NET Core Web API
 
-![44-dnx-web](Part4/44-dnx-web.png)
+???
 
-Open Firefox and navigate to `http://localhost:5000/api/values` to see your new _Web API_ in action.
+## An ?
 
-![45-web-api-in-action](Part4/45-web-api-in-action.png)
+???
 
 ## End of Part 4
 
 __Winning!__ You have a basic _Web API_ written in _ASP.NET Core_.
 
-Have a quick break and then continue with [5. "Hello, world!" Docker](Part5.md).
+Take a 5 minute break and then continue with [5. "Hello, world!" Docker](Part5.md).
