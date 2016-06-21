@@ -211,7 +211,7 @@ That's all we should need for our first Web API.
 
 ## Running our ASP.NET Core Web API
 
-First let's restore our NuGet pacages.
+First let's restore our NuGet packages.
 
 ```
 dotnet restore
@@ -231,11 +231,13 @@ dotnet run
 
 ## Testing our ASP.NET Core Web API
 
-???
+Open Firefox and navigate to `http://localhost:5000/api/HelloWorld`.
 
-## An ?
+![12-firefox-hello-world](Part4/12-firefox-hello-world.png)
 
-???
+## _All right stop, collaborate and listen!_
+
+Build out your ASP.NET Core Web API server with some more [HTTP methods](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and then update your .NET Core application to call your Web API `using System.Net.Http` (as a client).
 
 ## End of Part 4
 
