@@ -22,21 +22,21 @@ So you have said your _first hello_ to .NET Core? Continue on with __[Part 4](Pa
 
 And a _second hello_ to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.md)__.
 
-#### 7. Node.js
+#### 6. "Hello, world!" via Node.js & Yeoman
 
-TODO: Once you made your _third hello_ to Docker embark on __[Part 6](Part6.md)__.
+_(Work In Progress)_ Once you made your _third hello_ to Docker embark on __[Part 6](Part6.md)__.
 
 #### 7. OmniSharp
 
-TODO: ...
+__TODO: ...__
 
 #### 8. Visual Studio Code
 
-TODO: ...
+__TODO: ...__
 
 #### 9. Putting it all together...
 
-_Left as an exercise for the reader ;)_
+_Intentionally left as an exercise for the reader ;)_
 
 #### Feedback?
 

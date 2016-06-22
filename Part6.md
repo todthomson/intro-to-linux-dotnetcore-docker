@@ -1,4 +1,4 @@
-# 6. "Hello, world!" via Node.js and Yeoman
+# 6. "Hello, world!" via Node.js & Yeoman
 
 > _**Here be dragons! This section is probably out of date...**_
 
