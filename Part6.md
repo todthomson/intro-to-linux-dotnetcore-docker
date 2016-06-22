@@ -2,8 +2,6 @@
 
 ![1-node-js-and-yeoman](Part4/1-node-js-and-yeoman.png)
 
-__TODO: (Tod) FIX THE OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD!__
-
 ## Installing Node.js (via NVM)
 
 We'll be using Node.js to scaffold our ASP.NET Core application via [Yeoman](http://yeoman.io/).
