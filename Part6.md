@@ -40,7 +40,7 @@ nvm list-remote
 
 ![6-install-node-5](Part6/6-install-node-5.png)
 
-Now we can install the latest LTS version of Node.
+Now we can install the latest (LTS) version of Node.
 
 ```
 nvm install v4.4.0

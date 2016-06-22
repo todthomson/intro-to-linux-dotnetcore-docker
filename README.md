@@ -4,15 +4,15 @@
 
 #### 1. Ubuntu Linux Installation
 
-If you don't have a __fresh__ Ubuntu 16.04 LTS x64 installation then start at __[Part 1](Part1.md)__.
+If you don't have a __fresh__ Ubuntu 16.04 (LTS) x64 installation then start at __[Part 1](Part1.md)__.
 
 #### 2. Ubuntu Linux Configuration & Maintenance
 
-Now you have a __fresh__ Ubuntu 16.04 LTS x64 installation go to __[Part 2](Part2.md)__.
+Now you have a __fresh__ Ubuntu 16.04 (LTS) x64 installation go to __[Part 2](Part2.md)__.
 
 #### 3. "Hello, world!" .NET Core
 
-Once you have __configured__ Ubuntu 16.04 LTS x64 head over to __[Part 3](Part3.md)__.
+Once you have __configured__ Ubuntu 16.04 (LTS) x64 head over to __[Part 3](Part3.md)__.
 
 #### 4. "Hello, world!" ASP.NET Core
 
