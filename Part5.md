@@ -4,10 +4,6 @@ _**Note:** Apologies I ran out of time to screenshot and customise this section 
 
 ![1-lxc-docker](Part5/1-lxc-docker.png)
 
-## .NET Core on Docker on Ubuntu Linux
-
-_What a mouthful..._
-
 #### What is LXC (Linux Containers)?
 
 > [LXC](https://en.wikipedia.org/wiki/LXC) ([Linux Containers](https://linuxcontainers.org/)) is an operating-system-level virtualization method for running multiple isolated Linux systems (containers) on a control host using a single Linux kernel.
@@ -16,19 +12,17 @@ _What a mouthful..._
 
 > [Docker](https://en.wikipedia.org/wiki/Docker_(software)) is an open-source project that automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualization on Linux.
 
-#### Installing Docker 1.12 RC on Ubuntu Xenial 16.04 (LTS)
+## Installing Docker 1.12 RC on Ubuntu Xenial 16.04 (LTS)
 
-Follow the Ubuntu Xenial 16.04 ((LTS)) instructions [here](https://docs.docker.com/engine/installation/linux/ubuntulinux/) to install the Docker Engine 1.12 RC.
-
-#### Docker Run "Hello, world!"
+Follow the Ubuntu Xenial 16.04 (LTS) instructions [__here__](https://docs.docker.com/engine/installation/linux/ubuntulinux/) to install the Docker Engine 1.12 RC.
 
 Keep going until you get to `sudo docker run hello-world` and you will see the following.
 
 ![2-sudo-docker-run-hello-world](Part5/2-sudo-docker-run-hello-world.png)
 
-#### Optional configurations
+#### Optional Docker Configuration
 
-Now continue on and complete these _optional configurations_, these will make running Docker lower friction and more enjoyable.
+Now continue on and complete the following  _optional configurations_ as they will make running Docker lower friction and more enjoyable for you.
 
 1. [Create a docker group](https://docs.docker.com/engine/installation/linux/ubuntulinux/#create-a-docker-group) so you don't have to run Docker with `sudo`.
 
@@ -38,12 +32,18 @@ Now continue on and complete these _optional configurations_, these will make ru
 
 4. [Configure Docker to start on boot](https://docs.docker.com/engine/installation/linux/ubuntulinux/#configure-docker-to-start-on-boot) so you don't have to remember to start it every time.
 
+## .NET Core RC2 "Hello, world!" on Docker 1.12 RC
+
+Follow the instructions [__here__](https://www.microsoft.com/net/core#docker) to test drive .NET Core RC2 on Docker Engine 1.12 RC.
+
+Keep going until you get to `dotnet run` and you will see the following.
+
+![3-docker-dotnet-run](Part5/3-docker-dotnet-run.png)
 
 
 
 
-
-
+__TODO: (Tod)__ Continue on from here! :)
 
 
 
