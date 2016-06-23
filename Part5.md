@@ -28,9 +28,7 @@ Now continue on and complete the following  _optional configurations_ as they wi
 
 2. [Adjust memory and swap accounting](https://docs.docker.com/engine/installation/linux/ubuntulinux/#adjust-memory-and-swap-accounting) primarily to avoid getting spammed with warnings.
 
-3. [Configure a DNS server for use by Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/#configure-a-dns-server-for-use-by-docker) so that you don't resolve everything via Google's public DNS servers.
-
-4. [Configure Docker to start on boot](https://docs.docker.com/engine/installation/linux/ubuntulinux/#configure-docker-to-start-on-boot) so you don't have to remember to start it every time.
+3. [Configure Docker to start on boot](https://docs.docker.com/engine/installation/linux/ubuntulinux/#configure-docker-to-start-on-boot) so you don't have to remember to start it every time.
 
 ## .NET Core RC2 "Hello, world!" on Docker 1.12 RC
 
