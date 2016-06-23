@@ -1,33 +1,43 @@
-# GNU/Linux + .NET/ASP.NET Core + LXC/Docker
-
-__A tutorial on "how to" GNU/Linux + .NET/ASP.NET Core + LXC/Docker...__
+## An Introduction to Linux, .NET Core, ASP.NET Core & Docker
 
 ![1-nadella-loves-linux](README/1-nadella-loves-linux.jpg)
 
-## Step 1 - GNU/Linux Installation
+#### 1. Ubuntu Linux Installation
 
-If you _don't have a preexisting_ __Ubuntu 14.04.4 LTS VM__ then start at [Step 1](Step1.md).
+If you don't have a __fresh__ Ubuntu 16.04 (LTS) x64 installation then start at __[Part 1](Part1.md)__.
 
-## Step 2 - GNU/Linux Configuration & Maintenance
+#### 2. Ubuntu Linux Configuration & Maintenance
 
-Once you have a _fresh_ __Ubuntu 14.04.4 LTS VM__ go to [Step 2](Step2.md).
+Now you have a __fresh__ Ubuntu 16.04 (LTS) x64 installation go to __[Part 2](Part2.md)__.
 
-## Step 3 - .NET Core "Hello, world!"
+#### 3. "Hello, world!" .NET Core
 
-Once you have a _configured_ __Ubuntu 14.04.4 LTS VM__ (or my preconfigured VM) head over to [Step 3](Step3.md).
+Once you have __configured__ Ubuntu 16.04 (LTS) x64 head over to __[Part 3](Part3.md)__.
 
-## Step 4 - ASP.NET Core "Hello, world!"
+#### 4. "Hello, world!" ASP.NET Core
 
-Once you have said hello to __.NET Core__ continue on with [Step 4](Step4.md).
+So you have said your _first hello_ to .NET Core? Continue on with __[Part 4](Part4.md)__.
 
-## Step 5 - LXC/Docker "Hello, world!"
+#### 5. "Hello, world!" Docker
 
-Once you made your `HELO` to __ASP.NET Core__ strap on your helmet for [Step 5](Step5.md).
+And a _second hello_ to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.md)__.
 
-## Step 6 - Putting it all together
+#### 6. "Hello, world!" via Node.js & Yeoman
 
-_Left as an exercise for the reader..._
+_(Work In Progress)_ Once you made your _third hello_ to Docker embark on __[Part 6](Part6.md)__.
 
-## Feedback?
+#### 7. OmniSharp
+
+__TODO: ...__
+
+#### 8. Visual Studio Code
+
+__TODO: ...__
+
+#### 9. Putting it all together...
+
+_Intentionally left as an exercise for the reader ;)_
+
+#### Feedback?
 
 Hit me up on _Twitter_ [@todthomson](https://twitter.com/todthomson).
