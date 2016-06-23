@@ -24,7 +24,7 @@ And a _second hello_ to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.
 
 #### 6. "Hello, world!" via Node.js & Yeoman
 
-_(Work In Progress)_ Once you made your _third hello_ to Docker embark on __[Part 6](Part6.md)__.
+_(Work In Progress)_ Once you made your _third hello_ to Docker you might choose to embark on __[Part 6](Part6.md)__.
 
 #### 7. OmniSharp
 
