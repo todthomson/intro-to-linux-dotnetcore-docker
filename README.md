@@ -2,6 +2,8 @@
 
 [![Join the chat at https://gitter.im/todthomson/linux-dotnetcore-docker-how-to](https://badges.gitter.im/todthomson/linux-dotnetcore-docker-how-to.svg)](https://gitter.im/todthomson/linux-dotnetcore-docker-how-to?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+Slide deck (as presented) is available [here](https://speakerdeck.com/todthomson/an-introduction-to-linux-net-core-asp-dot-net-core-and-docker).
+
 ![1-nadella-loves-linux](README/1-nadella-loves-linux.jpg)
 
 #### 1. Ubuntu Linux Installation
