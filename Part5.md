@@ -30,25 +30,109 @@ Now continue on and complete the following  _optional configurations_ as they wi
 
 3. [Configure Docker to start on boot](https://docs.docker.com/engine/installation/linux/ubuntulinux/#configure-docker-to-start-on-boot) so you don't have to remember to start it every time.
 
-## .NET Core RC2 "Hello, world!" on Docker 1.12 RC
+## .NET Core "Hello, world!" on Docker 1.12 RC
 
-Follow the instructions [__here__](https://www.microsoft.com/net/core#docker) to test drive .NET Core RC2 on Docker Engine 1.12 RC.
+Lets give .net core and Docker a go. First we'll get the latest dotnet image and run it
 
-Keep going until you get to `dotnet run` and you will see the following.
+```
+docker run -it microsoft/dotnet:latest 
+```
 
-![3-docker-dotnet-run](Part5/3-docker-dotnet-run.png)
+![3-docker-run-dotnet](Part5/3-docker-run-dotnet.png)
+
+Build an app
+
+```
+mkdir mynewapp
+cd mynewapp
+dotnet new
+```
+
+![4-dotnet-new](Part5/4-dotnet-new.png)
+
+
+Run the app
+
+```
+dotnet restore
+dotnet run
+```
+
+![5-dotnet-run](Part5/5-dotnet-run.png)
 
 __Superb!__ You now have your "Hello, world!" on both vanilla Docker and .NET Core on Docker.
 
 ## _All right stop, collaborate and listen!_
 
-Bring your application from parts 3 and 4 over to Docker. The idea is that you will [compose](https://docs.docker.com/compose/) your .NET Core and ASP.NET Core applications from separate Docker containers into an integrated application-whole and get them communicating to each other over the [network](https://docs.docker.com/engine/userguide/networking/) i.e. this is the beginning of your journey into [Docker-hosted Microservices](https://dotnet.github.io/docs/tutorials/getting-started-with-csharp/microservices.html).
+Now what just happend there!!! Well first of all docker pulled down the latest```microsoft/dotnet``` image from docker hub and ran that in a new docker container the ```-it``` switch  
+
+**Here is where I am**
+
+* Intro to Docker concepts
+* Pick up part 5 and explain what actially goes on
+* 
+
+## Containers and images
+
+* What is what 
+* How to use
+* How o they play together
+* Docker files
+* Saving images
+
+## Commands - working from the terminal
+
+* ```docker ps```
+* ```docker images```
+* ```docker run```
+* ```docker pull```
+* 
+
+## Ensure containers run on startup
+
+* Upstart
+* Systemd
+* ?
+
+## Docker for Mac/Windows
+
+Just out of beta. Makes it possible to run docker 'almost' natively on Windows and Mac
+Elaborate
+
+## Kitematic (beta)
+
+A usefull GUI around docker still in beta
+
+## Useful commands
+
+stop all containers:
+
+```docker kill $(docker ps -q)```
+
+remove all containers
+
+```docker rm $(docker ps -a -q)```
+
+remove all docker images
+
+```docker rmi $(docker images -q)```
+
+------------------------------------------
+
 
 ## End of Part 5
 
 __Congratulations!__ You have completed the workshop.
 
 ## Next => Choose your own adventure...
+
+
+Step 6a (more dotnet core) or step 6b (more docker) 
+
+Figure out where the content below here should go
+-----------------------------------------
+
+Bring your application from parts 3 and 4 over to Docker. The idea is that you will [compose](https://docs.docker.com/compose/) your .NET Core and ASP.NET Core applications from separate Docker containers into an integrated application-whole and get them communicating to each other over the [network](https://docs.docker.com/engine/userguide/networking/) i.e. this is the beginning of your journey into [Docker-hosted Microservices](https://dotnet.github.io/docs/tutorials/getting-started-with-csharp/microservices.html).
 
 1. Use the [Ubuntu Apps Directory](https://apps.ubuntu.com/cat/) to "re-build" your desktop (with all the apps you love) in Ubuntu.
 
