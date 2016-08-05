@@ -64,90 +64,129 @@ __Superb!__ You now have your "Hello, world!" on both vanilla Docker and .NET Co
 
 ## _All right stop, collaborate and listen!_
 
-Now what just happend there!!! Well first of all docker pulled down the latest```microsoft/dotnet``` image from docker hub and ran that in a new docker container the ```-it``` switch  
+Now what just happend there!!! Well first of all, docker pulled down the latest```microsoft/dotnet``` image from docker hub and ran that in a new docker container with the ```-it``` switch. Let's go back a bit and explain some of the core components of Docker to better understand what that means.
 
-**Here is where I am**
+### Docker 101
 
-* Intro to Docker concepts
-* Pick up part 5 and explain what actially goes on
-* 
+First 3 main concepts to understand, Images, Containers and Registry's
 
-## Containers and images
+#### Images
 
-* What is what 
-* How to use
-* How o they play together
-* Docker files
-* Saving images
+> Docker images are the recipes for building containers. They are read-only and are usually composed of layers of other images with a base image of something like ubuntu, readhat or debian. The layers are built from ```Dockerfile```'s, which are just a set of instructions of how to build the image
+ 
+#### Containers
 
-## Commands - working from the terminal
+> Docker containers are running/runnable instances of docker images. Think if images and containers like classes and objects.
 
-* ```docker ps```
-* ```docker images```
-* ```docker run```
-* ```docker pull```
-* 
+#### Registry / Docker hub
 
-## Ensure containers run on startup
+> Docker registry's are repositories for docker images. The default public registry is the docker hub. Images are stored on the local host when pulled from the registry.
 
-* Upstart
-* Systemd
-* ?
+![6-docker-architecture](Part5/6-docker-architecture.svg)
 
-## Docker for Mac/Windows
+Docker itself is actually a client-server application where the client is the CLI application and the server is the docker daemon (like a windows service). The CLI is the users' way of sending commands to the server and the server then in turn does the heavy lifting of pulling images from the registry and building containers. 
 
-Just out of beta. Makes it possible to run docker 'almost' natively on Windows and Mac
-Elaborate
+Going back to our initial command ```docker run -it microsoft/dotnet:latest```. Here because we did not already have the image locally on the machine, docker will go to the docker hub registry and pull the image form the before building the container and run it.
 
-## Kitematic (beta)
+#### Exploring the Docker CLI
 
-A usefull GUI around docker still in beta
+We left our terminal inside the actual running container, lets exit (just run ```exit```) that and give a few of the basic docker CLI command a try.
 
-## Useful commands
+First of all let have a look at the images available on the local machine.
 
-stop all containers:
+```
+docker images
+```
+
+You should see a list with 2 images like this
+
+![7-docker-images](Part5/7-docker-images.png)
+
+Next, let have a look at the running containers
+
+```
+docker ps
+```
+
+![8-docker-ps](Part5/8-docker-ps.png)
+
+We have not images running now, but we do have some paused images. Try running;
+
+```
+docker ps -a
+```
+
+This will give us all containers on the system, running or not.
+
+![9-docker-ps-a](Part5/9-docker-ps-a.png)
+
+When we started this exercise we started the the ```microsoft/dotnet``` container with the ```-it``` switch, now let's start it again but add a ```d``` to the switch
+
+```
+docker run -itd microsoft/dotnet:latest
+```
+
+![10-docker-run-daemon](Part5/10-docker-run-daemon.png)
+
+This creates a new container start it but does not ```attach``` the console to it. Instead is just return the id of the container. Try running ```docker ps``` to see that now there is a running container. To attach to the console of the running container run;
+
+```
+docker attach <id/name of container>
+```
+
+__Protip__ to escape the container without stopping use the escape sequence Ctrl-p + Ctrl-q 
+
+![11-docker-attach](Part5/11-docker-attach.png)
+
+That's bit of basic intro to running docker commands, try to run
+
+```
+docker --help
+```
+
+And have a bit of a look around the possible commands. A few helpful commands for cleaning up could be:
+
+Stop all containers:
 
 ```docker kill $(docker ps -q)```
 
-remove all containers
+Remove all containers:
 
 ```docker rm $(docker ps -a -q)```
 
-remove all docker images
+Remove all docker images:
 
 ```docker rmi $(docker images -q)```
 
-------------------------------------------
+
+For more in-depth knowledge have a log at the [docker docs](https://docs.docker.com/engine/understanding-docker/)
+
+## Docker for Mac/Windows
+
+Recently Docker has also been released for macOS and Windows. Both versions run the client as native clients to the host OS but run the Docker Engine part (daemon) through a hypervisor, Hyper-V on Windows and [xhyve](https://github.com/mist64/xhyve/) on macOS. You can find a more elaborate description and download it for mac [here](https://docs.docker.com/docker-for-mac/) and for Windows [here](https://docs.docker.com/docker-for-windows/)
+
+
+#### Running "hello_world" on macOS on Docker
+
+![12-hello-world-macOS](Part5/12-hello-world-macOS.png)
+
+#### Running "hello_world" on Windows on Docker
+
+![13-hello-world-on-windows](Part5/13-hello-world-on-windows.png)
+
+
+## Kitematic (beta)
+
+Kitematic is a useful GUI application for managing Docker image and containers on macOS and Windows, description from the Docker docs:
+
+> Kitematic is an open source project built to simplify and streamline using Docker on a Mac or Windows (coming soon) PC. Kitematic automates the Docker installation and setup process and provides an intuitive graphical user interface (GUI) for running Docker containers. Kitematic integrates with Docker Machine to provision a VirtualBox VM and install the Docker Engine locally on your machine.
+
+![14-kitematic-dash](Part5/14-kitematic-dash.png)
+
 
 
 ## End of Part 5
 
-__Congratulations!__ You have completed the workshop.
-
-## Next => Choose your own adventure...
-
 
 Step 6a (more dotnet core) or step 6b (more docker) 
 
-Figure out where the content below here should go
------------------------------------------
-
-Bring your application from parts 3 and 4 over to Docker. The idea is that you will [compose](https://docs.docker.com/compose/) your .NET Core and ASP.NET Core applications from separate Docker containers into an integrated application-whole and get them communicating to each other over the [network](https://docs.docker.com/engine/userguide/networking/) i.e. this is the beginning of your journey into [Docker-hosted Microservices](https://dotnet.github.io/docs/tutorials/getting-started-with-csharp/microservices.html).
-
-1. Use the [Ubuntu Apps Directory](https://apps.ubuntu.com/cat/) to "re-build" your desktop (with all the apps you love) in Ubuntu.
-
-2. Continuing building-out and adding-to your [Microservices](http://martinfowler.com/articles/microservices.html) application.
-
-3. Ignore Docker completely and build a [Majestic Monolith](https://m.signalvnoise.com/the-majestic-monolith-29166d022228) on .NET Core.
-
-4. Have an existing .NET application? [Here's a guide on porting to .NET Core](https://blogs.msdn.microsoft.com/dotnet/2016/02/10/porting-to-net-core/).
-
-5. Know a good FOSS .NET framework or library that isn't yet available on .NET Core? Mark Rendle says [port it to .NET Core](https://blog.rendle.io/net-core-a-call-to-action/). Go go go!
-
-6. Looking for something new? Interested in JavaScript? Try out my "work in progress" __Part 6__ [.NET Core "Hello, world!" via Node.js & Yeoman](Part6.md).
-
-Or just do whatever takes your fancy, but remember...
-
-__Production or it didn't happen!__
-
-I encourage you to share what you have built under an [OSI-approved license](https://opensource.org/licenses) on [GitHub](https://github.com/).
