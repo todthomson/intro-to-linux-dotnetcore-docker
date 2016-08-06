@@ -32,7 +32,7 @@ Now continue on and complete the following  _optional configurations_ as they wi
 
 ## .NET Core "Hello, world!" on Docker 1.12 RC
 
-Lets give .net core and Docker a go. First we'll get the latest dotnet image and run it
+Lets give .net core and Docker a go. First we'll get the latest dotnet docker image and run it.
 
 ```
 docker run -it microsoft/dotnet:latest 
@@ -40,7 +40,7 @@ docker run -it microsoft/dotnet:latest
 
 ![3-docker-run-dotnet](Part5/3-docker-run-dotnet.png)
 
-Build an app
+Create a new dotnet core app.
 
 ```
 mkdir mynewapp
@@ -51,7 +51,7 @@ dotnet new
 ![4-dotnet-new](Part5/4-dotnet-new.png)
 
 
-Run the app
+Restore the dependencies and run the app.
 
 ```
 dotnet restore
@@ -64,7 +64,7 @@ __Superb!__ You now have your "Hello, world!" on both vanilla Docker and .NET Co
 
 ## _All right stop, collaborate and listen!_
 
-Now what just happend there!!! Well first of all, docker pulled down the latest```microsoft/dotnet``` image from docker hub and ran that in a new docker container with the ```-it``` switch. Let's go back a bit and explain some of the core components of Docker to better understand what that means.
+Now what just happed there!!! Well first of all, docker pulled down the latest```microsoft/dotnet``` image from docker hub and ran that in a new docker container with the ```-it``` switch. Let's go back a bit and explain some of the core components of Docker to better understand what that means.
 
 ### Docker 101
 
@@ -72,7 +72,7 @@ First 3 main concepts to understand, Images, Containers and Registry's
 
 #### Images
 
-> Docker images are the recipes for building containers. They are read-only and are usually composed of layers of other images with a base image of something like ubuntu, readhat or debian. The layers are built from ```Dockerfile```'s, which are just a set of instructions of how to build the image
+> Docker images are the recipes for building containers. They are read-only and are usually composed of layers of other images with a base image of something like Ubuntu, Readh at or Debian. The layers are built from ```Dockerfile```'s, which are just a set of instructions of how to build the image.
  
 #### Containers
 
@@ -82,17 +82,18 @@ First 3 main concepts to understand, Images, Containers and Registry's
 
 > Docker registry's are repositories for docker images. The default public registry is the docker hub. Images are stored on the local host when pulled from the registry.
 
-![6-docker-architecture](Part5/6-docker-architecture.svg)
+![6-docker-architecture](Part5/6-docker-architecture.png)
 
-Docker itself is actually a client-server application where the client is the CLI application and the server is the docker daemon (like a windows service). The CLI is the users' way of sending commands to the server and the server then in turn does the heavy lifting of pulling images from the registry and building containers. 
+Docker itself is actually a client-server application where the client is the CLI application and the server is the docker daemon (like a windows service). The CLI is the users' way of sending commands to the server and the server then, in turn does the heavy lifting of pulling images from the registry and building containers. 
 
-Going back to our initial command ```docker run -it microsoft/dotnet:latest```. Here because we did not already have the image locally on the machine, docker will go to the docker hub registry and pull the image form the before building the container and run it.
+Going back to our initial command ```docker run -it microsoft/dotnet:latest```. 
+Because we did not already have the image locally on the machine, docker will go to the docker hub registry and pull the image form there before building the container and running it.
 
 #### Exploring the Docker CLI
 
-We left our terminal inside the actual running container, lets exit (just run ```exit```) that and give a few of the basic docker CLI command a try.
+We left our terminal inside the actual running container, let's exit that (just run ```exit```) and give a few of the basic docker CLI command a try.
 
-First of all let have a look at the images available on the local machine.
+First of all, let's have a look at the images available on the local machine.
 
 ```
 docker images
@@ -110,7 +111,7 @@ docker ps
 
 ![8-docker-ps](Part5/8-docker-ps.png)
 
-We have not images running now, but we do have some paused images. Try running;
+Hmm, no containers running, but we might have some stopped containers. Try running;
 
 ```
 docker ps -a
@@ -123,22 +124,22 @@ This will give us all containers on the system, running or not.
 When we started this exercise we started the the ```microsoft/dotnet``` container with the ```-it``` switch, now let's start it again but add a ```d``` to the switch
 
 ```
-docker run -itd microsoft/dotnet:latest
+docker run -itd --name dotnet microsoft/dotnet:latest
 ```
 
 ![10-docker-run-daemon](Part5/10-docker-run-daemon.png)
 
-This creates a new container start it but does not ```attach``` the console to it. Instead is just return the id of the container. Try running ```docker ps``` to see that now there is a running container. To attach to the console of the running container run;
+This creates a new container and starts it but does not ```attach``` the console to it. Instead is just returned the id of the container. Try running ```docker ps``` to see that we now have a running container. To attach to the console of the running container run;
 
 ```
-docker attach <id/name of container>
+docker attach dotnet
 ```
 
-__Protip__ to escape the container without stopping use the escape sequence Ctrl-p + Ctrl-q 
+__Protip__ to escape the container without stopping it, use the escape sequence Ctrl-p + Ctrl-q 
 
 ![11-docker-attach](Part5/11-docker-attach.png)
 
-That's bit of basic intro to running docker commands, try to run
+That's a bit of basic introduction to running docker commands, try to run
 
 ```
 docker --help
@@ -159,11 +160,11 @@ Remove all docker images:
 ```docker rmi $(docker images -q)```
 
 
-For more in-depth knowledge have a log at the [docker docs](https://docs.docker.com/engine/understanding-docker/)
+For more in-depth docker knowledge, have a log at the [docker docs](https://docs.docker.com/engine/understanding-docker/)
 
 ## Docker for Mac/Windows
 
-Recently Docker has also been released for macOS and Windows. Both versions run the client as native clients to the host OS but run the Docker Engine part (daemon) through a hypervisor, Hyper-V on Windows and [xhyve](https://github.com/mist64/xhyve/) on macOS. You can find a more elaborate description and download it for mac [here](https://docs.docker.com/docker-for-mac/) and for Windows [here](https://docs.docker.com/docker-for-windows/)
+Recently Docker has also been released for macOS and Windows. Both versions run the client part as native application to the host OS, but runs the Docker Engine part (daemon) through a hypervisor, Hyper-V on Windows and [xhyve](https://github.com/mist64/xhyve/) on macOS. You can find a more elaborate description of how to use and download it, for mac [here](https://docs.docker.com/docker-for-mac/) and for Windows [here](https://docs.docker.com/docker-for-windows/)
 
 
 #### Running "hello_world" on macOS on Docker

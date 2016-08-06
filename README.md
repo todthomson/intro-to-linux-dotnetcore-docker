@@ -35,6 +35,10 @@ _(Work In Progress)_ Once you made your _third hello_ to Docker you might choose
 _(Work In Progress)_ Now we have some Docker running. We know all the basics but how do actually we actually build applications? __[Part 6B](Part6b.md)__ will elaborate on linking, networking and composing. 
 
 
+#### Congratulations and your further journey
+_(Work In Progress)_ Ideas for where to go next, jump to __[Part the end](Congratulations.md)
+
+
 #### x. OmniSharp
 
 __TODO: ...__
