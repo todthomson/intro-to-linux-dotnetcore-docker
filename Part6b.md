@@ -2,6 +2,48 @@
 
 ## Intro to problem
 
+One i
+
+## Installing node and Yeoman
+
+[Node](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04)
+[Yeoman](https://docs.asp.net/en/latest/client-side/yeoman.html)
+
+## Build api and app
+
+### Api
+
+```
+    yo aspnet
+```
+
+Pick api
+
+```
+    dotnet retsotore
+    dotnet run
+```
+
+test on [localhost:5000/api/values](http://localhost:5000/api/values)
+
+### App
+
+```
+    yo aspnet
+```
+
+Pick basic web app
+
+```
+    dotnet retsotore
+    dotnet run
+```
+
+
+## Dockorizing
+
+### Docker files/build
+
 ### Linking
 
 ```bash
@@ -31,7 +73,12 @@ Run Rethinklogs app (and RethinkDb) --todo add volume
 
 ## Distrubuted
 
-## swarm 
+## Swarm 
 
+## Ensure containers run on startup
+
+* Upstart
+* Systemd
+* ?
 
 ## Reference to Wolfy's repo
