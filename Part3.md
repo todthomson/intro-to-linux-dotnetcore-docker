@@ -22,8 +22,6 @@ __Note:__ If you see any errors here please resolve them before continuing.
 
 Now we're up to date let's add the .NET Core APT feed.
 
-__Note:__ That we are specifying `xenial main` not `trusty main` here as we're using Ubuntu 16.04.1 (LTS) ([Xenial Xerus](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes)) rather than Ubuntu 14.04.4 (LTS) ([Trusty Tahr](https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes)).
-
 ```
 sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
 ```

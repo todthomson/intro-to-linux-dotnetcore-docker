@@ -71,7 +71,7 @@ Now you have a __fresh__ Ubuntu Linux installation go to __[Part 2](Part2.md)__.
 
 #### 3. "Hello, world!" .NET Core
 
-Once you have __configured__ Ubuntu 16.04 (LTS) x64 head over to __[Part 3](Part3.md)__.
+Once you have __configured__ Ubuntu Linux head over to __[Part 3](Part3.md)__.
 
 #### 4. "Hello, world!" ASP.NET Core
 
