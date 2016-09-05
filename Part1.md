@@ -6,9 +6,9 @@ First we'll get a basic Ubuntu Linux Installation up and running.
 
 ## Prerequisites
 
-1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.04.1-desktop-amd64.iso`) from your local Ubuntu mirror (so as to save your quota and to download it as fast as possible). We're using _Ubuntu Linux_ as it's the primary Linux distribution being used by the .NET Core team.
+1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.04.1-desktop-amd64.iso`) from your local Ubuntu mirror so as to save your quota and to download it as fast as possible. We're using _Ubuntu Linux_ as it's the primary Linux distribution being used by the .NET Core team.
 
-2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. Windows `VirtualBox-5.1.4-110228-Win.exe` or MacOSX `VirtualBox-5.1.4-110228-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.1.4-110228.vbox-extpack`). This extension pack contains host drivers for USB etc.
+2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice e.g. Windows `VirtualBox-5.1.4-110228-Win.exe` or MacOSX `VirtualBox-5.1.4-110228-OSX.dmg`. Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.1.4-110228.vbox-extpack`. This extension pack contains host drivers for USB etc.
 
 ## Installing and configuring VirtualBox
 
@@ -20,9 +20,9 @@ First we'll get a basic Ubuntu Linux Installation up and running.
 
 4. Update the "host key combination" in VirtualBox Preferences as follows:
 
-  a. (Macintosh) __Preferences... => Input => Virtual Machine__ and update the __Host Key Combination__ to _Right COMMAND_.
+  a. (MacOS) __Preferences... => Input => Virtual Machine__ and update the __Host Key Combination__ to _Right COMMAND_.
 
-  b. (Wintel) __File => Preferences... => Input => Virtual Machine__ and update the __Host Key Combination__ to _Right CTRL_.
+  b. (Windows) __File => Preferences... => Input => Virtual Machine__ and update the __Host Key Combination__ to _Right CTRL_.
 
   ![2-virtualbox-host-key](Part1/2-virtualbox-host-key.png)
 
@@ -50,9 +50,11 @@ First we'll get a basic Ubuntu Linux Installation up and running.
 
   ![7-dynamically-allocated-disk](Part1/7-dynamically-allocated-disk.png)
 
-7. Determine the maximum size for your __dynamically allocated disk__. I recommend setting this to a reasonable size which is less than the currently available space on the host disk e.g. in my case I have `182GiB` free so I set the maximum disk size to `128GB`. The other option is to set it to `2TB` and monitor actual `.vdi` file size yourself. This maximum size can be altered later via the command line tools so it's not _set in stone_.
+7. Determine the maximum size for your __dynamically allocated disk__. I recommend setting this to a reasonable size which is less than the currently available space on the host disk e.g. in my case I have `182GiB` free so I __set the maximum disk size to `128GB`__. The other option is to set it to `2TB` and monitor actual `.vdi` file size yourself. This maximum size can be altered later via the command line tools so it's not _set in stone_.
 
 8. Once you are happy with all your settings click __create__ to build your new VM and VHDD.
+
+__NOTE: Make sure you have set the maximum disk size to at least 128GB before continuing.__
 
   ![8-hdd-size](Part1/8-hdd-size.png)
 
@@ -92,7 +94,7 @@ You now have a new __powered off__ VM so we want to update the configuration usi
 
 #### System => Acceleration
 
-1. Set __paravirtualization interface__ to _KVM_ which is the recommended setting for Linux guests. When using a Windows guest you should set it to _Hyper-V_.
+1. Set __paravirtualization interface__ to _KVM_ which is the [recommended setting](http://superuser.com/questions/945910/how-to-select-paravirtualization-interface-in-virtual-box) for Linux guests. When using a Windows guest you should set it to _Hyper-V_.
 
   ![13-system-acceleration](Part1/13-system-acceleration.png)
 
@@ -109,6 +111,8 @@ You now have a new __powered off__ VM so we want to update the configuration usi
 1. Increase the __video memory__ to the maximum available setting. In my case this is `128MB`.
 
 2. Check __enable 3D acceleration__.
+
+3. If you are on a "retina" (High-PPI display) you should set you __scale factor__ to `200%`.
 
   ![14-display-screen](Part1/14-display-screen.png)
 
@@ -154,7 +158,7 @@ __Done!__ Click __OK__ to save the VM settings.
 
   ![9-powered-off](Part1/9-powered-off.png)
 
-  __Note:__ While your new VM is booting into the installation screen, if your are using a host with a "retina" screen select __View => Scale Factor => 200%__ so you can actually see your VM while it's installing.
+  __Note:__ While your new VM is booting into the installation screen, if your are using a host with a "retina" screen make sure you have selected __View => Scale Factor => 200%__ so you can actually see your VM while it's installing.
 
 2. Once you arrive at the first screen labelled __Install__ click _Install Ubuntu_.
 
@@ -164,7 +168,7 @@ __Done!__ Click __OK__ to save the VM settings.
 
   ![20-preparing-to-install](Part1/20-preparing-to-install.png)
 
-4. To keep things simple leave the default option __Erase disk and install Ubuntu__ in place and click _install now_.
+4. To keep things simple leave the default option __Erase disk and install Ubuntu__ in place, select __Use LVM with the new Ubuntu installation__ and click _install now_.
 
   ![21-erase-disk-and-install](Part1/21-erase-disk-and-install.png)
 
@@ -182,13 +186,13 @@ __Done!__ Click __OK__ to save the VM settings.
 
 8. _Who are you?_ Use the following guide to fill in these details:
 
-  a. __Your name:__ e.g. Tod Nicholas Thomson
+  a. __Your name:__ e.g. Joe William Bloggs
 
-  b. __Your computer's name:__ e.g. apsalar
+  b. __Your computer's name:__ e.g. megatron
 
     __Note:__ Feel free to take a look at [RFC1178](https://tools.ietf.org/html/rfc1178) or __TL;DR__ Use all lower case (Unix is case-sensitive). Don't use random combinations of letters and numbers that "encode" some information about the location or function of the computer which are hard to "talk about". At the other end of the spectrum don't use names that will clash or sound like real people's names.
 
-  c. __Pick a username:__ e.g. tnt
+  c. __Pick a username:__ e.g. jwb
 
     _Note:__ The "Unix way" is to use all your initials for your username. You need to type your username a lot so it's good for it to be short.
 
@@ -212,7 +216,7 @@ __Done!__ Click __OK__ to save the VM settings.
 
 Login to your "new shiny" Linux VM and see if you can work out how to play a game of __Beneath a Steel Sky, Freeware CD Version__.
 
-The game files `bass-cd-1.2.zip` are available on the USB flash drive though you probably won't need them...
+The game files `bass-cd-1.2.zip` are available on the USB flash drive (you may be able to work out how to not need them)...
 
 You'll know you have it working when you see the following:
 

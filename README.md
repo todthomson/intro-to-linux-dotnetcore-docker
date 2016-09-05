@@ -59,7 +59,7 @@ I have tested the workshop with the following software versions. You mileage may
 
 ## The Workshop
 
-The workshop begins here. You have approximately 45 minutes to complete each chapter. If you complete a chapter ahead of time _please_ don't jump ahead. You should instead just explore what you have built and/or complete the extension exercise at the bottom of the chapter.
+__The workshop begins here.__ You have approximately 45 minutes to complete each chapter. If you complete a chapter ahead of time _please_ don't jump ahead. You should instead just explore what you have built and/or complete the extension exercise at the bottom of the chapter.
 
 #### 1. Ubuntu Linux Installation
 
