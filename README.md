@@ -84,7 +84,7 @@ And a _second hello_ to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.
 
 Once you made your _third hello_ to Docker embark on __[Part 6](Part6.md)__.
 
-#### 7. Composing Applications with Containers
+#### 7. Composing Applications with Containers (Draft)
 
 Now we have .NET Core, ASP.NET Core and Docker running we know all the basics but how do actually we actually build applications? __[Part 7](Part7.md)__ will elaborate on linking, networking and composing applications.
 
