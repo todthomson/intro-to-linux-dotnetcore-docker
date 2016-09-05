@@ -51,8 +51,8 @@ I have tested the workshop with the following software versions. You mileage may
 | [.NET Core SDK](https://www.microsoft.com/net/core) | 1.0.0-preview2-003131 |
 | [ASP.NET Core](http://www.asp.net/core) | 1.0.0 |
 | [Docker](https://www.docker.com) | 1.12.1 |
-| [Node.js](https://nodejs.org) | ? |
-| [Yeoman](http://yeoman.io) | ? |
+| [Node.js](https://nodejs.org) | 6.5.0 |
+| [Yeoman](http://yeoman.io) | 1.8.5 |
 
 ## The Workshop
 
