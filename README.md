@@ -50,8 +50,8 @@ I have tested the workshop with the following software versions. You mileage may
 | -------- | ------- |
 | [VirtualBox](https://www.virtualbox.org) | 5.0.26 |
 | [Ubuntu Linux](http://www.ubuntu.com) | 16.04.1 x64 LTS |
-| [.NET Core](https://www.microsoft.com/net/core) | ? |
-| [ASP.NET Core](http://www.asp.net/core) | ? |
+| [.NET Core SDK](https://www.microsoft.com/net/core) | 1.0.0-preview2-003131 |
+| [ASP.NET Core](http://www.asp.net/core) | 1.0.0 |
 | [Docker](https://www.docker.com) | 1.12.1 |
 | [Node.js](https://nodejs.org) | ? |
 | [Yeoman](http://yeoman.io) | ? |
