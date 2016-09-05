@@ -16,15 +16,49 @@ Before we begin here's a little background.
 
 The [Advanced Packaging Tool](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool) APT is the "package manager" of Debian GNU/Linux and its variants (e.g. Ubuntu). It provides for the (almost) completely-automated discovery, retrieval, configuration, installation and removal of both binary and source packages. APT is wrapper around `dpkg` adding useful extra functionality like automated package download, bulk package update, automatic package dependency tree resolution, etc...
 
+## VirtualBox Snapshots
+
+__Warning:__ I have experienced some issues with Ubuntu 16.04.1 and VirtualBox which can make it [kernel panic](https://en.wikipedia.org/wiki/Kernel_panic) on boot causing the boot to fail.
+
+I __strongly advise__ you take advantage of VirtualBox Snapshots __now__ (as shown in the screen shot below) in case anything goes wrong in the next section.
+
+![23-virtual-box-snapshots](Part2/23-virtual-box-snapshots.png)
+
+## Updating your new system
+
+__Apologies:__ You'll need to type a few commands here yourself as we don't yet have copy and paste enabled between the virtual machine host and guest operating systems.
+
+If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) is open (it opens automatically on startup if there are updates) then close it. We're going to use the terminal-based update system (described above) to update our system now.
+
+1. Open a new Terminal and run `apt-get update` to update to the latest package definition list. You should see the following error message:
+
+  ![6-apt-get-update-no-sudo-fail](Part2/2-apt-get-update-no-sudo-fail.png)
+
+2. So we _need root_ eh? Indeed. Root is the _super user_ (administrator) on Unix variants. Let's try our command again but this time we'll preface it with the `sudo` (super-user do) command to run it "as root". Run the command `sudo apt-get update` and let's see what happens:
+
+  ![7-sudo-apt-get-update](Part2/3-sudo-apt-get-update.png)
+
+3. You will see that you are prompted for _your_ password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created as part of the installation gets sudoers access automatically.
+
+4. Now that we have an up-to-date package definition list we can run `sudo apt-get upgrade` to upgrade our system to the latest package and security updates:
+
+  ![8-sudo-apt-get-upgrade-start](Part2/4-sudo-apt-get-upgrade-start.png)
+
+5. Once `sudo apt-get upgrade` has completed running you should see that it has "done" its job successfully:
+
+  ![9-sudo-apt-get-upgrade-end](Part2/5-sudo-apt-get-upgrade-end.png)
+
 ## Ironing out the wrinkles
 
 Time to switch back to our Ubuntu Linux VM.
 
 #### VirtualBox Guest Additions
 
+__Note:__ Here is where we get copy and paste working.
+
 1. Open a new Terminal by pressing the shortcut `CTRL+ALT+T` or by pressing the `SUPER` (Windows or Command) key, typing `term` and then pressing `ENTER`. This is how you launch applications in Ubuntu Linux i.e. it's the same as in Windows.
 
-2. Run the following command to install some tools we will use for compiling some kernel modules build and testing our OpenGL acceleration is working (_apologies you will probably have to type this bit yourself_):
+2. Run the following command to install some tools we will use for compiling some kernel modules build and testing our OpenGL acceleration is working:
 
   ```
   sudo apt-get install mesa-utils dkms build-essential linux-headers-$(uname -r)
@@ -34,15 +68,15 @@ Time to switch back to our Ubuntu Linux VM.
 
 4. Once you see the following prompt select __run__ to begin the process.
 
-  ![2-run-vbox-guest-tools](Part2/2-run-vbox-guest-tools.png)
+  ![2-run-vbox-guest-tools](Part2/6-run-vbox-guest-tools.png)
 
 5. Enter your _password_ and select __Authenticate__ to run the installation script as _root_.
 
-  ![3-enter-your-password.png](Part2/3-enter-your-password.png)
+  ![3-enter-your-password.png](Part2/7-enter-your-password.png)
 
 6. You should see the following output indicating you've succeeded.
 
-  ![4-press-return-to-close.png](Part2/4-press-return-to-close.png)
+  ![4-press-return-to-close.png](Part2/8-press-return-to-close.png)
 
 7. Press `ENTER` to close the terminal.
 
@@ -56,31 +90,9 @@ To confirm that everything's working OK do the following:
 
 3. Run `glxgears`. If the "world falls over" then shut down your VM `sudo shutdown -h now` and reconfigure your VM to deselect __enable 3D acceleration__. Start your VM again and re-run `glxgears` to make sure all is now well.
 
-![5-glxgears.png](Part2/5-glxgears.png)
+![5-glxgears.png](Part2/9-glxgears.png)
 
 __Note:__ See [VirtualBox ticket 12941](https://www.virtualbox.org/ticket/12941) for more information.
-
-## Updating your new system
-
-If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) is open (it opens automatically on startup if there are updates) then close it. We're going to use the terminal-based update system (described above) to update our system now.
-
-1. Open a new Terminal and run `apt-get update` to update to the latest package definition list. You should see the following error message:
-
-  ![6-apt-get-update-no-sudo-fail](Part2/6-apt-get-update-no-sudo-fail.png)
-
-2. So we _need root_ eh? Indeed. Root is the _super user_ (administrator) on Unix variants. Let's try our command again but this time we'll preface it with the `sudo` (super-user do) command to run it "as root". Run the command `sudo apt-get update` and let's see what happens:
-
-  ![7-sudo-apt-get-update](Part2/7-sudo-apt-get-update.png)
-
-3. You will see that you are prompted for _your_ password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created as part of the installation gets sudoers access automatically.
-
-4. Now that we have an up-to-date package definition list we can run `sudo apt-get upgrade` to upgrade our system to the latest package and security updates:
-
-  ![8-sudo-apt-get-upgrade-start](Part2/8-sudo-apt-get-upgrade-start.png)
-
-5. Once `sudo apt-get upgrade` has completed running you should see that it has "done" its job successfully:
-
-  ![9-sudo-apt-get-upgrade-end](Part2/9-sudo-apt-get-upgrade-end.png)
 
 ## Adding some useful programs
 
@@ -102,7 +114,7 @@ If you prefer `emacs` you could `sudo apt-get install emacs` and then add the aw
 
 So we have even more text-editing options let's install _Sublime Text 3_. There are two options for doing this which I will use to illustrate some other ways of getting software installed over and above _just downloading a binary_.
 
-1. Our first option is to download a `.dpkg` from the [Sublime Text 3](https://www.sublimetext.com/3) homepage and then install it using the `dpkg -i` command i.e. run the `wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb && sudo dpkg -i sublime-text_build-3114_amd64.deb` command.
+1. Our first option (but don't do this!) is to download a `.dpkg` from the [Sublime Text 3](https://www.sublimetext.com/3) homepage and then install it using the `dpkg -i` command i.e. run the `wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb && sudo dpkg -i sublime-text_build-3114_amd64.deb` command.
 
 2. Our second (and the better) option is to use the _Sublime Text 3 Installer PPA_. A [PPA](https://en.wikipedia.org/wiki/Personal_Package_Archive) is a _Personal Package Archive_ which is simply just an unofficial APT repository hosted by an individual on Canonical's [Launchpad](https://launchpad.net/) software collaboration service. Run the following commands to install Sublime Text 3 using the PPA.
 
@@ -130,11 +142,13 @@ Now run `subl` to confirm that Sublime Text 3 is available and working OK.
 
 #### Atom
 
-If you're like me you want GitHub's [Atom](https://atom.io/)! If so run `wget https://github.com/atom/atom/releases/download/v1.8.0/atom-amd64.deb && sudo dpkg -i atom-amd64.deb` now.
+If you're like me you want GitHub's [Atom](https://atom.io/)! If so run `wget https://github.com/atom/atom/releases/download/v1.10.0/atom-amd64.deb && sudo dpkg -i atom-amd64.deb` now.
 
 ![13-github-atom](Part2/13-github-atom.png)
 
 Now run `atom` to confirm that Atom is available and working OK.
+
+__Note:__ You may instead need to run `atom --disable-gpu` to get it to run in a virtual machine (depending on your host's graphics adapter).
 
 #### Brackets _(optional)_
 
@@ -200,61 +214,13 @@ code --disable-gpu
 
 ![17-vs-code-3](Part2/17-vs-code-3.png)
 
-#### Visual Studio Code _(the umake method)_
-
-A better idea is to install Visual Studio Code with `umake` which will help us automatically keep it up to date.
-
-> [_Ubuntu Make_](https://wiki.ubuntu.com/ubuntu-make) `umake` is a command line tool which allows you to download the latest version of popular developer tools on your installation, installing it alongside all of the required dependencies (which will only ask for root access if you don't have all the required dependencies installed already), enable multi-arch on your system if you are on a 64 bit machine, integrate it with the Unity launcher. Basically, one command to get your system ready to develop with!
-
-Firstly let's _remove_ the version of Visual Studio Code previously installed.
-
-1. Hit the __SUPER__ _(Windows/Command)_ key and type `remove`.
-
-2. Click on `Ubuntu Software`.
-
-3. Select `Installed` and scroll down to `Visual Studio Code`.
-
-4. Click on `Remove` and then confirm `Remove` to remove Visual Studio Code.
-
-![18-vs-code-uninstall](Part2/18-vs-code-uninstall.png)
-
-Then run the following (sourced from [Ask Ubuntu](http://askubuntu.com/a/616363/42342)) to install Visual Studio Code again:
-
-```
-sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
-```
-
-```
-sudo apt-get update
-```
-
-```
-sudo apt-get install ubuntu-make
-```
-
-![19-umake-1](Part2/19-umake-1.png)
-
-```
-umake ide visual-studio-code
-```
-
-![20-umake-2](Part2/20-umake-2.png)
-
-If you were paying attention you would have noticed a reference to the new location of Visual Studio Code, so let's go there now:
-
-```
-cd /home/readify/.local/share/umake/ide/visual-studio-code
-```
-
-Now run `code --disable-gpu` again to confirm that Visual Studio Code is still available and working correctly.
-
-![21-umake-3](Part2/21-umake-3.png)
-
 ## _All right stop, collaborate and listen!_
+
+Work out how to configure `code` to always execut as `code --disable-gpu`.
 
 Add `/home/readify/.local/share/umake/ide/visual-studio-code` to your `$PATH` and reboot to confirm that it's permanent (survives a reboot).
 
-You'll know you have it working when you can run `code --disable-gpu` from any location...
+You'll know you have it working when you can just run `code` from any location and it works fine...
 
 ## End of Part 2
 

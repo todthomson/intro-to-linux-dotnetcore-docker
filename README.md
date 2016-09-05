@@ -48,9 +48,8 @@ I have tested the workshop with the following software versions. You mileage may
 
 | Software | Version |
 | -------- | ------- |
-| [VirtualBox](https://www.virtualbox.org) | 5.1.4 |
+| [VirtualBox](https://www.virtualbox.org) | 5.0.26 |
 | [Ubuntu Linux](http://www.ubuntu.com) | 16.04.1 x64 LTS |
-| [VirtIO](http://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers) | 0.1.102 |
 | [.NET Core](https://www.microsoft.com/net/core) | ? |
 | [ASP.NET Core](http://www.asp.net/core) | ? |
 | [Docker](https://www.docker.com) | 1.12.1 |
