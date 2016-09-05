@@ -2,7 +2,7 @@
 
 Welcome to _An Introduction to Linux, .NET Core, ASP.NET Core & Docker_, a full-day workshop.
 
-In this workshop you will learn about: [VirtualBox](https://www.virtualbox.org), [Ubuntu Linux](http://www.ubuntu.com), [APT](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool), [.NET Core](https://www.microsoft.com/net/core), [ASP.NET Core](http://www.asp.net/core), [Docker](https://www.docker.com), [Node.js](https://nodejs.org), [Yeoman](http://yeoman.io) and more.
+In this workshop you will learn about: [VirtualBox](https://www.virtualbox.org), [Ubuntu Linux](http://www.ubuntu.com), [.NET Core](https://www.microsoft.com/net/core), [ASP.NET Core](http://www.asp.net/core), [Docker](https://www.docker.com), [Node.js](https://nodejs.org), [Yeoman](http://yeoman.io) and more.
 
 By the end of this workshop you will be ready to use Linux and .NET Core on your next work or personal project!
 
