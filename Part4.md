@@ -184,22 +184,21 @@ With your text editor of choice update `project.json` as follows.
   "version": "1.0.0-*",
   "buildOptions": {
     "debugType": "portable",
-    "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "emitEntryPoint": true
   },
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "type": "platform",
-      "version": "1.0.0"
-    },
-    "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final",
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final"
+    "Microsoft.AspNetCore.Mvc": "1.0.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0"
   },
   "frameworks": {
     "netcoreapp1.0": {
-      "imports": [
-        "dnxcore50"
-      ]
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.1"
+        }
+      },
+      "imports": "dnxcore50"
     }
   }
 }
@@ -235,7 +234,7 @@ Open Firefox and navigate to `http://localhost:5000/api/HelloWorld`.
 
 ## _All right stop, collaborate and listen!_
 
-Build out your ASP.NET Core Web API server with some more [HTTP methods](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and then update your .NET Core application to call your Web API `using System.Net.Http` (as a client).
+Build out your ASP.NET Core Web API server with some more [HTTP methods](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and then update your .NET Core application (from the previous chapter) to call your Web API `using System.Net.Http` (as a client).
 
 ## End of Part 4
 
