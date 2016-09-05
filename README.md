@@ -10,7 +10,7 @@ By the end of this workshop you will be ready to use Linux and .NET Core on your
 
 ### Overview
 
-This workshop is roughly broken into 45 minute sessions covering the following topics:
+This workshop is broken (roughly) into 45 minute sessions covering the following topics:
 
 1. __Ubuntu Linux Installation__
 
@@ -24,9 +24,7 @@ This workshop is roughly broken into 45 minute sessions covering the following t
 
 6. __"Hello, world!" via Node.js & Yeoman__
 
-7. __Composing Applications with Containers__
-
-8. __*Choose your own adventure*__
+7. __*Choose your own adventure*__
 
 ### Presentation
 
@@ -84,15 +82,11 @@ And a _second hello_ to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.
 
 Once you made your _third hello_ to Docker embark on __[Part 6](Part6.md)__.
 
-#### 7. Composing Applications with Containers (Draft)
-
-Now we have .NET Core, ASP.NET Core and Docker running we know all the basics but how do actually we actually build applications? __[Part 7](Part7.md)__ will elaborate on linking, networking and composing applications.
-
 ## Workshop Complete
 
 Congratulations! You have completed the workshop.
 
-#### Next "choose your own adventure"...
+#### Next, choose your own adventure...
 
 Here are some ideas for what you might like to work on next.
 
