@@ -24,21 +24,30 @@ So you have said your _first hello_ to .NET Core? Continue on with __[Part 4](Pa
 
 #### 5. "Hello, world!" Docker
 
-And a _second hello_ to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.md)__.
+_(Work In Progress)_  And a _second hello_ to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.md)__.
 
-#### 6. "Hello, world!" via Node.js & Yeoman
+#### 6a. "Hello, world!" via Node.js & Yeoman
 
-_(Work In Progress)_ Once you made your _third hello_ to Docker you might choose to embark on __[Part 6](Part6.md)__.
+_(Work In Progress)_ Once you made your _third hello_ to Docker you might choose to embark on __[Part 6a](Part6a.md)__.
 
-#### 7. OmniSharp
+#### 6b. Composing applications with containers
+
+_(Work In Progress)_ Now we have some Docker running. We know all the basics but how do actually we actually build applications? __[Part 6B](Part6b.md)__ will elaborate on linking, networking and composing. 
+
+
+#### Congratulations and your further journey
+_(Work In Progress)_ Ideas for where to go next, jump to __[Part the end](Congratulations.md)
+
+
+#### x. OmniSharp
 
 __TODO: ...__
 
-#### 8. Visual Studio Code
+#### xx. Visual Studio Code
 
 __TODO: ...__
 
-#### 9. Putting it all together...
+#### xxx. Putting it all together...
 
 _Intentionally left as an exercise for the reader ;)_
 
