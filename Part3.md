@@ -46,12 +46,12 @@ apt-cache search dotnet*
 
 ![3-list-dotnet-core-versions](Part3/3-list-dotnet-core-versions.png)
 
-#### Installing .NET Core
+#### Installing the .NET Core SDK
 
-Now we can install the _newest_ version of .NET Core.
+Now we can install the _newest_ version of .NET Core SDK.
 
 ```
-sudo apt-get install dotnet-dev-1.0.0-preview2-003119
+sudo apt-get install dotnet-dev-1.0.0-preview2-003131
 ```
 
 ![4-install-latest-dotnet-core-1](Part3/4-install-latest-dotnet-core-1.png)
@@ -70,9 +70,7 @@ dotnet --version
 
 ![6-checking-dotnet-core-version](Part3/6-checking-dotnet-core-version.png)
 
-Excellent! We now have version `1.0.0-preview2-003119` of .NET Core.
-
-__TODO: (Tod) CONTINUE UPDATING FROM HERE...__
+Excellent! We now have version `1.0.0-preview2-003131` of the .NET Core SDK.
 
 #### Creating a .NET Core Project
 
