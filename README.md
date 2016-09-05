@@ -1,4 +1,4 @@
-## An Introduction to Linux, .NET Core, ASP.NET Core & Docker
+## An Introduction to Linux, .NET Core, ASP.NET Core & Docker (Workshop)
 
 Welcome to _An Introduction to Linux, .NET Core, ASP.NET Core & Docker_, a full-day workshop.
 
