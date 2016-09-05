@@ -224,7 +224,13 @@ The following code may assist you in your journey:
 alias code='/usr/bin/code --disable-gpu'
 ```
 
-You'll know you have it working when you can just run `code` from any location and there are no graphical glitches...
+You'll know you have it working when you can simply run `code` from any location and there are no graphical glitches.
+
+Next work out how to "lock" the Visual Studio Code icon to the [Ubuntu/Unity Launcher](https://help.ubuntu.com/stable/ubuntu-help/unity-launcher-intro.html).
+
+Lastly locate the file `code.desktop` (created by the process of locking `code` to the Launcher) and update it appropriately to include the `--disable-gpu`.
+
+You should now be able to click on the Visual Studio Code icon in order to run `code` with no graphical glitches.
 
 ## End of Part 2
 
