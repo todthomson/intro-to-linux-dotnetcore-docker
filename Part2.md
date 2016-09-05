@@ -216,7 +216,13 @@ code --disable-gpu
 
 ## _All right stop, collaborate and listen!_
 
-Work out how to configure `code` to always execut as `code --disable-gpu`.
+Work out how to configure `code` to always execute as `code --disable-gpu`.
+
+The following code may assist you in your journey:
+
+```
+alias code='/usr/bin/code --disable-gpu'
+```
 
 You'll know you have it working when you can just run `code` from any location and there are no graphical glitches...
 
