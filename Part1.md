@@ -6,9 +6,9 @@ First we'll get a basic Ubuntu Linux Installation up and running.
 
 ## Prerequisites
 
-1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.04-desktop-amd64.iso`) from your local Ubuntu mirror (so as to save your quota and to download it as fast as possible). We're using _Ubuntu Desktop 'Xenial Xerus' 16.04 LTS_ as it's "unofficially supported" (full support is coming in the RTW) and it's the primary Linux distribution (and version) being used by the .NET Core team.
+1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.04.1-desktop-amd64.iso`) from your local Ubuntu mirror (so as to save your quota and to download it as fast as possible). We're using _Ubuntu Linux_ as it's the primary Linux distribution being used by the .NET Core team.
 
-2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. Windows `VirtualBox-5.0.22-108108-Win.exe` or MacOSX `VirtualBox-5.0.22-108108-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.0.22-108108.vbox-extpack`). This extension pack contains host drivers for USB etc.
+2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice (e.g. Windows `VirtualBox-5.1.4-110228-Win.exe` or MacOSX `VirtualBox-5.1.4-110228-OSX.dmg`). Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) (e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.1.4-110228.vbox-extpack`). This extension pack contains host drivers for USB etc.
 
 ## Installing and configuring VirtualBox
 

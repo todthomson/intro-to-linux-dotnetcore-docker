@@ -6,7 +6,7 @@
 
 __Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install .NET Core on Ubuntu Linux.
 
-For more information see [here](https://www.microsoft.com/net/core#ubuntu). The following is practically verbatim from that source, except that we're installing it on Ubuntu 16.04 (LTS) (the latest) not 14.04.4 (LTS) (from two years ago).
+For more information see [here](https://www.microsoft.com/net/core#ubuntu). The following is practically verbatim from that source.
 
 #### Are we up to date?
 
@@ -22,7 +22,7 @@ __Note:__ If you see any errors here please resolve them before continuing.
 
 Now we're up to date let's add the .NET Core APT feed.
 
-__Note:__ That we are specifying `xenial main` not `trusty main` here as we're using Ubuntu 16.04 (LTS) ([Xenial Xerus](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes)) rather than Ubuntu 14.04.4 (LTS) ([Trusty Tahr](https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes)).
+__Note:__ That we are specifying `xenial main` not `trusty main` here as we're using Ubuntu 16.04.1 (LTS) ([Xenial Xerus](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes)) rather than Ubuntu 14.04.4 (LTS) ([Trusty Tahr](https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes)).
 
 ```
 sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'

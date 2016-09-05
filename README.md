@@ -51,11 +51,11 @@ I have tested the workshop with the following software versions. You mileage may
 | [VirtualBox](https://www.virtualbox.org) | 5.1.4 |
 | [Ubuntu Linux](http://www.ubuntu.com) | 16.04.1 x64 LTS |
 | [VirtIO](http://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers) | 0.1.102 |
-| [.NET Core](https://www.microsoft.com/net/core) | Latest |
-| [ASP.NET Core](http://www.asp.net/core) | Latest |
-| [Docker](https://www.docker.com) | Latest |
-| [Node.js](https://nodejs.org) | Latest |
-| [Yeoman](http://yeoman.io) | Latest |
+| [.NET Core](https://www.microsoft.com/net/core) | ? |
+| [ASP.NET Core](http://www.asp.net/core) | ? |
+| [Docker](https://www.docker.com) | 1.12.1 |
+| [Node.js](https://nodejs.org) | ? |
+| [Yeoman](http://yeoman.io) | ? |
 
 ## The Workshop
 

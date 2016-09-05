@@ -12,9 +12,9 @@ _**Note:** Apologies I ran out of time to screenshot and customise this section 
 
 > [Docker](https://en.wikipedia.org/wiki/Docker_(software)) is an open-source project that automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualization on Linux.
 
-## Installing Docker 1.12 RC on Ubuntu Xenial 16.04 (LTS)
+## Installing Docker on Ubuntu Linux
 
-Follow the Ubuntu Xenial 16.04 (LTS) instructions [__here__](https://docs.docker.com/engine/installation/linux/ubuntulinux/) to install the Docker Engine 1.12 RC.
+Follow the Ubuntu Xenial 16.04 (LTS) instructions [__here__](https://docs.docker.com/engine/installation/linux/ubuntulinux/) to install Docker Engine.
 
 Keep going until you get to `sudo docker run hello-world` and you will see the following.
 
@@ -35,7 +35,7 @@ Now continue on and complete the following  _optional configurations_ as they wi
 Lets give .net core and Docker a go. First we'll get the latest dotnet docker image and run it.
 
 ```
-docker run -it microsoft/dotnet:latest 
+docker run -it microsoft/dotnet:latest
 ```
 
 ![3-docker-run-dotnet](Part5/3-docker-run-dotnet.png)
@@ -73,7 +73,7 @@ First 3 main concepts to understand, Images, Containers and Registry's
 #### Images
 
 > Docker images are the recipes for building containers. They are read-only and are usually composed of layers of other images with a base image of something like Ubuntu, Readh at or Debian. The layers are built from ```Dockerfile```'s, which are just a set of instructions of how to build the image.
- 
+
 #### Containers
 
 > Docker containers are running/runnable instances of docker images. Think if images and containers like classes and objects.
@@ -84,9 +84,9 @@ First 3 main concepts to understand, Images, Containers and Registry's
 
 ![6-docker-architecture](Part5/6-docker-architecture.png)
 
-Docker itself is actually a client-server application where the client is the CLI application and the server is the docker daemon (like a windows service). The CLI is the users' way of sending commands to the server and the server then, in turn does the heavy lifting of pulling images from the registry and building containers. 
+Docker itself is actually a client-server application where the client is the CLI application and the server is the docker daemon (like a windows service). The CLI is the users' way of sending commands to the server and the server then, in turn does the heavy lifting of pulling images from the registry and building containers.
 
-Going back to our initial command ```docker run -it microsoft/dotnet:latest```. 
+Going back to our initial command ```docker run -it microsoft/dotnet:latest```.
 Because we did not already have the image locally on the machine, docker will go to the docker hub registry and pull the image form there before building the container and running it.
 
 #### Exploring the Docker CLI
@@ -135,7 +135,7 @@ This creates a new container and starts it but does not ```attach``` the console
 docker attach dotnet
 ```
 
-__Protip__ to escape the container without stopping it, use the escape sequence Ctrl-p + Ctrl-q 
+__Protip__ to escape the container without stopping it, use the escape sequence Ctrl-p + Ctrl-q
 
 ![11-docker-attach](Part5/11-docker-attach.png)
 
@@ -189,5 +189,4 @@ Kitematic is a useful GUI application for managing Docker image and containers o
 ## End of Part 5
 
 
-Step 6a (more dotnet core) or step 6b (more docker) 
-
+Step 6a (more dotnet core) or step 6b (more docker)

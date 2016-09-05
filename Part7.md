@@ -247,7 +247,7 @@ networks:
 
 ## Distrubuted
 
-## Swarm 
+## Swarm
 
 ## Ensure containers run on startup
 
