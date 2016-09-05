@@ -22,7 +22,7 @@ But that's nothing to worry about. For anyone with an RC1 application there _is_
 
 __Awesome!__ Interacting with ASP.NET Core is now very simple indeed.
 
-## ASP.NET Core on Ubuntu Linux (RC2)
+## ASP.NET Core on Ubuntu Linux (RC2 and 1.0+)
 
 All you need to do install ASP.NET Core is to run the following command.
 
