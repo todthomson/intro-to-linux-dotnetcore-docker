@@ -1,10 +1,40 @@
 ## An Introduction to Linux, .NET Core, ASP.NET Core & Docker
 
-[![Join the chat at https://gitter.im/todthomson/linux-dotnetcore-docker-how-to](https://badges.gitter.im/todthomson/linux-dotnetcore-docker-how-to.svg)](https://gitter.im/todthomson/linux-dotnetcore-docker-how-to?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Welcome to _An Introduction to Linux, .NET Core, ASP.NET Core & Docker_, a full-day workshop.
 
-Slide deck (as presented) is available [here](https://speakerdeck.com/todthomson/an-introduction-to-linux-net-core-asp-dot-net-core-and-docker).
+In this workshop you will learn about: [VirtualBox](https://www.virtualbox.org), [Ubuntu Linux](http://www.ubuntu.com/), [APT](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool), [.NET Core](https://www.microsoft.com/net/core), [ASP.NET Core](http://www.asp.net/core), [Docker](https://www.docker.com), [Node.js](https://nodejs.org), [Yeoman](http://yeoman.io) and more.
+
+By the end of this workshop you will be ready to use Linux and .NET Core on your next work or personal project!
 
 ![1-nadella-loves-linux](README/1-nadella-loves-linux.jpg)
+
+### Overview
+
+This workshop is broken into 45 minute blocks covering the following areas:
+
+1. __Ubuntu Linux Installation__
+
+2. __Ubuntu Linux Configuration & Maintenance__
+
+3. __"Hello, world!" .NET Core__
+
+4. __"Hello, world!" ASP.NET Core__
+
+5. ____
+
+### Presentation
+
+My slide deck (as presented) is available [here](https://speakerdeck.com/todthomson/an-introduction-to-linux-net-core-asp-dot-net-core-and-docker).
+
+### Help, Chat & Feedback
+
+Please join the [![chat on gitter https://gitter.im/todthomson/linux-dotnetcore-docker-how-to](https://badges.gitter.im/todthomson/linux-dotnetcore-docker-how-to.svg)](https://gitter.im/todthomson/linux-dotnetcore-docker-how-to?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge).
+
+Also you can hit me up on _Twitter_ [@todthomson](https://twitter.com/todthomson).
+
+I encourage you to raise [issues](./issues) and send me [pull requests](./pulls).
+
+
 
 #### 1. Ubuntu Linux Installation
 
@@ -41,21 +71,41 @@ _(Work In Progress)_ Ideas for where to go next, jump to __[Part the end](Congra
 
 #### x. OmniSharp
 
-__TODO: ...__
+__*TODO: ...*__
 
 #### xx. Visual Studio Code
 
-__TODO: ...__
+__*TODO: ...*__
 
 #### xxx. Putting it all together...
 
-_Intentionally left as an exercise for the reader ;)_
-
-#### Feedback?
-
-Hit me up on _Twitter_ [@todthomson](https://twitter.com/todthomson).
+_Intentionally left as an exercise for the reader... ;)_
 
 ### License
 
 [Creative Commons Attribution Share Alike 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
+### History
+
+This workshop has been run "in person" on the following occasions:
+
+1. 18 Mar 2016 - Readify Queensland (37 attendees).
+2. 24 Jun 2016 - Microsoft Brisbane (40 attendees).
+3. 6 Sep 2016 - Youi Sunshine Coast (? attendees).
+
+Please contact [Readify Queensland](https://readify.net/contact-us/locations/queensland/) if you would like us to run this workshop for you and your team.
+
+### Acknowledgements
+
+Without the assistance of the following people (in chronological order) the development and execution of this workshop would not have been possible:
+
+* [Mark Rydstrom](https://github.com/markryd)
+* [George Kinsman](https://github.com/gkinsman)
+* [Sly Gryphon](https://github.com/sgryphon)
+* [Ammar Osama](https://github.com/ammaroff)
+* [Chui Tey](https://github.com/teyc)
+* [Liam McLennan](https://github.com/liammclennan)
+* [Jakob Højgaard](https://github.com/hgaard)
+* [Nicholas Blumhardt](https://github.com/nblumhardt)
+* [Jon CB](https://github.com/JonCB)
+* [Joshua Wulf](https://github.com/jwulf)
