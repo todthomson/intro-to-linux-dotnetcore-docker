@@ -2,7 +2,7 @@
 
 Welcome to _An Introduction to Linux, .NET Core, ASP.NET Core & Docker_, a full-day workshop.
 
-In this workshop you will learn about: [VirtualBox](https://www.virtualbox.org), [Ubuntu Linux](http://www.ubuntu.com/), [APT](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool), [.NET Core](https://www.microsoft.com/net/core), [ASP.NET Core](http://www.asp.net/core), [Docker](https://www.docker.com), [Node.js](https://nodejs.org), [Yeoman](http://yeoman.io) and more.
+In this workshop you will learn about: [VirtualBox](https://www.virtualbox.org), [Ubuntu Linux](http://www.ubuntu.com), [APT](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool), [.NET Core](https://www.microsoft.com/net/core), [ASP.NET Core](http://www.asp.net/core), [Docker](https://www.docker.com), [Node.js](https://nodejs.org), [Yeoman](http://yeoman.io) and more.
 
 By the end of this workshop you will be ready to use Linux and .NET Core on your next work or personal project!
 
@@ -10,7 +10,7 @@ By the end of this workshop you will be ready to use Linux and .NET Core on your
 
 ### Overview
 
-This workshop is broken into 45 minute blocks covering the following areas:
+This workshop is roughly broken into 45 minute sessions covering the following topics:
 
 1. __Ubuntu Linux Installation__
 
@@ -20,7 +20,13 @@ This workshop is broken into 45 minute blocks covering the following areas:
 
 4. __"Hello, world!" ASP.NET Core__
 
-5. ____
+5. __"Hello, world!" Docker__
+
+6. __"Hello, world!" via Node.js & Yeoman__
+
+7. __Composing Applications with Containers__
+
+8. __*Choose your own adventure*__
 
 ### Presentation
 
@@ -30,19 +36,38 @@ My slide deck (as presented) is available [here](https://speakerdeck.com/todthom
 
 Please join the [![chat on gitter https://gitter.im/todthomson/linux-dotnetcore-docker-how-to](https://badges.gitter.im/todthomson/linux-dotnetcore-docker-how-to.svg)](https://gitter.im/todthomson/linux-dotnetcore-docker-how-to?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge).
 
-Also you can hit me up on _Twitter_ [@todthomson](https://twitter.com/todthomson).
+Hit me up on _Twitter_ [@todthomson](https://twitter.com/todthomson).
 
-I encourage you to raise [issues](./issues) and send me [pull requests](./pulls).
+I encourage you to raise [issues](./issues) and send [pull requests](./pulls).
 
+### Software Versions
 
+As this workshop is conducted solely in a virtual machine you should be able to complete it in _any_ host operating system supporting the latest version of [VirtualBox](https://www.virtualbox.org).
+
+I have tested the workshop with the following software versions. You mileage may vary if you choose to use software and/or versions other than those listed below.
+
+| Software | Version |
+| -------- | ------- |
+| [VirtualBox](https://www.virtualbox.org) | 5.1.4 |
+| [Ubuntu Linux](http://www.ubuntu.com) | 16.04.1 x64 LTS |
+| [VirtIO](http://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers) | 0.1.102 |
+| [.NET Core](https://www.microsoft.com/net/core) | Latest |
+| [ASP.NET Core](http://www.asp.net/core) | Latest |
+| [Docker](https://www.docker.com) | Latest |
+| [Node.js](https://nodejs.org) | Latest |
+| [Yeoman](http://yeoman.io) | Latest |
+
+## The Workshop
+
+The workshop begins here. You have approximately 45 minutes to complete each chapter. If you complete a chapter ahead of time _please_ don't jump ahead. You should instead just explore what you have built and/or complete the extension exercise at the bottom of the chapter.
 
 #### 1. Ubuntu Linux Installation
 
-If you don't have a __fresh__ Ubuntu 16.04 (LTS) x64 installation then start at __[Part 1](Part1.md)__.
+If you don't have a __fresh__ Ubuntu Linux installation then start at __[Part 1](Part1.md)__.
 
 #### 2. Ubuntu Linux Configuration & Maintenance
 
-Now you have a __fresh__ Ubuntu 16.04 (LTS) x64 installation go to __[Part 2](Part2.md)__.
+Now you have a __fresh__ Ubuntu Linux installation go to __[Part 2](Part2.md)__.
 
 #### 3. "Hello, world!" .NET Core
 
@@ -54,44 +79,51 @@ So you have said your _first hello_ to .NET Core? Continue on with __[Part 4](Pa
 
 #### 5. "Hello, world!" Docker
 
-_(Work In Progress)_  And a _second hello_ to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.md)__.
+And a _second hello_ to ASP.NET Core? Strap on your helmet for __[Part 5](Part5.md)__.
 
-#### 6a. "Hello, world!" via Node.js & Yeoman
+#### 6. "Hello, world!" via Node.js & Yeoman
 
-_(Work In Progress)_ Once you made your _third hello_ to Docker you might choose to embark on __[Part 6a](Part6a.md)__.
+Once you made your _third hello_ to Docker embark on __[Part 6](Part6.md)__.
 
-#### 6b. Composing applications with containers
+#### 7. Composing Applications with Containers
 
-_(Work In Progress)_ Now we have some Docker running. We know all the basics but how do actually we actually build applications? __[Part 6B](Part6b.md)__ will elaborate on linking, networking and composing. 
+Now we have .NET Core, ASP.NET Core and Docker running we know all the basics but how do actually we actually build applications? __[Part 7](Part7.md)__ will elaborate on linking, networking and composing applications.
 
+## Workshop Complete
 
-#### Congratulations and your further journey
-_(Work In Progress)_ Ideas for where to go next, jump to __[Part the end](Congratulations.md)
+Congratulations! You have completed the workshop.
 
+#### Next "choose your own adventure"...
 
-#### x. OmniSharp
+Here are some ideas for what you might like to work on next.
 
-__*TODO: ...*__
+1. Use the [Ubuntu Apps Directory](https://apps.ubuntu.com/cat/) to "re-build" your desktop (with all the apps you love) in Ubuntu.
 
-#### xx. Visual Studio Code
+2. Continue building-out and adding-to your [Microservices](http://martinfowler.com/articles/microservices.html) application.
 
-__*TODO: ...*__
+3. Ignore Docker completely and build a [Majestic Monolith](https://m.signalvnoise.com/the-majestic-monolith-29166d022228) on .NET Core.
 
-#### xxx. Putting it all together...
+4. Have an existing .NET application? [Here's a guide on porting it to .NET Core](https://blogs.msdn.microsoft.com/dotnet/2016/02/10/porting-to-net-core/).
 
-_Intentionally left as an exercise for the reader... ;)_
+5. Know a good FOSS .NET framework or library that isn't yet available on .NET Core? Mark Rendle says [port it to .NET Core](https://blog.rendle.io/net-core-a-call-to-action/). Go go go!
+
+Or just do whatever takes your fancy, but remember...
+
+__*Production or it didn't happen!*__
+
+I encourage you to share what you have built under an [OSI-approved license](https://opensource.org/licenses) on [GitHub](https://github.com/).
 
 ### License
 
-[Creative Commons Attribution Share Alike 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+This workshop is licensed under the [Creative Commons Attribution Share Alike 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license so feel free to remix this workshop however you like.
 
 ### History
 
 This workshop has been run "in person" on the following occasions:
 
-1. 18 Mar 2016 - Readify Queensland (37 attendees).
-2. 24 Jun 2016 - Microsoft Brisbane (40 attendees).
-3. 6 Sep 2016 - Youi Sunshine Coast (? attendees).
+1. __Readify__ *Queensland* 18 Mar 2016 (37 attendees).
+2. __Microsoft__ *Brisbane* 24 Jun 2016 (40 attendees).
+3. __Youi__ *Sunshine Coast* 6 Sep 2016 (? attendees).
 
 Please contact [Readify Queensland](https://readify.net/contact-us/locations/queensland/) if you would like us to run this workshop for you and your team.
 
