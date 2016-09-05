@@ -30,7 +30,7 @@ Now continue on and complete the following  _optional configurations_ as they wi
 
 3. [Configure Docker to start on boot](https://docs.docker.com/engine/installation/linux/ubuntulinux/#configure-docker-to-start-on-boot) so you don't have to remember to start it every time.
 
-## .NET Core "Hello, world!" on Docker 1.12 RC
+## .NET Core "Hello, world!" on Docker
 
 Lets give .net core and Docker a go. First we'll get the latest dotnet docker image and run it.
 
