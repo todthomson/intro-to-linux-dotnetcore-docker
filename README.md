@@ -45,3 +45,8 @@ _Intentionally left as an exercise for the reader ;)_
 #### Feedback?
 
 Hit me up on _Twitter_ [@todthomson](https://twitter.com/todthomson).
+
+### License
+
+[Creative Commons Attribution Share Alike 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
