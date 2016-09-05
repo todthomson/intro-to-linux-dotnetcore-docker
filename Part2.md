@@ -218,9 +218,7 @@ code --disable-gpu
 
 Work out how to configure `code` to always execut as `code --disable-gpu`.
 
-Add `/home/readify/.local/share/umake/ide/visual-studio-code` to your `$PATH` and reboot to confirm that it's permanent (survives a reboot).
-
-You'll know you have it working when you can just run `code` from any location and it works fine...
+You'll know you have it working when you can just run `code` from any location and there are no graphical glitches...
 
 ## End of Part 2
 
