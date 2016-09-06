@@ -122,7 +122,7 @@ You now have a new __powered off__ VM so we want to update the configuration usi
 
 2. Remove the virtual __controller: ide__ from the __storage tree__ by selecting it and then clicking the _subtract controller_ icon at the bottom (the rightmost icon).
 
-3. Add a new virtual optical drive by selecting __controller: sata__ and clicking the _add disk_ icon at the bottom (the leftmost icon). When the modal appears click __choose disk__ and select `ubuntu-14.04.4-desktop-amd64.iso` downloaded earlier. Also check __use host i/o cache__.
+3. Add a new virtual optical drive by selecting __controller: sata__ and clicking the _add disk_ icon at the bottom (the leftmost icon). When the modal appears click __choose disk__ and select the Ubuntu Linux `.iso` file e.g. `ubuntu-16.04.1-desktop-amd64.iso` downloaded earlier. Also check __use host i/o cache__.
 
 4. If your host has an SSD select __Ubuntu.vdi__ and check __solid-state drive__.
 
