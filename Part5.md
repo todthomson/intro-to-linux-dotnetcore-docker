@@ -215,7 +215,7 @@ Have a go at running [Docker on MacOS](https://docs.docker.com/docker-for-mac/) 
 
 Keep going until you get your "Hello, World!".
 
-![13-hello-world-macOS](Part5/13-hello-world-macOS.png)
+![15-hello-world-macOS](Part5/15-hello-world-macOS.png)
 
 #### Running "Hello, World!" on Windows on Docker
 
@@ -223,7 +223,7 @@ Have a go at running [Docker on Windows](https://docs.docker.com/docker-for-mac/
 
 Keep going until you get your "Hello, World!".
 
-![14-hello-world-on-windows](Part5/14-hello-world-on-windows.png)
+![16-hello-world-on-windows](Part5/16-hello-world-on-windows.png)
 
 #### Kitematic (beta)
 
@@ -235,7 +235,7 @@ Have a go at installing and using the [Docker Toolbox](https://kitematic.com) vi
 
 Have a play around with the product, install some containers and see if you can find something interesting to you. Share what you have found with your neighbours.
 
-![15-kitematic-dash](Part5/15-kitematic-dash.png)
+![17-kitematic-dash](Part5/17-kitematic-dash.png)
 
 ## End of Part 5
 
