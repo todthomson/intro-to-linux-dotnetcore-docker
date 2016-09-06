@@ -215,7 +215,7 @@ Have a go at running [Docker on MacOS](https://docs.docker.com/docker-for-mac/) 
 
 Keep going until you get your "Hello, World!".
 
-![15-hello-world-macOS](Part5/15-hello-world-macOS.png)
+![15-hello-world-macos](Part5/15-hello-world-macos.png)
 
 #### Running "Hello, World!" on Windows on Docker
 
