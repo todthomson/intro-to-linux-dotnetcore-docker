@@ -219,7 +219,7 @@ Keep going until you get your "Hello, World!".
 
 #### Running "Hello, World!" on Windows on Docker
 
-Have a go at running [Docker on Windows](https://docs.docker.com/docker-for-mac/) using `InstallDocker.msi`.
+Have a go at running [Docker on Windows](https://docs.docker.com/docker-for-windows/) using `InstallDocker.msi`.
 
 Keep going until you get your "Hello, World!".
 
