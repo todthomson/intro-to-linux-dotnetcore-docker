@@ -46,17 +46,17 @@ I have tested the workshop with the following software versions. You mileage may
 
 | Software | Version |
 | -------- | ------- |
-| [VirtualBox](https://www.virtualbox.org) | `5.1.10` |
-| [Ubuntu Linux](http://www.ubuntu.com) | `16.10` |
+| [VirtualBox](https://www.virtualbox.org) | `5.1.10 x64` |
+| [Ubuntu Linux](http://www.ubuntu.com) | `16.10 x64` |
 | [.NET Core](https://www.microsoft.com/net/core) | `1.0.0-preview2.1-003177` |
-| [ASP.NET Core](http://www.asp.net/core) | `?` |
-| [Docker](https://www.docker.com) | `?` |
-| [Node.js](https://nodejs.org) | `?` |
-| [Yeoman](http://yeoman.io) | `?` |
+| [ASP.NET Core](http://www.asp.net/core) | `(as above)` |
+| [Docker](https://www.docker.com) | `1.12.3` |
+| [Node.js](https://nodejs.org) | `7.2.0` |
+| [Yeoman](http://yeoman.io) | `1.8.5` |
 
 ## The Workshop
 
-__The workshop begins here.__ You have approximately 45 minutes to complete each chapter. If you complete a chapter ahead of time _please_ don't jump ahead. You should instead just explore what you have built and/or complete the extension exercise at the bottom of the chapter.
+__The workshop begins here.__ You have approximately 45 minutes to complete each chapter. If you complete a chapter ahead of time _please_ don't jump ahead. You should instead explore what you have built and/or complete the extension exercise at the bottom of the chapter.
 
 #### 1. Ubuntu Linux Installation
 
@@ -123,7 +123,7 @@ Please contact [Readify Queensland](https://readify.net/contact-us/locations/que
 
 ### Acknowledgements
 
-Without the assistance of the following people (in chronological order) the development and execution of this workshop would not have been possible:
+Without the assistance of the following people (in chronological order) the development and execution of this workshop would simply not have been possible:
 
 * [Mark Rydstrom](https://github.com/markryd)
 * [George Kinsman](https://github.com/gkinsman)
