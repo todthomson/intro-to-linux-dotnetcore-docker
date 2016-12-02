@@ -203,15 +203,15 @@ For a more in-depth Docker have a look at the [Docker Docs](https://docs.docker.
 
 ## _All right stop, collaborate and listen!_
 
-So you have seen what Docker can do on Linux. Let's see what Docker can do on MacOS and Windows as well.
+So you have seen what Docker can do on Linux. Let's see what Docker can do on macOS and Windows as well.
 
-### Docker for MacOS and/or Windows
+### Docker for macOS and/or Windows
 
-Recently Docker has also been released for MacOS and Windows. Both MacOS and Windows run the CLI (client) as a native application, but run the Docker Engine (daemon) through a hypervisor. Hyper-V on Windows and [xhyve](https://github.com/mist64/xhyve/) on MacOS.
+Recently Docker has also been released for macOS and Windows. Both macOS and Windows run the CLI (client) as a native application, but run the Docker Engine (daemon) through a hypervisor. Hyper-V on Windows and [xhyve](https://github.com/mist64/xhyve/) on macOS.
 
-#### Running "Hello, World!" on MacOS on Docker
+#### Running "Hello, World!" on macOS on Docker
 
-Have a go at running [Docker on MacOS](https://docs.docker.com/docker-for-mac/) using `Docker.dmg`
+Have a go at running [Docker on macOS](https://docs.docker.com/docker-for-mac/) using `Docker.dmg`
 
 Keep going until you get your "Hello, World!".
 
@@ -227,11 +227,11 @@ Keep going until you get your "Hello, World!".
 
 #### Kitematic (beta)
 
-[Kinematic](https://kitematic.com) is a useful GUI application for managing Docker images and containers on MacOS and Windows:
+[Kinematic](https://kitematic.com) is a useful GUI application for managing Docker images and containers on macOS and Windows:
 
 > Kitematic is an open source project built to simplify and streamline using Docker on a Mac or Windows (coming soon) PC. Kitematic automates the Docker installation and setup process and provides an intuitive graphical user interface (GUI) for running Docker containers. Kitematic integrates with Docker Machine to provision a VirtualBox VM and install the Docker Engine locally on your machine.
 
-Have a go at installing and using the [Docker Toolbox](https://kitematic.com) via either `DockerToolbox-1.12.3.pkg` on MacOS or `DockerToolbox-1.12.3.exe` on Windows.
+Have a go at installing and using the [Docker Toolbox](https://kitematic.com) via either `DockerToolbox-1.12.3.pkg` on macOS or `DockerToolbox-1.12.3.exe` on Windows.
 
 Have a play around with the product, install some containers and see if you can find something interesting to you. Share what you have found with your neighbours.
 
@@ -239,6 +239,6 @@ Have a play around with the product, install some containers and see if you can 
 
 ## End of Part 5
 
-__Excellent!__ You have dug into Docker on Linux and you have also seen Docker running on either MacOS or Windows.
+__Excellent!__ You have dug into Docker on Linux and you have also seen Docker running on either macOS or Windows.
 
 Take a 5 minute break and then continue with [6. "Hello, world!" via Node.js & Yeoman](Part6.md).
