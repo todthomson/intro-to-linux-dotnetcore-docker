@@ -54,13 +54,15 @@ First we'll get a basic Ubuntu Linux Installation up and running.
 
 8. Once you are happy with all your settings click __create__ to build your new VM and VHDD.
 
-__NOTE: Make sure you have set the maximum disk size to at least 128GB before continuing.__
+__Note: Make sure you have set the maximum disk size to at least 128GB before continuing! 8GiB will not be enough once you start playing with Docker containers.__
 
   ![8-hdd-size](Part1/8-hdd-size.png)
 
 ## Configuring your new VM
 
-You now have a new __powered off__ VM so we want to update the configuration using some "more-optimal" defaults prior to installing Linux. Click __settings__ to configure your new VM.
+You now have a new __powered off__ VM so we want to update the configuration using some "more-optimal" defaults prior to installing Linux. These "more-optimal" settings are based on my experiences for what makes for a fast, enjoyable VM. If you run into any issues with your VM go back to the defaults.
+
+Click __settings__ to configure your new VM.
 
 ![9-powered-off](Part1/9-powered-off.png)
 
@@ -72,7 +74,7 @@ You now have a new __powered off__ VM so we want to update the configuration usi
 
 #### System => Motherboard
 
-1. Set __boot order__ to a) _floppy_ b) _network_ c) _optical_ d) _hard disk_ then disable _floppy_ and _network_.
+1. Set __boot order__ to a) _floppy_ b) _network_ c) _optical_ d) _hard disk_ **and then disable _floppy_ and _network_**.
 
 2. Set __chipset__ to _ICH9_.
 
@@ -82,11 +84,11 @@ You now have a new __powered off__ VM so we want to update the configuration usi
 
   ![11-system-motherboard](Part1/11-system-motherboard.png)
 
-  __Note:__ Windows generally expects its hardware clock in to be in _local time_. Macintosh (and most other operating systems) run their hardware clocks in _UTC by default_. Windows can be told it's hardware clock is in UTC using via the registry as described [here](http://superuser.com/a/975764/120578).
+  __Note:__ Windows generally expects its hardware clock in to be in _local time_. macOS (and most other operating systems) run their hardware clock in _UTC by default_. Windows can be told it's hardware clock is in UTC using via the registry as described [here](http://superuser.com/a/975764/120578).
 
 #### System => Processor
 
-1. Determine how many __Processor(s)__ to assign to your new VM. I recommend a minimum of `1` and a maximum of `half the number` of __logical__ CPU cores of your host machine e.g. in my case I have a `2015 MacBook Pro` with `4 physical / 8 logical` CPU cores, so I _could_ set the virtual CPU cores to `4`, however I just selected `1` as that's all I will need for Linux.
+1. Determine how many __Processor(s)__ to assign to your new VM. I recommend a minimum of `1` and a maximum of `half the number` of __logical__ CPU cores of your host machine e.g. in my case I have a `2015 MacBook Pro` with `4 physical / 8 logical` CPU cores, so I _could_ set the virtual CPU cores to `4`, however I just select `1` as that's all I will need for Linux.
 
 2. Check __enable PAE/NX__.
 
@@ -94,7 +96,7 @@ You now have a new __powered off__ VM so we want to update the configuration usi
 
 #### System => Acceleration
 
-1. Set __paravirtualization interface__ to _KVM_ which is the [recommended setting](http://superuser.com/questions/945910/how-to-select-paravirtualization-interface-in-virtual-box) for Linux guests. When using a Windows guest you should set it to _Hyper-V_.
+1. Set __paravirtualization interface__ to _KVM_ which is the [recommended setting](http://superuser.com/questions/945910/how-to-select-paravirtualization-interface-in-virtual-box) for Linux guests. When using a Windows guest you should set it to _Hyper-V_. Today we are using a Linux guest (VM) so select _KVM_.
 
   ![13-system-acceleration](Part1/13-system-acceleration.png)
 
@@ -127,6 +129,8 @@ You now have a new __powered off__ VM so we want to update the configuration usi
 4. If your host has an SSD select __Ubuntu.vdi__ and check __solid-state drive__.
 
   ![15-storage](Part1/15-storage.png)
+
+__Note:__ This screen is where the most errors get made. Double check your configuration against the screenshot above.
 
 #### Audio
 
@@ -176,7 +180,7 @@ __Done!__ Click __OK__ to save the VM settings.
 
   ![22-write-changes-to-disk](Part1/22-write-changes-to-disk.png)
 
-6. _Where are you?_ should have automatically detected and configured your location via the Internet. If this didn't happen stop and check the "up and down" arrows in the task bar (top right corner) to confirm you have internet access through _NAT_ or _Bridged Mode_ via the host. If you don't have any Internet access that's OK just type in to the autocomplete the name of your closet capital city e.g. _Brisbane (Queensland, Australia)_ or your timezone e.g. _Lord Howe Time (Australia)_ and then click _continue_.
+6. _Where are you?_ should have automatically detected and configured your location via the Internet. If this didn't happen stop and check the "up and down" arrows in the task bar (top right corner) to confirm you have internet access through _NAT_ or _Bridged Mode_ via the host. If you don't have any Internet access that's OK just type into the autocomplete the name of your closet capital city e.g. _Brisbane (Queensland, Australia)_ or your timezone e.g. _Lord Howe Time (Australia)_ and then click _continue_.
 
   ![23-where-are-you](Part1/23-where-are-you.png)
 
@@ -196,11 +200,11 @@ __Done!__ Click __OK__ to save the VM settings.
 
     _Note:__ The "Unix way" is to use all your initials for your username. You need to type your username a lot so it's good for it to be short.
 
-  d. __Choose a password__ and __confirm your password__. You will need to remember this password as you'll need it when you want to run things as _root_ (administrator).
+  d. __Choose a password__ and __confirm your password__. You will need to remember this password as you'll need it when you want to run things as _root_ (administrator) via `sudo`.
 
   e. For ease of use (and as this is just a VM) select __log in automatically__.
 
-  f. click __next__ to begin the process of installing your new Linux system.
+  f. Click __next__ to begin the process of installing your new Ubuntu Linux system.
 
   ![25-who-are-you](Part1/25-who-are-you.png)
 
@@ -216,9 +220,11 @@ __Done!__ Click __OK__ to save the VM settings.
 
 Login to your "new shiny" Linux VM and see if you can work out how to play a game of __Beneath a Steel Sky, Freeware CD Version__.
 
-The game files `bass-cd-1.2.zip` are available on the USB flash drive (you may be able to work out how to not need them)...
+_Beneath a Steel Sky_ is a [SCUMMVM](https://www.scummvm.org) game that is now freely available in the public domain.
 
-You'll know you have it working when you see the following:
+The game files `bass-cd-1.2.zip` are available on the USB flash drive (though you may be able to work out how to not need them)... _**hint hint**_ If you're clever you might be able to use `apt-get` to get both SCUMMVM and the game files you need (if you get stuck this will be explained in more detail in Part 2).
+
+You know you have it working when you see the following:
 
 ![27-scumm-vm](Part1/27-scumm-vm.png)
 
