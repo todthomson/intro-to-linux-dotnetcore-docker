@@ -6,9 +6,9 @@ First we'll get a basic Ubuntu Linux Installation up and running.
 
 ## Prerequisites
 
-1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.04.1-desktop-amd64.iso`) from your local Ubuntu mirror so as to save your quota and to download it as fast as possible. We're using _Ubuntu Linux_ as it's the primary Linux distribution being used by the .NET Core team.
+1. Download the latest [Ubuntu Desktop 64-bit ISO](https://launchpad.net/ubuntu/+cdmirrors) (e.g. `ubuntu-16.10-desktop-amd64.iso`) from your local Ubuntu mirror so as to save your quota and to download it as fast as possible. We're using _Ubuntu Linux_ as it's the primary Linux distribution being used by the .NET Core team.
 
-2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice e.g. Windows `VirtualBox-5.0.26-108824-Win.exe` or MacOS `VirtualBox-5.0.26-108824-OSX.dmg`. Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.0.26-108824.vbox-extpack`. This extension pack contains host drivers for USB etc.
+2. Download the latest [VirtualBox installer](https://www.virtualbox.org/wiki/Downloads) for your operating system of choice e.g. Windows `VirtualBox-5.1.10-112026-Win.exe` or MacOS `VirtualBox-5.1.10-112026-OSX.dmg`. Also download the corresponding version of the [extension pack](https://www.virtualbox.org/wiki/Downloads) e.g. for all operating systems `Oracle_VM_VirtualBox_Extension_Pack-5.1.10-112026.vbox-extpack`. This extension pack contains host drivers for USB etc.
 
 ## Installing and configuring VirtualBox
 
@@ -122,7 +122,7 @@ You now have a new __powered off__ VM so we want to update the configuration usi
 
 2. Remove the virtual __controller: ide__ from the __storage tree__ by selecting it and then clicking the _subtract controller_ icon at the bottom (the rightmost icon).
 
-3. Add a new virtual optical drive by selecting __controller: sata__ and clicking the _add disk_ icon at the bottom (the leftmost icon). When the modal appears click __choose disk__ and select the Ubuntu Linux `.iso` file e.g. `ubuntu-16.04.1-desktop-amd64.iso` downloaded earlier. Also check __use host i/o cache__.
+3. Add a new virtual optical drive by selecting __controller: sata__ and clicking the _add disk_ icon at the bottom (the leftmost icon). When the modal appears click __choose disk__ and select the Ubuntu Linux `.iso` file e.g. `ubuntu-16.10-desktop-amd64.iso` downloaded earlier. Also check __use host i/o cache__.
 
 4. If your host has an SSD select __Ubuntu.vdi__ and check __solid-state drive__.
 

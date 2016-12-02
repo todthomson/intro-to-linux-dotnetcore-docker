@@ -18,7 +18,7 @@ The [Advanced Packaging Tool](https://en.wikipedia.org/wiki/Advanced_Packaging_T
 
 ## VirtualBox Snapshots
 
-__Warning:__ I have experienced some issues with Ubuntu 16.04.1 and VirtualBox which can make it [kernel panic](https://en.wikipedia.org/wiki/Kernel_panic) on boot causing the boot to fail.
+__Warning:__ I have experienced some issues with the combination of Ubuntu and VirtualBox which can make it [kernel panic](https://en.wikipedia.org/wiki/Kernel_panic) on boot causing the boot to fail.
 
 I __strongly advise__ you take advantage of VirtualBox Snapshots __now__ (as shown in the screen shot below) in case anything goes wrong in the next section.
 
@@ -114,7 +114,7 @@ If you prefer `emacs` you could `sudo apt-get install emacs` and then add the aw
 
 So we have even more text-editing options let's install _Sublime Text 3_. There are two options for doing this which I will use to illustrate some other ways of getting software installed over and above _just downloading a binary_.
 
-1. Our first option (but don't do this!) is to download a `.dpkg` from the [Sublime Text 3](https://www.sublimetext.com/3) homepage and then install it using the `dpkg -i` command i.e. run the `wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb && sudo dpkg -i sublime-text_build-3114_amd64.deb` command.
+1. Our first option (but don't do this!) is to download a `.dpkg` from the [Sublime Text 3](https://www.sublimetext.com/3) homepage and then install it using the `dpkg -i` command i.e. run the `wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb && sudo dpkg -i sublime-text_build-3114_amd64.deb` command.
 
 2. Our second (and the better) option is to use the _Sublime Text 3 Installer PPA_. A [PPA](https://en.wikipedia.org/wiki/Personal_Package_Archive) is a _Personal Package Archive_ which is simply just an unofficial APT repository hosted by an individual on Canonical's [Launchpad](https://launchpad.net/) software collaboration service. Run the following commands to install Sublime Text 3 using the PPA.
 
@@ -142,7 +142,7 @@ Now run `subl` to confirm that Sublime Text 3 is available and working OK.
 
 #### Atom
 
-If you're like me you want GitHub's [Atom](https://atom.io/)! If so run `wget https://github.com/atom/atom/releases/download/v1.10.0/atom-amd64.deb && sudo dpkg -i atom-amd64.deb` now.
+If you're like me you want GitHub's [Atom](https://atom.io/)! If so run `wget https://github.com/atom/atom/releases/download/v1.12.6/atom-amd64.deb && sudo dpkg -i atom-amd64.deb` now.
 
 ![13-github-atom](Part2/13-github-atom.png)
 

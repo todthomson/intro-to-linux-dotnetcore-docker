@@ -23,7 +23,7 @@ __Note:__ If you see any errors here please resolve them before continuing.
 Now we're up to date let's add the .NET Core APT feed.
 
 ```
-sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
+sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ yakkety main" > /etc/apt/sources.list.d/dotnetdev.list'
 ```
 
 ```
@@ -51,7 +51,7 @@ apt-cache search dotnet*
 Now we can install the _newest_ version of .NET Core SDK.
 
 ```
-sudo apt-get install dotnet-dev-1.0.0-preview2-003131
+sudo apt-get install dotnet-dev-1.0.0-preview2.1-003177
 ```
 
 ![4-install-latest-dotnet-core-1](Part3/4-install-latest-dotnet-core-1.png)
@@ -70,7 +70,7 @@ dotnet --version
 
 ![6-checking-dotnet-core-version](Part3/6-checking-dotnet-core-version.png)
 
-Excellent! We now have version `1.0.0-preview2-003131` of the .NET Core SDK.
+Excellent! We now have version `1.0.0-preview2.1-003177` of the .NET Core SDK.
 
 #### Creating a .NET Core Project
 

@@ -46,13 +46,13 @@ I have tested the workshop with the following software versions. You mileage may
 
 | Software | Version |
 | -------- | ------- |
-| [VirtualBox](https://www.virtualbox.org) | `5.0.26` |
-| [Ubuntu Linux](http://www.ubuntu.com) | `16.04.1 x64 LTS` |
-| [.NET Core SDK](https://www.microsoft.com/net/core) | `1.0.0-preview2-003131` |
-| [ASP.NET Core](http://www.asp.net/core) | `1.0.0` |
-| [Docker](https://www.docker.com) | `1.12.1` |
-| [Node.js](https://nodejs.org) | `6.5.0` |
-| [Yeoman](http://yeoman.io) | `1.8.5` |
+| [VirtualBox](https://www.virtualbox.org) | `5.1.10` |
+| [Ubuntu Linux](http://www.ubuntu.com) | `16.10` |
+| [.NET Core](https://www.microsoft.com/net/core) | `1.0.0-preview2.1-003177` |
+| [ASP.NET Core](http://www.asp.net/core) | `?` |
+| [Docker](https://www.docker.com) | `?` |
+| [Node.js](https://nodejs.org) | `?` |
+| [Yeoman](http://yeoman.io) | `?` |
 
 ## The Workshop
 
@@ -116,7 +116,8 @@ This workshop has been run "in person" on the following occasions:
 
 1. __Readify__ *Queensland* 18 Mar 2016 (37 attendees).
 2. __Microsoft__ *Brisbane* 24 Jun 2016 (40 attendees).
-3. __Youi__ *Sunshine Coast* 6 Sep 2016 (? attendees).
+3. __Youi__ *Sunshine Coast* 6 Sep 2016 (18 attendees).
+4. __DDD Brisbane 2016__ *Brisbane* 3 Sep 2016 (? attendees).
 
 Please contact [Readify Queensland](https://readify.net/contact-us/locations/queensland/) if you would like us to run this workshop for you and your team.
 
