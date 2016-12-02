@@ -27,7 +27,7 @@ sudo apt-get install build-essential libssl-dev
 Run the following to install `nvm`.
 
 ```
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 ```
 
 ![3-install-node-2](Part6/3-install-node-2.png)
@@ -55,7 +55,7 @@ nvm list-remote
 Now we can install the latest version of Node.
 
 ```
-nvm install v6.5.0
+nvm install v7.2.0
 ```
 
 ![7-install-node-6](Part6/7-install-node-6.png)
