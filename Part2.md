@@ -2,7 +2,7 @@
 
 ![1-debian-is-under-ubuntu](Part2/1-debian-is-under-ubuntu.jpg)
 
-Now we have a basic [Ubuntu](http://www.ubuntu.com/) [Linux](https://en.wikipedia.org/wiki/Linux_naming_controversy) installation up and running we'll look a few basic pieces of installation and configuration that will make your life easy.
+Now we have an [Ubuntu](http://www.ubuntu.com/) [GNU/Linux](https://en.wikipedia.org/wiki/Linux_naming_controversy) installation up and running we'll look a few basic pieces of installation and configuration that will make your life easy.
 
 ## Background
 
@@ -20,7 +20,7 @@ The [Advanced Packaging Tool](https://en.wikipedia.org/wiki/Advanced_Packaging_T
 
 __Warning:__ I have experienced some issues with the combination of Ubuntu and VirtualBox which can make it [kernel panic](https://en.wikipedia.org/wiki/Kernel_panic) on boot causing the boot to fail.
 
-I __strongly advise__ you take advantage of VirtualBox Snapshots __now__ (as shown in the screen shot below) in case anything goes wrong in the next section.
+I suspect those issues have been resolved by now, however I still __strongly advise__ you take advantage of VirtualBox Snapshots __now__ (as shown in the screen shot below) in case anything goes wrong in the next section so that you can rollback to your snapshot and go again if you need to.
 
 ![23-virtual-box-snapshots](Part2/23-virtual-box-snapshots.png)
 
@@ -38,7 +38,7 @@ If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) i
 
   ![7-sudo-apt-get-update](Part2/3-sudo-apt-get-update.png)
 
-3. You will see that you are prompted for _your_ password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created as part of the installation gets sudoers access automatically.
+3. You will see that you are prompted for _your_ password (not the root password) to confirm that you are in the list of _sudoers_ i.e. the list of users who have been granted the ability to run commands "as root" by the super user. The first account created (as part of the installation) gets added to the sudoers list automatically.
 
 4. Now that we have an up-to-date package definition list we can run `sudo apt-get upgrade` to upgrade our system to the latest package and security updates:
 
@@ -50,15 +50,13 @@ If GUI application [Software Updater](https://wiki.ubuntu.com/SoftwareUpdates) i
 
 ## Ironing out the wrinkles
 
-Time to switch back to our Ubuntu Linux VM.
-
 #### VirtualBox Guest Additions
 
 __Note:__ Here is where we get copy and paste working.
 
 1. Open a new Terminal by pressing the shortcut `CTRL+ALT+T` or by pressing the `SUPER` (Windows or Command) key, typing `term` and then pressing `ENTER`. This is how you launch applications in Ubuntu Linux i.e. it's the same as in Windows.
 
-2. Run the following command to install some tools we will use for compiling some kernel modules build and testing our OpenGL acceleration is working:
+2. Run the following command to install the tools we will use for compiling a few kernel modules which will help us test our OpenGL acceleration is working:
 
   ```
   sudo apt-get install mesa-utils dkms build-essential linux-headers-$(uname -r)
