@@ -2,9 +2,41 @@
 
 ![1-dotnet-core-dev-stack](Part3/1-dotnet-core-dev-stack.png)
 
-## .NET Core on Ubuntu Linux
+## Supported Distributions
 
-__Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install .NET Core on Ubuntu Linux.
+.NET Core is [supported on the following distributions](https://github.com/dotnet/core/blob/master/roadmap.md#technology-roadmaps):
+
+OS                       |Version               |Architectures|
+-------------------------|----------------------|-------------|
+Red Hat Enterprise Linux | 7.2                  | x64         |
+Fedora                   | 23                   | x64         |
+Debian                   | 8.2                  | x64         |
+Ubuntu                   | 14.04 LTS, 16.04 LTS | x64         |
+Linux Mint               | 17                   | x64         |
+openSUSE                 | 13.2                 | x64         |
+Centos                   | 7.1                  | x64         |
+Oracle Linux             | 7.1                  | x64         |
+Mac OS X                 | 10.11, 10.12         | x64         |
+Windows Client           | 7 SP1 - 10           | x64, x86    |
+Windows Server           | 2008 R2 SP1 - 2016   | x64, x86    |
+
+It also __works fine on Ubuntu 16.10 x64__ which is the distribution/version I have used while preparing this workshop.
+
+If you are using one of the distributions above (that is not Ubuntu 16.10 x64) you should go [here](https://www.microsoft.com/net/core) and follow your distribution's specfic instructions, then skip forward a little way to the section entitled _Smoke Testing .NET Core_.
+
+If you are not using one of the above distributions you have two options:
+
+#### 1. Import my pre-baked VirtualBox VM _(The easier method)_
+
+I have pre-prepared an Ubuntu 16.10 x64 VM for you for just this situation. You can now install the latest [VirtualBox 5.1.12](https://www.virtualbox.org/wiki/Downloads) and _VirtualBox Extension Pack 5.1.2_ (available on my USB sticks) and then import the pre-baked vm `LCA2017_Before.ova` now and then continue on with the workshop, or...
+
+#### 2. Compile from source _(The harder method)_ 
+
+You can [compile from source](https://github.com/dotnet/coreclr#building-the-repository) though your milage may vary. If you get stuck you can always fall back to importing the VM.
+
+## Installing .NET Core on Ubuntu Linux 16.10 x64
+
+__Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install .NET Core on Ubuntu Linux 16.10 x64.
 
 For more information see [here](https://www.microsoft.com/net/core#ubuntu). The following is practically verbatim from that source.
 
