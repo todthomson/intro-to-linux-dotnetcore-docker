@@ -1,5 +1,7 @@
 # 3. "Hello, world!" .NET Core
 
+__Note:__ The screenshots may contain out of date version numbers (etc) but the `text commands` should be accurate and up to date i.e. please refer to the text commands and use the screenshots as rough guide to correctness only.
+
 ![1-dotnet-core-dev-stack](Part3/1-dotnet-core-dev-stack.png)
 
 ## Supported Distributions
@@ -105,7 +107,7 @@ dotnet --version
 
 ![6-checking-dotnet-core-version](Part3/6-checking-dotnet-core-version.png)
 
-Excellent! We now have version `1.0.0-preview2.1-003177` of the .NET Core SDK.
+Excellent! We now have version `1.0.0-preview2-1-003177` of the .NET Core SDK.
 
 #### Creating a .NET Core Project
 
@@ -156,6 +158,36 @@ cat Program.cs
 ![10-view-source](Part3/10-view-source.png)
 
 Superb! The world of .NET Core on Ubuntu Linux is now open to you...
+
+## Exploring the .NET Core CLI
+
+As you have already seen .NET Core is driven by the `dotnet` CLI.
+
+Let's take a look at the features provided by `dotnet`.
+
+```
+dotnet --help
+```
+
+![11-dotnet-help](Part3/11-dotnet-help.png)
+
+We have seen `dotnet new`, `dotnet restore` and `dotnet run` already.
+
+#### `dotnet new`
+
+Below you can see that `dotnet new` scaffolds the simplest .NET Core application possible (the Hello, world!) which is made up of two files: `Program.cs` and `project.json`.
+
+`Program.cs` contains the `public static void Main(string[] args)` that is the entry point for your application. It also writes the `Hello, world!` to the console.
+
+`project.json` is your project's configuration file. It (amongst other things) defines the dependencies of your application. You can see that your application is targetting version `1.1` of the .NET Core platform and runtime via the `netcoreapp1.1` framework dependency.
+
+![12-dotnet-new](Part3/12-dotnet-new.png)
+
+#### `dotnet restore`
+
+Below you can see that the `dotnet restore` command's job is to restore your dependencies. In the current case this is just `Microsoft.NETCore.App`  is called automatically by 
+
+![13-dotnet-restore](Part3/13-dotnet-restore.png)
 
 ## _All right stop, collaborate and listen!_
 
