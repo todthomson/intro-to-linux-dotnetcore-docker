@@ -63,7 +63,11 @@ dotnet run
 
 ![6-dotnet-run](Part5/6-dotnet-run.png)
 
-__Superb!__ You now have your "Hello, world!" on both vanilla .NET Core and .NET Core on Docker.
+__Superb!__ You now have "Hello, world!" on:
+
+1. .NET Core,
+2. Docker, and
+3. .Net Core on Docker.
 
 ### Docker 101
 
