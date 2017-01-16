@@ -28,7 +28,7 @@ If you are not using one of the above distributions you have two options:
 
 #### 1. Import my pre-baked VirtualBox VM _(The easier method)_
 
-I have pre-prepared an Ubuntu 16.10 x64 VM for you for just this situation. You can now install the latest [VirtualBox 5.1.12](https://www.virtualbox.org/wiki/Downloads) and _VirtualBox Extension Pack 5.1.2_ (available on my USB sticks) and then import the pre-baked vm `LCA2017_Before.ova` now and then continue on with the workshop, or...
+I have pre-prepared an Ubuntu 16.10 x64 VM for you for just this situation. You can now install the latest [VirtualBox 5.1.12](https://www.virtualbox.org/wiki/Downloads) and _VirtualBox Extension Pack 5.1.2_ (available on my USB sticks) and then import the pre-baked vm `LCA2017_Before.ova` (also available on my USB sticks) now and then continue on with the workshop, or...
 
 #### 2. Compile from source _(The harder method)_ 
 
@@ -36,9 +36,7 @@ You can [compile from source](https://github.com/dotnet/coreclr#building-the-rep
 
 ## Installing .NET Core on Ubuntu Linux 16.10 x64
 
-__Note:__ In order to avoid excessive rehashing of work that's currently in a state of flux I will be providing _fast_ instructions on how to install .NET Core on Ubuntu Linux 16.10 x64.
-
-For more information see [here](https://www.microsoft.com/net/core#ubuntu). The following is practically verbatim from that source.
+__Note:__ The following are _fast_ instructions on how to install .NET Core on Ubuntu Linux 16.10 x64. For more information see [here](https://www.microsoft.com/net/core#ubuntu).
 
 #### Are we up to date?
 
