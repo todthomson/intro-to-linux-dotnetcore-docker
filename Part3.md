@@ -28,7 +28,11 @@ If you are not using one of the above distributions you have two options:
 
 #### 1. Import my pre-baked VirtualBox VM _(The easier method)_
 
-I have pre-prepared an Ubuntu 16.10 x64 VM for you for just this situation. You can now install the latest [VirtualBox 5.1.12](https://www.virtualbox.org/wiki/Downloads) and _VirtualBox Extension Pack 5.1.2_ (available on my USB sticks) and then import the pre-baked vm `LCA2017_Before.ova` (also available on my USB sticks) now and then continue on with the workshop, or...
+I have pre-prepared an Ubuntu 16.10 x64 VM for you for just this situation.
+
+You can now install the latest [VirtualBox 5.1.12](https://www.virtualbox.org/wiki/Downloads) and _VirtualBox Extension Pack 5.1.2_ (available on my USB sticks) and then import the pre-baked vm `LCA2017_Before.ova` (also available on my USB sticks) now and then continue on with the workshop, or...
+
+__Note:__ Please ask an I will supply the password for the VM.
 
 #### 2. Compile from source _(The harder method)_ 
 
