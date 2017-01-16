@@ -46,7 +46,7 @@ I have tested the workshop with the following software versions. You mileage may
 
 | Software | Version |
 | -------- | ------- |
-| [VirtualBox](https://www.virtualbox.org) | `5.1.10 x64` |
+| [VirtualBox](https://www.virtualbox.org) | `5.1.12 x64` |
 | [Ubuntu Linux](http://www.ubuntu.com) | `16.10 x64` |
 | [.NET Core](https://www.microsoft.com/net/core) | `1.0.0-preview2.1-003177` |
 | [ASP.NET Core](http://www.asp.net/core) | `(as above)` |

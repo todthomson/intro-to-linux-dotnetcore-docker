@@ -140,7 +140,7 @@ Now run `subl` to confirm that Sublime Text 3 is available and working OK.
 
 #### Atom
 
-If you're like me you want GitHub's [Atom](https://atom.io/)! If so run `wget https://github.com/atom/atom/releases/download/v1.12.6/atom-amd64.deb && sudo dpkg -i atom-amd64.deb` now.
+If you're like me you want GitHub's [Atom](https://atom.io/)! If so run `wget https://github.com/atom/atom/releases/download/v1.13.0/atom-amd64.deb && sudo dpkg -i atom-amd64.deb` now.
 
 ![13-github-atom](Part2/13-github-atom.png)
 
