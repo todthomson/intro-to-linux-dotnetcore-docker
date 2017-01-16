@@ -57,7 +57,8 @@ __Note:__ If you see any errors here please resolve them before continuing.
 Now we're up to date let's add the .NET Core APT feed.
 
 ```
-sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ yakkety main" > /etc/apt/sources.list.d/dotnetdev.list'
+sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ yakkety main" \
+> /etc/apt/sources.list.d/dotnetdev.list'
 ```
 
 ```
