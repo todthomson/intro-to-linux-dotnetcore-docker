@@ -2,27 +2,7 @@
 
 ![1-aspnet-core](Part4/1-aspnet-core.png)
 
-## ASP.NET Core on Ubuntu Linux (RC1)
-
-The world of ASP.NET Core has changed significantly from RC1 to RC2.
-
-1. `DNX` the _.NET Execution Runtime_ is no more.
-
-  ![2-dnx-is-no-more](Part4/2-dnx-is-no-more.png)
-
-2. `DNVM` the _.NET Version Manager_ (the install script for obtaining `DNX`) is gone.
-
-  ![3-dnvm-is-gone](Part4/3-dnvm-is-gone.png)
-
-3. `DNU` the _.NET Developer Utility_ (for managing dependencies, building and publishing your applications) is out the window.
-
-  ![4-dnu-is-out](Part4/4-dnu-is-out.png)
-
-But that's nothing to worry about. For anyone with an RC1 application there _is_ a [migration path](https://dotnet.github.io/docs/core-concepts/dnx-migration.html) and the functions previously provided by `dnx`, `dnvm` and `dnu` are now provided by the `dotnet` CLI.
-
-__Awesome!__ Interacting with ASP.NET Core is now very simple indeed.
-
-## ASP.NET Core on Ubuntu Linux (RC2 and 1.0+)
+## ASP.NET Core
 
 All you need to do install ASP.NET Core is to run the following command.
 
@@ -30,7 +10,7 @@ All you need to do install ASP.NET Core is to run the following command.
 dotnet
 ```
 
-![5-installing-aspnet-core.png](Part4/5-installing-aspnet-core.png)
+![2-installing-aspnet-core.png](Part4/2-installing-aspnet-core.png)
 
 So I lied... Clearly you _already_ had it installed... ;)
 
@@ -50,7 +30,7 @@ cd AspDotNetCoreTestApp
 dotnet new
 ```
 
-![6-dotnet-new-project](Part4/6-dotnet-new-project.png)
+![3-dotnet-new-project](Part4/3-dotnet-new-project.png)
 
 Let's take a closer look this time at what the `dotnet new` command creates for us.
 
@@ -66,7 +46,7 @@ cat Program.cs
 cat project.json
 ```
 
-![7-new-program-cs-project-json](Part4/7-new-program-cs-project-json.png)
+![4-new-program-cs-project-json](Part4/4-new-program-cs-project-json.png)
 
 ## Our first ASP.NET Core Web API
 
@@ -175,7 +155,7 @@ Let's take another look at our `Project.json`.
 cat project.json
 ```
 
-![8-project-json](Part4/8-project-json.png)
+![5-project-json](Part4/5-project-json.png)
 
 With your text editor of choice update `project.json` as follows.
 
@@ -214,9 +194,9 @@ First let's restore our NuGet packages.
 dotnet restore
 ```
 
-![9-dotnet-restore-1](Part4/9-dotnet-restore-1.png)
+![6-dotnet-restore-1](Part4/6-dotnet-restore-1.png)
 
-![10-dotnet-restore-2](Part4/10-dotnet-restore-2.png)
+![7-dotnet-restore-2](Part4/7-dotnet-restore-2.png)
 
 Now let's run our application.
 
@@ -224,17 +204,21 @@ Now let's run our application.
 dotnet run
 ```
 
-![11-dotnet-run](Part4/11-dotnet-run.png)
+![8-dotnet-run](Part4/8-dotnet-run.png)
 
 ## Testing our ASP.NET Core Web API
 
 Open Firefox and navigate to `http://localhost:5000/api/HelloWorld`.
 
-![12-firefox-hello-world](Part4/12-firefox-hello-world.png)
+![9-firefox-hello-world](Part4/9-firefox-hello-world.png)
 
 ## _All right stop, collaborate and listen!_
 
 Build out your ASP.NET Core Web API server with some more [HTTP methods](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and then update your .NET Core application (from the previous chapter) to call your Web API `using System.Net.Http` (as a client).
+
+## Unit Testing in .NET Core (and optional Visual Studio Code)
+
+TODO
 
 ## End of Part 4
 
