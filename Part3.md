@@ -237,7 +237,7 @@ The NuGet Package will become relevent once you want to distribute your applicat
 
 That's it for `dotnet` CLI commands.
 
-## Unit Testing in .NET Core (option: Visual Studio Code)
+## Unit Testing in .NET Core (and optional Visual Studio Code)
 
 __Prerequisite:__ If you would like to check out _Visual Studio Code_ (VS Code) please go [here](https://code.visualstudio.com) and install it for your operating system / distribution of choice. It's also 100% OK to continue on with your text editor of choice.
 
@@ -250,7 +250,7 @@ Open VS Code (or another text editor of your choice) and edit `project.json` upd
   },
 ```
 
-__Note:__ If you're chose to run VS Code you may be prompted to install the C# Language Extension. If so go ahead and do that now.
+__Note:__ If you chose to try out VS Code you may be prompted to install the C# Language Extension. If so go ahead and click on "show recommendations" to do that now.
 
 ![19-vscode-csharp](Part3/19-vscode-csharp.png)
 
