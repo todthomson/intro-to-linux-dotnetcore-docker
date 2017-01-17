@@ -245,7 +245,7 @@ __Prerequisites:__ If you would like to check out _Visual Studio Code_ (VS Code)
 
 Open VS Code (or another text editor of your choice) and edit `project.json` updating the `"dependencies": {}` section so it looks like the following. This will set the test libary to [xUnit.net](http://xunit.github.io) and include the bridge between `dotnet test` and xUnit.net.
 
-```JSON
+```json
   },
   "dependencies": {
     "xunit":"2.2.0-beta4-build3444",
@@ -255,7 +255,7 @@ Open VS Code (or another text editor of your choice) and edit `project.json` upd
 
 Also, you will need to update the top of your `project.json` to tell `dotnet` to use the xUnit.net test runner.
 
-```JSON
+```json
 {
   "version": "1.0.0-*",
   "testRunner": "xunit",
@@ -264,7 +264,7 @@ Also, you will need to update the top of your `project.json` to tell `dotnet` to
 
 Your complete `project.json` should look as follows.
 
-```JSON
+```json
 {
   "version": "1.0.0-*",
   "testRunner": "xunit",
@@ -306,7 +306,7 @@ __And:__ Then select "restore" in VS Code or run `dotnet restore` from the comma
 
 Now open `Program.cs` and import (use / `using`) the xUnit.net library as shown below. This will allow our code to use the Classes and Methods (etc) provided by xUnit.net.
 
-```C#
+```csharp
 using System;
 using Xunit;
 
@@ -316,7 +316,7 @@ namespace ConsoleApplication
 
 Next we'll refactor our existing terminal application as shown below. This will simplify the process of testing our method `HelloWorld()` in the `SystemUnderTest` class.
 
-```C#
+```csharp
     public class Program
     {
         public static void Main(string[] args)
@@ -338,7 +338,7 @@ Next we'll refactor our existing terminal application as shown below. This will 
 
 Lastly we will write our unit test. Add the following unit test `TestClass` at the bottom of `Program.cs` just before the final `}`.
 
-```C#
+```csharp
     public class TestClass
     {
         [Fact]
@@ -352,7 +352,7 @@ Lastly we will write our unit test. Add the following unit test `TestClass` at t
 
 Your complete `Program.cs` should look as follows.
 
-```C#
+```csharp
 using System;
 using Xunit;
 
