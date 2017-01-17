@@ -24,11 +24,11 @@ Keep going until you get to `sudo docker run hello-world` and you will see the f
 
 Now continue on and complete the following  _optional configurations_ as they will make running Docker lower friction and more enjoyable for you.
 
-1. [Create a docker group](https://docs.docker.com/engine/installation/linux/ubuntulinux/#create-a-docker-group) so you don't have to run Docker with `sudo`.
+1. [Manage Docker as a non-root user](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/manage-docker-as-a-non-root-user) so you don't have to run Docker with `sudo`.
 
-2. [Adjust memory and swap accounting](https://docs.docker.com/engine/installation/linux/ubuntulinux/#adjust-memory-and-swap-accounting) primarily to avoid getting spammed with warnings.
+2. [Enable memory and swap accounting](https://docs.docker.com/engine/installation/linux/ubuntulinux/#enable-memory-and-swap-accounting) primarily to avoid getting spammed with warnings.
 
-3. [Configure Docker to start on boot](https://docs.docker.com/engine/installation/linux/ubuntulinux/#configure-docker-to-start-on-boot) so you don't have to remember to start it every time.
+3. [Configure Docker to start on boot](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/configure-docker-to-start-on-boot) so you don't have to remember to start it every time.
 
 Once you have completed the three optional Docker configuration steps above, reboot and then run `docker version`. You should see the following output which confirms that Docker Daemon is running.
 
