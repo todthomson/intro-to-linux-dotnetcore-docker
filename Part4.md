@@ -216,7 +216,7 @@ Open Firefox and navigate to `http://localhost:5000/api/HelloWorld`.
 
 Build out your ASP.NET Core Web API server with some more [HTTP methods](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and then update your .NET Core application (from the previous chapter) to call your Web API `using System.Net.Http` (as a client).
 
-## Unit Testing in .NET Core (and optional Visual Studio Code)
+## Integration Testing in ASP.NET Core
 
 TODO
 
