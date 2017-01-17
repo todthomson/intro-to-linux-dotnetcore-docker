@@ -237,13 +237,32 @@ The NuGet Package will become relevent once you want to distribute your applicat
 
 That's it for `dotnet` CLI commands.
 
-## Unit Testing in .NET Core
+## Unit Testing in .NET Core (option: Visual Studio Code)
 
-TODO
+__Prerequisite:__ If you would like to check out _Visual Studio Code_ (VS Code) please go [here](https://code.visualstudio.com) and install it for your operating system / distribution of choice. It's also 100% OK to continue on with your text editor of choice.
 
-## Visual Studio Code
+Open VS Code (or another text editor of your choice) and edit `project.json` updating the `"dependencies": {}` section so it looks like the following:
 
-TODO
+```
+  "dependencies": {
+    "xunit":"2.1.0",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029"
+  },
+```
+
+__Note:__ If you're chose to run VS Code you may be prompted to install the C# Language Extension. If so go ahead and do that now.
+
+![19-vscode-csharp](Part3/19-vscode-csharp.png)
+
+If you're using VS Code you will see the following prompts after restarting the editor. Go ahead and select "yes" to install the required assets for building and debugging via VS Code.
+
+![20-vscode-csharp-installed](Part3/20-vscode-csharp-installed.png)
+
+Next you can select "restore" in VS Code or run `dotnet restore` from the command line to restore (download) your new `dependencies`. You should then see output similar to the following.
+
+![21-vscode-dotnet-restore](Part3/21-vscode-dotnet-restore.png)
+
+TODO: Continue from here writing the unit test...
 
 ## _All right stop, collaborate and listen!_
 
