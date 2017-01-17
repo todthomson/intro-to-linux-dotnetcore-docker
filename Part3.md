@@ -239,15 +239,55 @@ That's it for `dotnet` CLI commands.
 
 ## Unit Testing in .NET Core (and optional Visual Studio Code)
 
-__Prerequisite:__ If you would like to check out _Visual Studio Code_ (VS Code) please go [here](https://code.visualstudio.com) and install it for your operating system / distribution of choice. It's also 100% OK to continue on with your text editor of choice.
+__Prerequisites:__ If you would like to check out _Visual Studio Code_ (VS Code) please go [here](https://code.visualstudio.com) and install it for your operating system / distribution of choice. It's also 100% OK to continue on with your text editor of choice.
 
-Open VS Code (or another text editor of your choice) and edit `project.json` updating the `"dependencies": {}` section so it looks like the following:
+#### `project.json`
 
-```
+Open VS Code (or another text editor of your choice) and edit `project.json` updating the `"dependencies": {}` section so it looks like the following. This will set the test libary to [xUnit.net](http://xunit.github.io) and include the bridge between `dotnet test` and xUnit.net.
+
+```JSON
+  },
   "dependencies": {
     "xunit":"2.1.0",
     "dotnet-test-xunit": "2.2.0-preview2-build1029"
   },
+```
+
+Also, you will need to update the top of your `project.json` to tell `dotnet` to use the xUnit.net test runner.
+
+```JSON
+{
+  "version": "1.0.0-*",
+  "testRunner": "xunit",
+  "buildOptions": {
+``` 
+
+Your complete `project.json` should look as follows.
+
+```JSON
+{
+  "version": "1.0.0-*",
+  "testRunner": "xunit",
+  "buildOptions": {
+    "debugType": "portable",
+    "emitEntryPoint": true
+  },
+  "dependencies": {
+    "xunit":"2.2.0-beta4-build3444",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029"
+  },
+  "frameworks": {
+    "netcoreapp1.1": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.1.0"
+        }
+      },
+      "imports": "dnxcore50"
+    }
+  }
+}
 ```
 
 __Note:__ If you chose to try out VS Code you may be prompted to install the C# Language Extension. If so go ahead and click on "show recommendations" to do that now.
@@ -262,7 +302,95 @@ Next you can select "restore" in VS Code or run `dotnet restore` from the comman
 
 ![21-vscode-dotnet-restore](Part3/21-vscode-dotnet-restore.png)
 
-TODO: Continue from here writing the unit test...
+#### `Program.cs`
+
+Now open `Program.cs` and import (use) the xUnit.net library as shown below. This will allow our code to use the Classes and Methods (etc) provided by xUnit.net.
+
+```C#
+using System;
+using Xunit;
+
+namespace ConsoleApplication
+{
+```
+
+Next we'll refactor our existing terminal application as shown below. This will simplify the process of testing our method (function).
+
+```C#
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var sut = new SystemUnderTest();
+            var hello = sut.HelloWorld();
+            Console.WriteLine(hello);
+        }
+    }
+
+    public class SystemUnderTest
+    {
+        public string HelloWorld()
+        {
+            return "Hello World!";
+        }
+    }
+```
+
+Lastly we will write our unit test. Add the following unit test at the bottom of `Program.cs` just before the final `}`.
+
+```C#
+    public class TestClass
+    {
+        [Fact]
+        public void TestMethod()
+        {
+            var sut = new SystemUnderTest();
+            Assert.Equal("Hello World!", sut.HelloWorld());
+        }
+    }
+```
+
+Your complete `Program.cs` should look as follows.
+
+```C#
+using System;
+using Xunit;
+
+namespace ConsoleApplication
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var sut = new SystemUnderTest();
+            var hello = sut.HelloWorld();
+            Console.WriteLine(hello);
+        }
+    }
+
+    public class SystemUnderTest
+    {
+        public string HelloWorld()
+        {
+            return "Hello World!";
+        }
+    }
+
+    public class TestClass
+    {
+        [Fact]
+        public void TestMethod()
+        {
+            var sut = new SystemUnderTest();
+            Assert.Equal("Hello World!", sut.HelloWorld());
+        }
+    }
+}
+```
+
+#### Running your unit test
+
+TODO
 
 ## _All right stop, collaborate and listen!_
 
