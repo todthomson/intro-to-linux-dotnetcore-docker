@@ -185,53 +185,65 @@ The [`dotnet new`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/d
 
 #### `dotnet restore`
 
-The [`dotnet restore`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-restore) command's job is to restore your dependencies. In the current case this is just `Microsoft.NETCore.App` which is a "meta package" for the [set of .NET API's](https://github.com/dotnet/corefx/) that are included in the default .NET Core application model. As you expand your application you will get more entries in this location.
+The [`dotnet restore`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-restore) command's job is to restore your dependencies. In the current case this is just `Microsoft.NETCore.App` which is a "meta package" for the [set of .NET API's](https://github.com/dotnet/corefx/) that are included in the default .NET Core application model. As you expand the scope of your application you will add more dependencies in this location.
 
 .NET Core dependencies / packages are restored from [http://www.nuget.org](http://www.nuget.org) by default. You can also opt-in to restore packages from other locations (e.g. internal package sources).
 
 ![13-dotnet-restore](Part3/13-dotnet-restore.png)
 
-#### `dotnet bulid`
+#### `dotnet build`
 
-It seems self-evident that [`dotnet build`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-build) will build (compile, etc) you .NET Core application. You can learn more about the .NET Build process [here](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-build). Take some time to read about the .NET Core build process now.
+It seems self-evident that [`dotnet build`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-build) will build (compile, etc) your .NET Core application. You can learn more about the .NET Core build process [here](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-build). Take some time to read more about the .NET Core build process now.
 
 ![14-dotnet-build](Part3/14-dotnet-build.png)
 
 #### `dotnet publish`
 
-The [`dotnet publish`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-publish) command packs your application and all it's dependencies into a folder preparing it for publishing. Importantly it produces one of the following three outputs:
+The [`dotnet publish`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-publish) command copies your application and all its dependencies into a folder preparing it for publishing. Importantly it produces one of the following three types of outputs:
 
-1. _A portable application:_ An application in .NET's Common Intermediate Language (CIL) which allows the application to be executed anywhere there is a compatible .NET Runtime. In our current situation this runtime is the [CoreCLR](https://github.com/dotnet/coreclr) (the .NET Core Common Language Runtime) though there are other compatible (legacy?) runtimes that can be used.
+1. _A portable application:_ An application in .NET's Common Intermediate Language (CIL) which allows the application to be executed anywhere there is a compatible .NET Runtime. In our current situation (on GNU/Linux, with .NET Core)this runtime is the [CoreCLR](https://github.com/dotnet/coreclr) (the .NET Core Common Language Runtime) though there are other compatible (legacy perhaps) runtimes that can be used.
 
-2. _A portable application with native dependencies:_ the same as the above with an extra platform folder for each native dependency. This is important as a single application bundle can be delivered to multiple platforms where there are some native dependencies required.
+2. _A portable application with native dependencies:_ the same as the above with an extra platform folder containing the native dependency(s). This is important as a single application bundle can be delivered to multiple platforms where there are some native dependencies required.
 
-3. _A self-contained application:_ the same as either of the above, but we also bundle the runtime(s) required to execute the application. This is great as the application then contains everything required for execution on all target platforms, rather than an expectation/supposition that the target operating system will have the precise version of the runtime required for our application). This is a relatively new concept for .NET.
+3. _A self-contained application:_ the same as either of the above, but we also bundle the runtime(s) required to execute the application. This is great as the application then contains everything required for execution on all target platforms, rather than an expectation/supposition that the target operating system will have the precise version of the runtime required for our application. This is a relatively new concept for .NET.
+
+__Note:__ All of the above application types still require the `dotnet run` command to bootstrap their execution.
 
 ![15-dotnet-publish](Part3/15-dotnet-publish.png)
 
 #### `dotnet run`
 
-Unsurprisingly the [`dotnet run` command](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-run) will execute your application. But it actually does more than that. It allows you to have a single command to prepare and execute your application. It will detect if you do not have an up-to-date build of your application and then execute `dotnet build`.
+Unsurprisingly the [`dotnet run`] command(https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-run) will execute your application. But it actually does more than that. It allows you to have a single command to prepare and execute your application. It will detect if you do not have an up-to-date build of your application and then execute `dotnet build`. It will also detect if you have missing dependencies and execute `dotnet restore` etc.
 
 Take some time to [read more](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-run) about `dotnet build` now.
 
-__Note:__ In the future .NET Core will support "native compilation" where a native binary can be produced per-target-platform. This process is currently under active development. My understanding is that this will produce and [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) binary.
+__Note:__ In the future .NET Core will support "native compilation" (they call this .NET Native which is an ahead-of-time compiler) where a native binary can be produced per-target-platform. This process is [currently under active development](https://github.com/dotnet/corert). My understanding is that this will produce an [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) binary.
 
 ![16-dotnet-run](Part3/16-dotnet-run.png)
 
 #### `dotnet test`
 
-The [`dotnet test` command](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-test) runs your unit tests using the configured test runner. We will learn more about unit testing in the next section.
+The [`dotnet test`] command(https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-test) runs your unit tests using the configured test runner. We will learn more about unit testing in the next section.
 
 ![17-dotnet-test](Part3/17-dotnet-test.png)
 
 #### `dotnet pack`
 
-The `dotnet pack` command packages your application as a [NuGet Package](https://www.nuget.org). The NuGet Package is the package format for .NET applications, libraries, frameworks, etc. Like many other packaging formats it's basically just a zip file and a manifest file with a `.nupkg` extension.
+The [`dotnet pack`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-pack) command packages your application as a [NuGet Package](https://www.nuget.org). The NuGet Package is the package format for .NET applications, libraries, frameworks, etc. Like many other packaging formats it's basically just a zip file and a manifest file with a `.nupkg` extension.
 
 The NuGet Package will become relevent once you want to distribute your application, library, framework, etc.
 
 ![18-dotnet-pack](Part3/18-dotnet-pack.png)
+
+That's it for `dotnet` CLI commands.
+
+## Unit Testing in .NET Core
+
+TODO
+
+## Visual Studio Code
+
+TODO
 
 ## _All right stop, collaborate and listen!_
 
