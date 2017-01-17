@@ -248,7 +248,7 @@ Open VS Code (or another text editor of your choice) and edit `project.json` upd
 ```JSON
   },
   "dependencies": {
-    "xunit":"2.1.0",
+    "xunit":"2.2.0-beta4-build3444",
     "dotnet-test-xunit": "2.2.0-preview2-build1029"
   },
 ```
@@ -290,21 +290,21 @@ Your complete `project.json` should look as follows.
 }
 ```
 
-__Note:__ If you chose to try out VS Code you may be prompted to install the C# Language Extension. If so go ahead and click on "show recommendations" to do that now.
+__Note:__ If you are trying out VS Code you may be prompted to install the _C# Language Extension_. If so go ahead and click on "show recommendations" and "install" to do that now.
 
 ![19-vscode-csharp](Part3/19-vscode-csharp.png)
 
-If you're using VS Code you will see the following prompts after restarting the editor. Go ahead and select "yes" to install the required assets for building and debugging via VS Code.
+__Also:__ If you're using VS Code you will see the following prompts after restarting the editor. Go ahead and select "yes" to install the required assets for building and debugging via VS Code.
 
 ![20-vscode-csharp-installed](Part3/20-vscode-csharp-installed.png)
 
-Next you can select "restore" in VS Code or run `dotnet restore` from the command line to restore (download) your new `dependencies`. You should then see output similar to the following.
+__And:__ Then select "restore" in VS Code or run `dotnet restore` from the command line to restore (download) your new `dependencies`. You should then see output similar to the following.
 
 ![21-vscode-dotnet-restore](Part3/21-vscode-dotnet-restore.png)
 
 #### `Program.cs`
 
-Now open `Program.cs` and import (use) the xUnit.net library as shown below. This will allow our code to use the Classes and Methods (etc) provided by xUnit.net.
+Now open `Program.cs` and import (use / `using`) the xUnit.net library as shown below. This will allow our code to use the Classes and Methods (etc) provided by xUnit.net.
 
 ```C#
 using System;
@@ -314,7 +314,7 @@ namespace ConsoleApplication
 {
 ```
 
-Next we'll refactor our existing terminal application as shown below. This will simplify the process of testing our method (function).
+Next we'll refactor our existing terminal application as shown below. This will simplify the process of testing our method `HelloWorld()` in the `SystemUnderTest` class.
 
 ```C#
     public class Program
@@ -336,7 +336,7 @@ Next we'll refactor our existing terminal application as shown below. This will 
     }
 ```
 
-Lastly we will write our unit test. Add the following unit test at the bottom of `Program.cs` just before the final `}`.
+Lastly we will write our unit test. Add the following unit test `TestClass` at the bottom of `Program.cs` just before the final `}`.
 
 ```C#
     public class TestClass
@@ -410,6 +410,8 @@ If you look closely you will see that your test has passed.
    DotNetCoreTestApp  Total: 1, Errors: 0, Failed: 0, Skipped: 0, Time: 0.134s
 SUMMARY: Total: 1 targets, Passed: 1, Failed: 0.
 ```
+
+Awesome! Now you know how to unit test your .NET Core project.
 
 ## _All right stop, collaborate and listen!_
 
