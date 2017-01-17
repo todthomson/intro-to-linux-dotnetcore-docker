@@ -390,16 +390,35 @@ namespace ConsoleApplication
 
 #### Running your unit test
 
-TODO
+Running your new unit test is as simple as follows.
+
+```
+dotnet restore
+dotnet build
+dotnet run
+dotnet test
+```
+
+Which should produce the following output.
+
+![22-unit-test.png](Part3/22-unit-test.png)
+
+If you look closely you will see that your test has passed.
+
+```
+=== TEST EXECUTION SUMMARY ===
+   DotNetCoreTestApp  Total: 1, Errors: 0, Failed: 0, Skipped: 0, Time: 0.134s
+SUMMARY: Total: 1 targets, Passed: 1, Failed: 0.
+```
 
 ## _All right stop, collaborate and listen!_
 
-Explore .NET Core and/or build a new .NET Core application.
+Feel free to explore .NET Core and/or build a new .NET Core application.
 
-The [.NET Core Concepts](https://dotnet.github.io/docs/core-concepts/index.html) may be useful to you...
+The [.NET Core Concepts](https://dotnet.github.io/docs/core-concepts/index.html) will be useful to you.
 
 ## End of Part 3
 
 __Excellent!__ You have said hello to the world of _.NET Core_.
 
-It's time to break for lunch before continuing with [4. "Hello, world!" ASP.NET Core](Part4.md).
+Next continue with [4. "Hello, world!" ASP.NET Core](Part4.md).
