@@ -224,4 +224,4 @@ TODO
 
 __Winning!__ You have a basic _Web API_ written in _ASP.NET Core_.
 
-Take a 5 minute break and then continue with [5. "Hello, world!" Docker](Part5.md).
+Take a coffee break (if you need it) and then continue with [5. "Hello, world!" Docker](Part5.md).
