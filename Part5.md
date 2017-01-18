@@ -47,8 +47,8 @@ docker run -it microsoft/dotnet:latest
 Create a new dotnet core app.
 
 ```
-mkdir mynewapp
-cd mynewapp
+mkdir DotNetCoreOnDocker
+cd DotNetCoreOnDocker
 dotnet new
 ```
 
@@ -63,11 +63,14 @@ dotnet run
 
 ![6-dotnet-run](Part5/6-dotnet-run.png)
 
-__Superb!__ You now have "Hello, world!" on:
+__Superb!__ You have now seen "Hello, world!" on:
 
 1. .NET Core,
+2. ASP.NET Core
 2. Docker, and
-3. .Net Core on Docker.
+3. .NET Core in a Docker container.
+
+That's a lot of "Hello, world!", let's take a step back and learn more about Docker.
 
 ### Docker 101
 
