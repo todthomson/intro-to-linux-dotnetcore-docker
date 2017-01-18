@@ -212,6 +212,12 @@ For a more in-depth Docker have a look at the [Docker Docs](https://docs.docker.
 
 So you have seen what Docker can do on Linux. Let's see what Docker can do on macOS and Windows as well.
 
+__Note:__ If you're not running on macOS or Windows you have one of the following two options:
+
+1. Continue on with [6. "Hello, world!" via Node.js & Yeoman](Part6.md) where you will learn about [Node.js](https://nodejs.org) and scaffolding parts of you .NET Core and ASP.NET Core application with [Yeoman](http://yeoman.io).
+
+2. Spend some time learning more about .NET Core and building your own application. The [.NET Core Concepts](https://docs.microsoft.com/en-us/dotnet/articles/core/getting-started) will be useful to you.
+
 ### Docker for macOS and/or Windows
 
 Recently Docker has also been released for macOS and Windows. Both macOS and Windows run the CLI (client) as a native application, but run the Docker Engine (daemon) through a hypervisor. Hyper-V on Windows and [xhyve](https://github.com/mist64/xhyve/) on macOS.
@@ -248,4 +254,4 @@ Have a play around with the product, install some containers and see if you can 
 
 __Excellent!__ You have dug into Docker on Linux and you have also seen Docker running on either macOS or Windows.
 
-Take a 5 minute break and then continue with [6. "Hello, world!" via Node.js & Yeoman](Part6.md).
+Take a break and then continue with [6. "Hello, world!" via Node.js & Yeoman](Part6.md).

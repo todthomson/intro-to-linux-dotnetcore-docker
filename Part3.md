@@ -417,7 +417,7 @@ Awesome! Now you know how to unit test your .NET Core project.
 
 Feel free to explore .NET Core and/or build a new .NET Core application.
 
-The [.NET Core Concepts](https://dotnet.github.io/docs/core-concepts/index.html) will be useful to you.
+The [.NET Core Concepts](https://docs.microsoft.com/en-us/dotnet/articles/core/getting-started) will be useful to you.
 
 ## End of Part 3
 
