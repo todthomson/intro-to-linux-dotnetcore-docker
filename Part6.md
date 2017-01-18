@@ -55,7 +55,7 @@ nvm list-remote
 Now we can install the latest version of Node.
 
 ```
-nvm install v7.2.0
+nvm install v7.4.0
 ```
 
 ![7-install-node-6](Part6/7-install-node-6.png)
