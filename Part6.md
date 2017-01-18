@@ -27,7 +27,7 @@ sudo apt-get install build-essential libssl-dev
 Run the following to install `nvm`.
 
 ```
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 ```
 
 ![3-install-node-2](Part6/3-install-node-2.png)
